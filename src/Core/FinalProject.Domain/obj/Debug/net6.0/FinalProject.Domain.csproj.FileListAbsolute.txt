@@ -1,0 +1,12 @@
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\bin\Debug\net6.0\FinalProject.Domain.deps.json
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\bin\Debug\net6.0\FinalProject.Domain.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\bin\Debug\net6.0\FinalProject.Domain.pdb
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\obj\Debug\net6.0\FinalProject.Domain.csproj.AssemblyReference.cache
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\obj\Debug\net6.0\FinalProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\obj\Debug\net6.0\FinalProject.Domain.AssemblyInfoInputs.cache
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\obj\Debug\net6.0\FinalProject.Domain.AssemblyInfo.cs
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\obj\Debug\net6.0\FinalProject.Domain.csproj.CoreCompileInputs.cache
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\obj\Debug\net6.0\FinalProject.Domain.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\obj\Debug\net6.0\refint\FinalProject.Domain.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\obj\Debug\net6.0\FinalProject.Domain.pdb
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Domain\obj\Debug\net6.0\ref\FinalProject.Domain.dll

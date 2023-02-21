@@ -1,0 +1,15 @@
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\bin\Debug\net6.0\FinalProject.Application.deps.json
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\bin\Debug\net6.0\FinalProject.Application.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\bin\Debug\net6.0\FinalProject.Application.pdb
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\bin\Debug\net6.0\FinalProject.Domain.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\bin\Debug\net6.0\FinalProject.Domain.pdb
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\obj\Debug\net6.0\FinalProject.Application.csproj.AssemblyReference.cache
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\obj\Debug\net6.0\FinalProject.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\obj\Debug\net6.0\FinalProject.Application.AssemblyInfoInputs.cache
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\obj\Debug\net6.0\FinalProject.Application.AssemblyInfo.cs
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\obj\Debug\net6.0\FinalProject.Application.csproj.CoreCompileInputs.cache
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\obj\Debug\net6.0\FinalProject.Application.csproj.CopyComplete
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\obj\Debug\net6.0\FinalProject.Application.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\obj\Debug\net6.0\refint\FinalProject.Application.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\obj\Debug\net6.0\FinalProject.Application.pdb
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Core\FinalProject.Application\obj\Debug\net6.0\ref\FinalProject.Application.dll
