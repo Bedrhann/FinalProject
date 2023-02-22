@@ -7,7 +7,7 @@ namespace FinalProject.Persistence.Repositories.ShopListRepositories
 {
     public class ShopListQueryRepository : QueryRepository<ShopList>, IShopListQueryRepository
     {
-        public ShopListQueryRepository(PostgreSqlDbContext context) : base(context)
+        public ShopListQueryRepository(MsSqlDbContext context) : base(context)
         {
         }
     }

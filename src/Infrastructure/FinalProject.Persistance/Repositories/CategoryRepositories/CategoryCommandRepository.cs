@@ -8,7 +8,7 @@ namespace FinalProject.Persistence.Repositories.CategoryRepositories
 {
     public class CategoryCommandRepository : CommandRepository<Category>, ICategoryCommandRepository
     {
-        public CategoryCommandRepository(PostgreSqlDbContext context) : base(context)
+        public CategoryCommandRepository(MsSqlDbContext context) : base(context)
         {
         }
     }

@@ -8,7 +8,7 @@ namespace FinalProject.Persistence.Repositories.ProductRepositories
 {
     public class ProductCommandRepository : CommandRepository<Product>, IProductCommandRepository
     {
-        public ProductCommandRepository(PostgreSqlDbContext context) : base(context)
+        public ProductCommandRepository(MsSqlDbContext context) : base(context)
         {
         }
     }

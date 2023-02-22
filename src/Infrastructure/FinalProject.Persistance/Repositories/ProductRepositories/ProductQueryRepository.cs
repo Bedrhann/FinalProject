@@ -8,7 +8,7 @@ namespace FinalProject.Persistence.Repositories.ProductRepositories
 {
     public class ProductQueryRepository : QueryRepository<Product>, IProductQueryRepository
     {
-        public ProductQueryRepository(PostgreSqlDbContext context) : base(context)
+        public ProductQueryRepository(MsSqlDbContext context) : base(context)
         {
         }
     }

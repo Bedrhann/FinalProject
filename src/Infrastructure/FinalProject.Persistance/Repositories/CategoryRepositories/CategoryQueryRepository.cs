@@ -8,7 +8,7 @@ namespace FinalProject.Persistence.Repositories.CategoryRepositories
 {
     public class CategoryQueryRepository : QueryRepository<Category>, ICategoryQueryRepository
     {
-        public CategoryQueryRepository(PostgreSqlDbContext context) : base(context)
+        public CategoryQueryRepository(MsSqlDbContext context) : base(context)
         {
         }
     }
