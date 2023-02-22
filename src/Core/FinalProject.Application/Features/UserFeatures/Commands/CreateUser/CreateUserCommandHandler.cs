@@ -16,7 +16,7 @@ namespace FinalProject.Application.Features.UserFeatures.Commands.CreateUser
             _roleManager = roleManager;
         }
 
-        public async Task<BaseResponse> Handle(CreateUserCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<>> Handle(CreateUserCommandRequest request, CancellationToken cancellationToken)
         {
             //Veritabanına ilk kez admin ve user rollerini vermek için kullanıyoruz.
             //await _roleManager.CreateAsync(new AppRole { Id = "sdfsdfsfs", Name = "Admin" });

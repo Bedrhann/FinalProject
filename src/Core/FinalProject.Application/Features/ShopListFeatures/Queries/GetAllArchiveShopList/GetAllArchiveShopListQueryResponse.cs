@@ -6,6 +6,6 @@ namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetAllArchi
     public class GetAllArchiveShopListQueryResponse
     {
         public List<ShopListArchiveDto> Lists { get; set; }
-        public PagingInfo PagingInfo { get; set; }
+        public BasePagingResponse PagingInfo { get; set; }
     }
 }

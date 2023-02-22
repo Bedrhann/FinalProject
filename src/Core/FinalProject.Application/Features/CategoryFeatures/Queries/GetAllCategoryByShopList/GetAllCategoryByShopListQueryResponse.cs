@@ -6,6 +6,6 @@ namespace FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCateg
     public class GetAllCategoryByShopListQueryResponse
     {
         public List<GetCategoryDto> Categories { get; set; }
-        public PagingInfo PagingInfo { get; set; }
+        public BasePagingResponse PagingInfo { get; set; }
     }
 }

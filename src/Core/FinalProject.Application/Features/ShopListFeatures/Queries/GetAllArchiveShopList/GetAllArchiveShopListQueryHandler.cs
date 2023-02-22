@@ -41,7 +41,7 @@ namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetAllArchi
             int TotalPage = (int)Math.Ceiling(TotalUser / (double)request.Limit);
             int Skip = (request.Page - 1) * request.Limit;
 
-            PagingInfo PageInfo = new()
+            BasePagingResponse PageInfo = new()
             {
                 TotalData = TotalUser,
                 TotalPage = TotalPage,
