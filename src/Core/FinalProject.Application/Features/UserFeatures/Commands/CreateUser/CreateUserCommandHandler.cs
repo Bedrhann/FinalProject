@@ -1,45 +1,22 @@
-﻿using FinalProject.Application.Wrappers.Base;
-using FinalProject.Domain.Entities.Identity;
+﻿using FinalProject.Application.DTOs.User;
+using FinalProject.Application.Interfaces.Services.UserServices;
+using FinalProject.Application.Wrappers.Base;
+using Mapster;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
 
 namespace FinalProject.Application.Features.UserFeatures.Commands.CreateUser
 {
-    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommandRequest, BaseResponse<>>
+    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommandRequest, BaseResponse<UserCommandDto>>
     {
-        private readonly UserManager<AppUser> _userManager;
-        private readonly RoleManager<AppRole> _roleManager;
-
-        public CreateUserCommandHandler(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
+        private readonly IUserService _service;
+        public CreateUserCommandHandler(IUserService service)
         {
-            _userManager = userManager;
-            _roleManager = roleManager;
+            _service = service;
         }
 
-        public async Task<BaseResponse<>> Handle(CreateUserCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<UserCommandDto>> Handle(CreateUserCommandRequest request, CancellationToken cancellationToken)
         {
-            //Veritabanına ilk kez admin ve user rollerini vermek için kullanıyoruz.
-            //await _roleManager.CreateAsync(new AppRole { Id = "sdfsdfsfs", Name = "Admin" });
-            //await _roleManager.CreateAsync(new AppRole { Id = "dfsdffsf", Name = "User" });
-            AppUser NewUser = new()
-            {
-                Id = Guid.NewGuid().ToString(),
-                UserName = request.Username,
-                FirstName = request.Firstname,
-                LastName = request.Lastname,
-                Email = request.Email,
-                RegistrationDate = DateTime.UtcNow,
-            };
-
-            IdentityResult result = await _userManager.CreateAsync(NewUser, request.Password);
-            await _userManager.AddToRoleAsync(NewUser, "User");
-
-            BaseResponse response = new() { Success = result.Succeeded };
-
-            if (result.Succeeded)
-                response.Message = "Kullanıcı başarıyla oluşturulmuştur.";
-
-            return response;
+            return await _service.CreateAsync(request.Adapt<UserCommandDto>());
         }
     }
 }

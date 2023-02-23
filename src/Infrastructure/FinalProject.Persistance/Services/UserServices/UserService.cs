@@ -1,9 +1,11 @@
 ﻿using FinalProject.Application.DTOs.Base;
 using FinalProject.Application.DTOs.User;
 using FinalProject.Application.Features.UserFeatures.Commands.CreateUser;
+using FinalProject.Application.Interfaces.ForeignServices;
 using FinalProject.Application.Interfaces.Services.UserServices;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities.Identity;
+using FinalProject.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 
@@ -14,15 +16,17 @@ namespace FinalProject.Persistance.Services.UserServices
         readonly RoleManager<AppRole> _roleManager;
         private readonly SignInManager<AppUser> _signInManager;
         readonly UserManager<AppUser> _userManager;
+        private readonly IGenerateToken _tokenGenerater;
 
-        public UserService(RoleManager<AppRole> roleManager, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public UserService(RoleManager<AppRole> roleManager, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IGenerateToken tokenGenerater)
         {
             _roleManager = roleManager;
             _userManager = userManager;
             _signInManager = signInManager;
+            _tokenGenerater = tokenGenerater;
         }
 
-        public async Task<BaseResponse<UserCommandDto>> CheckAsync(UserCommandDto insertResource)
+        public async Task<BaseResponse<Token>> CheckAsync(UserCommandDto insertResource)
         {
             AppUser user = await _userManager.FindByNameAsync(insertResource.UserName);
             if (user == null)
@@ -43,41 +47,31 @@ namespace FinalProject.Persistance.Services.UserServices
                 claims.Add(new Claim("Id", user.Id));
 
                 Token token = _tokenGenerater.CreateAccessToken(5, claims);
-                return new CheckUserCommandResponse()
-                {
-                    Token = token
-                };
+                return new BaseResponse<Token>(token);
             }
-            throw new NotImplementedException();
+            throw new Exception();//TODO exeption kontolu dikkay!!!!
 
         }
 
-        public async Task<BaseResponse<CreateUserCommandRequest>> CreateAsync(CreateUserCommandRequest request)
+        public async Task<BaseResponse<UserCommandDto>> CreateAsync(UserCommandDto insertResource)
         {
-
-            
-            //********
-
-
+            //Veritabanına ilk kez admin ve user rollerini vermek için kullanıyoruz.
+            //await _roleManager.CreateAsync(new AppRole { Id = "sdfsdfsfs", Name = "Admin" });
+            //await _roleManager.CreateAsync(new AppRole { Id = "dfsdffsf", Name = "User" });
             AppUser NewUser = new()
             {
                 Id = Guid.NewGuid().ToString(),
-                UserName = request.Username,
-                FirstName = request.Firstname,
-                LastName = request.Lastname,
-                Email = request.Email,
+                UserName = insertResource.UserName,
+                FirstName = insertResource.FirstName,
+                LastName = insertResource.LastName,
+                Email = insertResource.Email,
                 RegistrationDate = DateTime.UtcNow,
             };
 
-            IdentityResult result = await _userManager.CreateAsync(NewUser, request.Password);
+            IdentityResult result = await _userManager.CreateAsync(NewUser, insertResource.Password);
             await _userManager.AddToRoleAsync(NewUser, "User");
 
-            return new BaseResponse<CreateUserCommandRequest>(result.Succeeded);
-        }
-
-        public Task<BaseResponse<UserCommandDto>> CreateAsync(UserCommandDto insertResource)
-        {
-            throw new NotImplementedException();
+            return new BaseResponse<UserCommandDto>(result.Succeeded);
         }
 
         public Task<BaseResponse<IEnumerable<UserQueryDto>>> GetAllAsync()

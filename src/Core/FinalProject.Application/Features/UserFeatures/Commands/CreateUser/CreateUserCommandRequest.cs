@@ -1,14 +1,10 @@
-﻿using FinalProject.Application.Wrappers.Responses;
+﻿using FinalProject.Application.DTOs.User;
+using FinalProject.Application.Wrappers.Base;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinalProject.Application.Features.UserFeatures.Commands.CreateUser
 {
-    public class CreateUserCommandRequest : IRequest<BaseResponse<>>
+    public class CreateUserCommandRequest : IRequest<BaseResponse<UserCommandDto>>
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }

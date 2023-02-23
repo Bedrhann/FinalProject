@@ -1,14 +1,13 @@
-﻿using FinalProject.Application.Interfaces.Services;
+﻿using FinalProject.Application.DTOs.User;
 using FinalProject.Application.Interfaces.Services.UserServices;
-using FinalProject.Application.Models.JwtToken;
-using FinalProject.Domain.Entities.Identity;
+using FinalProject.Application.Wrappers.Base;
+using FinalProject.Domain.Models;
+using Mapster;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
-using System.Security.Claims;
 
 namespace FinalProject.Application.Features.UserFeatures.Commands.CheckUser
 {
-    public class CheckUserCommandHandler : IRequestHandler<CheckUserCommandRequest, CheckUserCommandResponse>
+    public class CheckUserCommandHandler : IRequestHandler<CheckUserCommandRequest, BaseResponse<Token>>
     {
         private readonly IUserService _service;
         public CheckUserCommandHandler(IUserService service)
@@ -16,10 +15,9 @@ namespace FinalProject.Application.Features.UserFeatures.Commands.CheckUser
             _service = service;
         }
 
-        public async Task<CheckUserCommandResponse> Handle(CheckUserCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<Token>> Handle(CheckUserCommandRequest request, CancellationToken cancellationToken)
         {
-            _service.CheckAsync(,)
-
+            return await _service.CheckAsync(request.Adapt<UserCommandDto>());
         }
     }
 }
