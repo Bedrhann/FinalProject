@@ -1,35 +1,24 @@
-﻿using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
+﻿using FinalProject.Application.DTOs.ShopList;
+using FinalProject.Application.Interfaces.Services.ShopListService;
 using FinalProject.Application.Wrappers.Base;
-using FinalProject.Domain.Entities;
 using Mapster;
 using MediatR;
 
 namespace FinalProject.Application.Features.ShopListFeatures.Commands.CreateShopList
 {
-    public class CreateShopListCommandHandler : IRequestHandler<CreateShopListCommandRequest, BaseResponse<BaseCreateDto>>
+    public class CreateShopListCommandHandler : IRequestHandler<CreateShopListCommandRequest, BaseResponse<ShopListCommandDto>>
     {
-        private readonly IShopListCommandRepository _repository;
+        private readonly IShopListCommandService _service;
 
-        public CreateShopListCommandHandler(IShopListCommandRepository repository)
+        public CreateShopListCommandHandler(IShopListCommandService service)
         {
-            _repository = repository;
+            _service = service;
         }
 
-        public async Task<BaseResponse<BaseCreateDto>> Handle(CreateShopListCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<ShopListCommandDto>> Handle(CreateShopListCommandRequest request, CancellationToken cancellationToken)
         {
-            ShopList NewShopList = request.Adapt<ShopList>();
-            await _repository.AddAsync(NewShopList);
-            await _repository.SaveAsync();
 
-            var a = new BaseResponse<>();
-
-            BaseResponse response = new()
-            {
-                Success = true,
-                Message = "ShopList Added"
-            };
-            return response;
-            throw new NotImplementedException();
+            return await _service.InsertAsync(request.Adapt<ShopListCommandDto>());
         }
     }
 }

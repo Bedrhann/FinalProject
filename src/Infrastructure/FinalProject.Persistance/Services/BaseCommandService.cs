@@ -2,6 +2,7 @@
 using FinalProject.Application.Interfaces.Services;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities.Common;
+using Mapster;
 
 namespace FinalProject.Persistance.Services
 {
@@ -13,9 +14,13 @@ namespace FinalProject.Persistance.Services
             _commandRepository = commandRepository;
         }
 
-        public Task<BaseResponse<Dto>> InsertAsync(Dto insertResource)
+        public async Task<BaseResponse<Dto>> InsertAsync(Dto insertResource)
         {
-            throw new NotImplementedException();
+
+            await _commandRepository.AddAsync(insertResource.Adapt<Entity>());
+            await _commandRepository.SaveAsync();
+
+            return new BaseResponse<Dto>(insertResource);
         }
 
         public Task<BaseResponse<Dto>> RemoveAsync(Guid id)
