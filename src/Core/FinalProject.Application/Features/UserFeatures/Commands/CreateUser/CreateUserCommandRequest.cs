@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Application.Features.UserFeatures.Commands.CreateUser
 {
-    public class CreateUserCommandRequest : IRequest<BaseResponse>
+    public class CreateUserCommandRequest : IRequest<BaseResponse<>>
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }

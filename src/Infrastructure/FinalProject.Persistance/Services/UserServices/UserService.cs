@@ -1,9 +1,10 @@
-﻿using FinalProject.Application.Features.UserFeatures.Commands.CreateUser;
+﻿using FinalProject.Application.DTOs.Base;
+using FinalProject.Application.Features.UserFeatures.Commands.CreateUser;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 
-namespace FinalProject.Persistance.Services
+namespace FinalProject.Persistance.Services.UserServices
 {
     public class UserService
     {
@@ -16,7 +17,7 @@ namespace FinalProject.Persistance.Services
             _userManager = userManager;
         }
 
-        public async Task<BaseResponse<object>> CreateAsync(CreateUserCommandRequest request)
+        public async Task<BaseResponse<BaseCommandDto>> CreateAsync(CreateUserCommandRequest request)
         {
             AppUser NewUser = new()
             {
@@ -31,7 +32,7 @@ namespace FinalProject.Persistance.Services
             IdentityResult result = await _userManager.CreateAsync(NewUser, request.Password);
             await _userManager.AddToRoleAsync(NewUser, "User");
 
-            return new BaseResponse<Object>(result.Succeeded);
+            return new BaseResponse<BaseCommandDto>(result.Succeeded);
         }
 
     }
