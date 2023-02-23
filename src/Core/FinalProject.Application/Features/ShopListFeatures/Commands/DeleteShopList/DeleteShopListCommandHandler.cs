@@ -1,36 +1,23 @@
-﻿using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
-using FinalProject.Application.Wrappers.Responses;
-using FinalProject.Domain.Entities;
+﻿using FinalProject.Application.DTOs.ShopList;
+using FinalProject.Application.Interfaces.Services.ShopListService;
+using FinalProject.Application.Wrappers.Base;
 using MediatR;
 
 namespace FinalProject.Application.Features.ShopListFeatures.Commands.DeleteShopList
 {
-    public class DeleteShopListCommandHandler : IRequestHandler<DeleteShopListCommandRequest, BaseResponse>
+    public class DeleteShopListCommandHandler : IRequestHandler<DeleteShopListCommandRequest, BaseResponse<ShopListCommandDto>>
     {
-        private readonly IShopListQueryRepository _queryRepository;
-        private readonly IShopListCommandRepository _commandRepository;
+        private readonly IShopListCommandService _service;
 
-        public DeleteShopListCommandHandler(IShopListCommandRepository commandrepository, IShopListQueryRepository queryrepository)
+        public DeleteShopListCommandHandler(IShopListCommandService service)
         {
-            _commandRepository = commandrepository;
-            _queryRepository = queryrepository;
+            _service = service;
         }
 
-        public async Task<BaseResponse> Handle(DeleteShopListCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<ShopListCommandDto>> Handle(DeleteShopListCommandRequest request, CancellationToken cancellationToken)
         {
-            ShopList DeletedList = await _queryRepository.GetByIdAsync(request.Id.ToString());
-            DeletedList.IsDeleted = true;
-            _commandRepository.SaveAsync();
-
-            BaseResponse response = new()
-            {
-                Success = true,
-                Message = "ShopList Deleted"
-            };
-            return response;
-            throw new NotImplementedException();
+            return await _service.SoftRemoveAsync(request.Id);
         }
-
 
     }
 }

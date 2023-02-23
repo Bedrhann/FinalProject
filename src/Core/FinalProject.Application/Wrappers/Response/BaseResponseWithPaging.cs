@@ -8,6 +8,11 @@ namespace FinalProject.Application.Wrappers.Base
     {
         public BaseResponse<T> BaseResponse { get; set; }
         public BasePagingResponse PagingInfo { get; set; }
-    }
+
+        public BaseResponseWithPaging(BaseResponse<T> baseResponse, BasePagingResponse pagingInfo)
+        {
+            BaseResponse = baseResponse;
+            PagingInfo = pagingInfo;
+        }
     }
 }

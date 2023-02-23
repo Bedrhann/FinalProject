@@ -1,9 +1,10 @@
-﻿using FinalProject.Application.Wrappers.Responses;
+﻿using FinalProject.Application.DTOs.ShopList;
+using FinalProject.Application.Wrappers.Base;
 using MediatR;
 
 namespace FinalProject.Application.Features.ShopListFeatures.Commands.UpdateShopList
 {
-    public class UpdateShopListCommandRequest : IRequest<BaseResponse>
+    public class UpdateShopListCommandRequest : IRequest<BaseResponse<ShopListCommandDto>>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

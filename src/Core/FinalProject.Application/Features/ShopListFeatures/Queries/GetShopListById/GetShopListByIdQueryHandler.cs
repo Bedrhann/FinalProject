@@ -1,30 +1,22 @@
 ﻿using FinalProject.Application.DTOs.ShopList;
-using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
-using FinalProject.Domain.Entities;
-using Mapster;
+using FinalProject.Application.Interfaces.Services.ShopListService;
+using FinalProject.Application.Wrappers.Base;
 using MediatR;
 
 namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetShopListById
 {
-    public class GetShopListByIdQueryHandler : IRequestHandler<GetShopListByIdQueryRequest, GetShopListByIdQueryResponse>
+    public class GetShopListByIdQueryHandler : IRequestHandler<GetShopListByIdQueryRequest, BaseResponse<ShopListQueryDto>>
     {
-        private readonly IShopListQueryRepository _repository;
+        private readonly IShopListQueryService _service;
 
-        public GetShopListByIdQueryHandler(IShopListQueryRepository repository)
+        public GetShopListByIdQueryHandler(IShopListQueryService service)
         {
-            _repository = repository;
+            _service = service;
         }
 
-        public async Task<GetShopListByIdQueryResponse> Handle(GetShopListByIdQueryRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<ShopListQueryDto>> Handle(GetShopListByIdQueryRequest request, CancellationToken cancellationToken)
         {
-            ShopList ShopList = await _repository.GetByIdAsync(request.Id.ToString());
-            ShopListQueryDto ShopListDto = ShopList.Adapt<ShopListQueryDto>();
-
-            return new GetShopListByIdQueryResponse()
-            {
-                ShopList = ShopListDto
-            };
-            throw new NotImplementedException();
+            return await _service.GetByIdAsync(request.Id);
         }
     }
 }

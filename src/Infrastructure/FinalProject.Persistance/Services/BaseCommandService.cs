@@ -6,14 +6,19 @@ using Mapster;
 
 namespace FinalProject.Persistance.Services
 {
-    public class BaseCommandService<Dto,Entity> : IBaseCommandService<Dto,Entity> where Entity : BaseEntity
+    public abstract class BaseCommandService<Dto,Entity> : IBaseCommandService<Dto,Entity> where Entity : BaseEntity
     {
         private readonly ICommandRepository<Entity> _commandRepository;
-        public BaseCommandService(ICommandRepository<Entity> commandRepository)
+        private readonly IQueryRepository<Entity> _queryRepository;
+        public BaseCommandService(ICommandRepository<Entity> commandRepository, IQueryRepository<Entity> queryRepository)
         {
             _commandRepository = commandRepository;
+            _queryRepository = queryRepository;
         }
 
+
+
+        //*******************       INSERT     **********************
         public async Task<BaseResponse<Dto>> InsertAsync(Dto insertResource)
         {
 
@@ -23,13 +28,44 @@ namespace FinalProject.Persistance.Services
             return new BaseResponse<Dto>(insertResource);
         }
 
-        public Task<BaseResponse<Dto>> RemoveAsync(Guid id)
+
+
+        //*******************       REMOVE     **********************
+        public async Task<BaseResponse<Dto>> RemoveAsync(Guid id)
         {
-            throw new NotImplementedException();
+            Entity DeletedProduct = await _queryRepository.GetByIdAsync(id.ToString());
+            _commandRepository.Remove(DeletedProduct);
+            _commandRepository.SaveAsync();
+
+            return new BaseResponse<Dto>(true);
         }
 
-        public Task<BaseResponse<Dto>> UpdateAsync(Guid id, Dto updateResource)
+
+
+
+        //*******************       UPDATE     **********************
+        public virtual async Task<BaseResponse<Dto>> UpdateAsync(Guid id, Dto updateResource)
         {
+            Entity UpdatedShopList = await _queryRepository.GetByIdAsync(id.ToString());
+            bool oldStatus = UpdatedShopList.IsCompleted;
+            request.Adapt<UpdateShopListCommandRequest, ShopList>(UpdatedShopList);
+            _commandRepository.Update(UpdatedShopList);
+            await _commandRepository.SaveAsync();
+            if (oldStatus == false && UpdatedShopList.IsCompleted == true)
+            {
+                UpdatedShopList.Adapt<ShopList, ShopListArchiveDto>();
+                _rabbitMq.Publish(UpdatedShopList, "fanout.shoplist");
+            }
+
+
+            BaseResponse response = new()
+            {
+                Success = true,
+                Message = "ShopList Updated"
+            };
+            return response;
+
+
             throw new NotImplementedException();
         }
     }

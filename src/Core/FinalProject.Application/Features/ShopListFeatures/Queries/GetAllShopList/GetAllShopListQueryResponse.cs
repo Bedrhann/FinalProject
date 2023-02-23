@@ -1,5 +1,5 @@
 ﻿using FinalProject.Application.DTOs.ShopList;
-using FinalProject.Application.Models.Paging;
+using FinalProject.Application.Wrappers.Paging;
 
 namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetAllShopList
 {
