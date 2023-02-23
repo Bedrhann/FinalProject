@@ -31,7 +31,7 @@ namespace FinalProject.Persistance.Services
             IdentityResult result = await _userManager.CreateAsync(NewUser, request.Password);
             await _userManager.AddToRoleAsync(NewUser, "User");
 
-            return new BaseResponse<AppUser>(result.Succeeded);
+            return new BaseResponse<Object>(result.Succeeded);
         }
 
     }

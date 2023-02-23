@@ -15,6 +15,12 @@ namespace FinalProject.Application.Wrappers.Base
         public List<string> Message { get; private set; }
         public T Response { get; private set; }
 
+        public BaseResponse()
+        {
+            Response = default;
+            Success = false;
+            Message = new List<string>() { "Fault" };
+        }
         public BaseResponse(bool isSuccess)
         {
             Response = default;

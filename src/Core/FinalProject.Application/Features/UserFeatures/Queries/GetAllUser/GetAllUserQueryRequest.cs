@@ -1,4 +1,4 @@
-﻿using FinalProject.Application.Wrappers.Queries;
+﻿using FinalProject.Application.Wrappers.Paging;
 using MediatR;
 
 namespace FinalProject.Application.Features.UserFeatures.Queries.GetAllUser

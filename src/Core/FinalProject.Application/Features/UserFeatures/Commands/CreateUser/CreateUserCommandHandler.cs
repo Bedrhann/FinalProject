@@ -1,11 +1,11 @@
-﻿using FinalProject.Application.Wrappers.Responses;
+﻿using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities.Identity;
-using Microsoft.AspNetCore.Identity;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 
 namespace FinalProject.Application.Features.UserFeatures.Commands.CreateUser
 {
-    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommandRequest, BaseResponse>
+    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommandRequest, BaseResponse<>>
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly RoleManager<AppRole> _roleManager;
@@ -30,7 +30,7 @@ namespace FinalProject.Application.Features.UserFeatures.Commands.CreateUser
                 Email = request.Email,
                 RegistrationDate = DateTime.UtcNow,
             };
-            
+
             IdentityResult result = await _userManager.CreateAsync(NewUser, request.Password);
             await _userManager.AddToRoleAsync(NewUser, "User");
 
@@ -38,7 +38,7 @@ namespace FinalProject.Application.Features.UserFeatures.Commands.CreateUser
 
             if (result.Succeeded)
                 response.Message = "Kullanıcı başarıyla oluşturulmuştur.";
-           
+
             return response;
         }
     }

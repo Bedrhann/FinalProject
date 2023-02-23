@@ -1,14 +1,13 @@
-﻿using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
-using FinalProject.Application.Wrappers.Responses;
-using FinalProject.Domain.Entities.Identity;
-using Microsoft.AspNetCore.Identity;
+﻿using FinalProject.Application.DTOs.Base;
+using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
+using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities;
 using Mapster;
 using MediatR;
 
 namespace FinalProject.Application.Features.ShopListFeatures.Commands.CreateShopList
 {
-    public class CreateShopListCommandHandler : IRequestHandler<CreateShopListCommandRequest, BaseResponse>
+    public class CreateShopListCommandHandler : IRequestHandler<CreateShopListCommandRequest, BaseResponse<BaseCreateDto>>
     {
         private readonly IShopListCommandRepository _repository;
 
@@ -17,11 +16,13 @@ namespace FinalProject.Application.Features.ShopListFeatures.Commands.CreateShop
             _repository = repository;
         }
 
-        public async Task<BaseResponse> Handle(CreateShopListCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<BaseCreateDto>> Handle(CreateShopListCommandRequest request, CancellationToken cancellationToken)
         {
             ShopList NewShopList = request.Adapt<ShopList>();
             await _repository.AddAsync(NewShopList);
             await _repository.SaveAsync();
+
+            var a = new BaseResponse<>();
 
             BaseResponse response = new()
             {

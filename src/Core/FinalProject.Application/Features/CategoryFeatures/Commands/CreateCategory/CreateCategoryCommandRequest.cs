@@ -1,5 +1,4 @@
-﻿using FinalProject.Application.Wrappers.Responses;
-using MediatR;
+﻿using MediatR;
 
 namespace FinalProject.Application.Features.CategoryFeatures.Commands.CreateCategory
 {
