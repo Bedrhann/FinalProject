@@ -3,7 +3,7 @@ using FinalProject.Domain.Entities;
 
 namespace FinalProject.Application.Interfaces.Services.ShopListService
 {
-    public interface IShopListQueryService : IBaseQueryService<GetShopListDto, ShopList>
+    public interface IShopListCommandService : IBaseCommandService<ShopListCommandDto, ShopList>
     {
     }
 }

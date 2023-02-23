@@ -2,7 +2,7 @@
 
 namespace FinalProject.Application.DTOs.Category
 {
-    public class GetCategoryDto : BaseEntity
+    public class CategoryQueryDto : BaseEntity
     {
         public int MyProperty { get; set; }
     }

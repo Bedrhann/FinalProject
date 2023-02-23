@@ -1,8 +1,8 @@
-﻿using FinalProject.Application.Features.CategoryFeatures.Commands.CreateCategory;
+﻿using FinalProject.Application.DTOs.Category;
 
 namespace FinalProject.Application.Interfaces.Services.CategoryService
 {
-    public interface ICategoryCommandService : IBaseCommandService<CreateCategoryCommandRequest, FinalProject.Domain.Entities.Category>
+    public interface ICategoryCommandService : IBaseCommandService<CategoryCommandDto, FinalProject.Domain.Entities.Category>
     {
     }
 }

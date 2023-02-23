@@ -18,7 +18,7 @@ namespace FinalProject.Application.Features.ProductFeatures.Queries.GetProductBy
         public async Task<GetProductByIdQueryResponse> Handle(GetProductByIdQueryRequest request, CancellationToken cancellationToken)
         {
             Product Product = await _repository.GetByIdAsync(request.Id.ToString());
-            GetProductDto ProductDto = Product.Adapt<GetProductDto>();
+            ProductQueryDto ProductDto = Product.Adapt<ProductQueryDto>();
             return new GetProductByIdQueryResponse()
             {
                 Product = ProductDto

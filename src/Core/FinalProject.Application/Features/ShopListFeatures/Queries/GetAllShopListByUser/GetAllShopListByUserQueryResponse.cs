@@ -7,7 +7,7 @@ namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetAllShopL
 {
     public class GetAllShopListByUserQueryResponse : BaseResponse
     {
-        public List<GetShopListDto> Lists { get; set; }
+        public List<ShopListQueryDto> Lists { get; set; }
         public BasePagingResponse PagingInfo { get; set; }
     }
 }

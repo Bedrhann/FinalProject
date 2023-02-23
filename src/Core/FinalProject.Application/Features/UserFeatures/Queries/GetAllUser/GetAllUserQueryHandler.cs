@@ -51,7 +51,7 @@ namespace FinalProject.Application.Features.UserFeatures.Queries.GetAllUser
                 HasPrevious = request.Page == 1 ? false : true,
             };
             List<AppUser> UserList = Lists.Skip(Skip).Take(request.Limit).ToList();
-            List<GetUserDto> UserDtoList = UserList.Adapt<List<GetUserDto>>();
+            List<UserQueryDto> UserDtoList = UserList.Adapt<List<UserQueryDto>>();
             return new GetAllUserQueryResponse()
             {
                 PagingInfo = PageInfo,

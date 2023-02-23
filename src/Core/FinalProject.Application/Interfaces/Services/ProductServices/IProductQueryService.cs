@@ -3,7 +3,7 @@ using FinalProject.Domain.Entities;
 
 namespace FinalProject.Application.Interfaces.Services.ProductService
 {
-    public interface IProductQueryService : IBaseQueryService<GetProductDto, Product>
+    public interface IProductQueryService : IBaseQueryService<ProductQueryDto, Product>
     {
     }
 }

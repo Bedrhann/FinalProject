@@ -5,7 +5,7 @@ namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetAllShopL
 {
     public class GetAllShopListQueryResponse
     {
-        public List<GetShopListDto> Lists { get; set; }
+        public List<ShopListQueryDto> Lists { get; set; }
         public BasePagingResponse PagingInfo { get; set; }
     }
 }

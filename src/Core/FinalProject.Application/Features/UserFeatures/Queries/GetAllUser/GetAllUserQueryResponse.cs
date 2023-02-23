@@ -5,7 +5,7 @@ namespace FinalProject.Application.Features.UserFeatures.Queries.GetAllUser
 {
     public class GetAllUserQueryResponse
     {
-        public List<GetUserDto> Users { get; set; }
+        public List<UserQueryDto> Users { get; set; }
         public BasePagingResponse PagingInfo { get; set; }
     }
 }

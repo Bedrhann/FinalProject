@@ -1,7 +1,7 @@
 ﻿
 namespace FinalProject.Application.DTOs.User
 {
-    public class GetUserDto
+    public class UserQueryDto
     {
         public string Id { get; set; }
         public string FirstName { get; set; }

@@ -4,6 +4,6 @@ namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetShopList
 {
     public class GetShopListByIdQueryResponse
     {
-        public GetShopListDto ShopList { get; set; }
+        public ShopListQueryDto ShopList { get; set; }
     }
 }

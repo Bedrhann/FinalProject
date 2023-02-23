@@ -4,6 +4,6 @@ namespace FinalProject.Application.Features.CategoryFeatures.Queries.GetCategory
 {
     public class GetCategoryByIdQueryResponse
     {
-        public GetCategoryDto Category { get; set; }
+        public CategoryQueryDto Category { get; set; }
     }
 }

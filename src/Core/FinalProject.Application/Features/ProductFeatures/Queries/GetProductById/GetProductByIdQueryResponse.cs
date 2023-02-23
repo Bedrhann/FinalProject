@@ -4,6 +4,6 @@ namespace FinalProject.Application.Features.ProductFeatures.Queries.GetProductBy
 {
     public class GetProductByIdQueryResponse
     {
-        public GetProductDto Product { get; set; }
+        public ProductQueryDto Product { get; set; }
     }
 }

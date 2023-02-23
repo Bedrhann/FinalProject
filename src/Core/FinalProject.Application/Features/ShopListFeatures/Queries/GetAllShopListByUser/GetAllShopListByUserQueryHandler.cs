@@ -55,7 +55,7 @@ namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetAllShopL
                 HasPrevious = request.Page == 1 ? false : true,
             };
             List<ShopList> ShopLists = Lists.Skip(Skip).Take(request.Limit).ToList();
-            List<GetShopListDto> ShopListDtoList = ShopLists.Adapt<List<GetShopListDto>>();
+            List<ShopListQueryDto> ShopListDtoList = ShopLists.Adapt<List<ShopListQueryDto>>();
             return new GetAllShopListByUserQueryResponse()
             {
                 PagingInfo = PageInfo,

@@ -51,7 +51,7 @@ namespace FinalProject.Application.Features.ProductFeatures.Queries.GetAllProduc
             };
 
             List<Product> ProductList = Products.Skip(Skip).Take(request.Limit).ToList();
-            List<GetProductDto> ProductDtoList = ProductList.Adapt<List<GetProductDto>>();
+            List<ProductQueryDto> ProductDtoList = ProductList.Adapt<List<ProductQueryDto>>();
             return new GetAllProductByCategoryQueryResponse()
             {
                 PagingInfo = PageInfo,

@@ -6,7 +6,7 @@ namespace FinalProject.Application.Features.ProductFeatures.Queries.GetAllProduc
     public class GetAllProductByCategoryQueryResponse
     {
         [System.Text.Json.Serialization.JsonPropertyName("products")]
-        public List<GetProductDto> Products { get; set; }
+        public List<ProductQueryDto> Products { get; set; }
         [System.Text.Json.Serialization.JsonPropertyName("pagingInfo")]
         public BasePagingResponse PagingInfo { get; set; }
 

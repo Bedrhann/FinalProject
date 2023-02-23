@@ -3,7 +3,7 @@ using FinalProject.Domain.Entities.Enums;
 
 namespace FinalProject.Application.DTOs.Product
 {
-    public class GetProductDto : BaseEntity
+    public class ProductQueryDto : BaseEntity
     {
         [System.Text.Json.Serialization.JsonPropertyName("quantity")]
         public float Quantity { get; set; }
