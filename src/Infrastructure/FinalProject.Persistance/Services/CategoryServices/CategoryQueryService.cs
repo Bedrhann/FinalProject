@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Persistance.Services.CategoryServices
 {
-    internal class CategoryService
+    internal class CategoryQueryService
     {
     }
 }

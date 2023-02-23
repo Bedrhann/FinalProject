@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Identity;
 
 namespace FinalProject.Persistance.Services.ProductServices
 {
-    public class ProductService
+    public class ProductQueryService
     {
         private readonly IProductCommandRepository _repositoryCommand;
         private readonly IProductQueryRepository _repositoryQuery;
-        public ProductService(IProductCommandRepository repositoryCommand, IProductQueryRepository repositoryQuery)
+        public ProductQueryService(IProductCommandRepository repositoryCommand, IProductQueryRepository repositoryQuery)
         {
             _repositoryCommand = repositoryCommand;
             _repositoryQuery = repositoryQuery;

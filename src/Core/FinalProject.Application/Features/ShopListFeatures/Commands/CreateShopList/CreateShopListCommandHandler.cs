@@ -1,5 +1,4 @@
-﻿using FinalProject.Application.DTOs.Base;
-using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
+﻿using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities;
 using Mapster;

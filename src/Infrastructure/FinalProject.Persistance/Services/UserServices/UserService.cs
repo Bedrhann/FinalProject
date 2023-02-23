@@ -1,6 +1,7 @@
 ﻿using FinalProject.Application.DTOs.Base;
 using FinalProject.Application.DTOs.User;
 using FinalProject.Application.Features.UserFeatures.Commands.CreateUser;
+using FinalProject.Application.Features.UserFeatures.Queries.GetAllUser;
 using FinalProject.Application.Interfaces.ForeignServices;
 using FinalProject.Application.Interfaces.Services.UserServices;
 using FinalProject.Application.Wrappers.Base;
@@ -74,9 +75,41 @@ namespace FinalProject.Persistance.Services.UserServices
             return new BaseResponse<UserCommandDto>(result.Succeeded);
         }
 
-        public Task<BaseResponse<IEnumerable<UserQueryDto>>> GetAllAsync()
+        public Task<BaseResponse<IEnumerable<UserQueryDto>>> GetAllAsync(GetAllUserQueryRequest request)
         {
-            throw new NotImplementedException();
+            IQueryable<AppUser> Lists = _userManager.Users;
+
+            if (!string.IsNullOrWhiteSpace(request.SearchByUserName))
+            {
+                Lists = Lists.Where(x => x.UserName.Contains(request.SearchByUserName));
+            }
+
+            if (request.RegistrationRangeCeiling.HasValue || request.RegistrationRangeLower.HasValue)
+            {
+                Lists = Lists.Where(x => x.RegistrationDate <= request.RegistrationRangeCeiling && x.RegistrationDate >= request.RegistrationRangeLower);
+            }
+
+
+            int TotalUser = Lists.Count();
+            int TotalPage = (int)Math.Ceiling(TotalUser / (double)request.Limit);
+            int Skip = (request.Page - 1) * request.Limit;
+
+            BasePagingResponse PageInfo = new()
+            {
+                TotalData = TotalUser,
+                TotalPage = TotalPage,
+                PageLimit = request.Limit,
+                PageNum = request.Page,
+                HasNext = request.Page >= TotalPage ? false : true,
+                HasPrevious = request.Page == 1 ? false : true,
+            };
+            List<AppUser> UserList = Lists.Skip(Skip).Take(request.Limit).ToList();
+            List<UserQueryDto> UserDtoList = UserList.Adapt<List<UserQueryDto>>();
+            return new GetAllUserQueryResponse()
+            {
+                PagingInfo = PageInfo,
+                Users = UserDtoList
+            };
         }
 
         public Task<BaseResponse<UserQueryDto>> GetByIdAsync(Guid id)

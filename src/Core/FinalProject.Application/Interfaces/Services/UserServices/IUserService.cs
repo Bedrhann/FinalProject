@@ -1,4 +1,5 @@
 ﻿using FinalProject.Application.DTOs.User;
+using FinalProject.Application.Features.UserFeatures.Queries.GetAllUser;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Models;
 
@@ -11,6 +12,6 @@ namespace FinalProject.Application.Interfaces.Services.UserServices
         Task<BaseResponse<UserCommandDto>> UpdateAsync(Guid id, UserCommandDto updateResource);
         Task<BaseResponse<UserCommandDto>> RemoveAsync(Guid id);
         Task<BaseResponse<UserQueryDto>> GetByIdAsync(Guid id);
-        Task<BaseResponse<IEnumerable<UserQueryDto>>> GetAllAsync();
+        Task<BaseResponseWithPaging<IEnumerable<UserQueryDto>>> GetAllAsync(GetAllUserQueryRequest request);
     }
 }

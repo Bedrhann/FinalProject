@@ -7,15 +7,10 @@ namespace FinalProject.Persistance.Services
 {
     public class BaseQueryService<Dto,Entity> : IBaseQueryService<Dto,Entity> where Entity : BaseEntity
     {
-        private readonly ICommandRepository<Entity> _commandRepository;
-        public BaseQueryService(ICommandRepository<Entity> commandRepository)
+        private readonly IQueryRepository<Entity> _commandRepository;
+        public BaseQueryService(IQueryRepository<Entity> commandRepository)
         {
             _commandRepository = commandRepository;
-        }
-
-        public Task<BaseResponse<IEnumerable<Dto>>> GetAllAsync()
-        {
-            throw new NotImplementedException();
         }
 
         public Task<BaseResponse<Dto>> GetByIdAsync(Guid id)

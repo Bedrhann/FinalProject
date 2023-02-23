@@ -2,13 +2,6 @@
 
 namespace FinalProject.Application.Wrappers.Base
 {
-    //public class BaseResponse
-    //{
-    //    [System.Text.Json.Serialization.JsonPropertyName("success")]
-    //    public bool Success { get; set; }
-    //    [System.Text.Json.Serialization.JsonPropertyName("message")]
-    //    public string Message { get; set; }
-    //}
     public class BaseResponse<T>
     {
         public bool Success { get; private set; }

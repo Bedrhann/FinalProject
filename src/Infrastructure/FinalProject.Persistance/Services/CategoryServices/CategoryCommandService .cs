@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinalProject.Persistance.Services.ShopListServices
+namespace FinalProject.Persistance.Services.CategoryServices
 {
-    internal class ShopListService
+    internal class CategoryQueryService
     {
     }
 }
