@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zo7UHOeRtFLqGnlgnTK1WwDKw2mDbKtCKDNqPIzJd483/ZpsKjvLx36I1/t6uftn63dd+VugSIRTiqm2Y3VHLA==",
+  "dgSpecHash": "PjYN1aNJp/IN7YUVfq0XVBAyNm7U7bzltP1quM2OwOzJW5Z3WttOHBSC/97LA/dIWu0bupc/gKR/elekbN2uCQ==",
   "success": true,
   "projectFilePath": "E:\\DotNetWork\\a.ParamProjects\\FinalProject\\src\\Presentation\\FinalProject.API\\FinalProject.API.csproj",
   "expectedPackageFiles": [
@@ -82,11 +82,14 @@
     "C:\\Users\\Bedirhan\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
-    "C:\\Users\\Bedirhan\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\microsoft.openapi\\1.3.1\\microsoft.openapi.1.3.1.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\scrutor\\3.3.0\\scrutor.3.3.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\swashbuckle.aspnetcore.filters\\7.0.3\\swashbuckle.aspnetcore.filters.7.0.3.nupkg.sha512",
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\swashbuckle.aspnetcore.filters.abstractions\\7.0.3\\swashbuckle.aspnetcore.filters.abstractions.7.0.3.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
