@@ -372,3 +372,4 @@ E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\obj
 E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\obj\Debug\net6.0\FinalProject.API.pdb
 E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\obj\Debug\net6.0\FinalProject.API.genruntimeconfig.cache
 E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\obj\Debug\net6.0\ref\FinalProject.API.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

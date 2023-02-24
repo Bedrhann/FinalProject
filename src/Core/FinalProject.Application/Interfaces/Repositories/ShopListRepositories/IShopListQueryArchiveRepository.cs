@@ -4,6 +4,6 @@ namespace FinalProject.Application.Interfaces.Repositories.ShopListRepositories
 {
     public interface IShopListQueryArchiveRepository
     {
-        IQueryable<ShopListArchiveDto> GetAll();
+        IQueryable<ShopListQueryDto> GetAll();
     }
 }

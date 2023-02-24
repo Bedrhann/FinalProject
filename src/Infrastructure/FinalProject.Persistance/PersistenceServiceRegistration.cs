@@ -1,15 +1,21 @@
 ﻿using FinalProject.Application.Interfaces.Repositories.CategoryRepositories;
+using FinalProject.Application.Interfaces.Repositories.Common;
 using FinalProject.Application.Interfaces.Repositories.ProductRepositories;
 using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
 using FinalProject.Application.Interfaces.Services.CategoryService;
 using FinalProject.Application.Interfaces.Services.ProductService;
 using FinalProject.Application.Interfaces.Services.ShopListService;
+using FinalProject.Application.Interfaces.Services.UserServices;
+using FinalProject.Domain.Entities;
+using FinalProject.Domain.Entities.Common;
 using FinalProject.Domain.Entities.Identity;
 using FinalProject.Persistance.Services.CategoryServices;
 using FinalProject.Persistance.Services.ProductServices;
 using FinalProject.Persistance.Services.ShopListServices;
+using FinalProject.Persistance.Services.UserServices;
 using FinalProject.Persistence.Contexts;
 using FinalProject.Persistence.Repositories.CategoryRepositories;
+using FinalProject.Persistence.Repositories.Common;
 using FinalProject.Persistence.Repositories.ProductRepositories;
 using FinalProject.Persistence.Repositories.ShopListRepositories;
 using Microsoft.EntityFrameworkCore;
@@ -29,7 +35,7 @@ namespace FinalProject.Persistence
 
             services.AddIdentity<AppUser, AppRole>(options =>
             {
-                options.Password.RequiredLength = 3;
+                options.Password.RequiredLength = 1;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;
@@ -45,12 +51,20 @@ namespace FinalProject.Persistence
             services.AddScoped<ICategoryCommandRepository, CategoryCommandRepository>();
             services.AddScoped<ICategoryQueryRepository, CategoryQueryRepository>();
 
+            services.AddScoped<IBaseQueryRepository<Category>, BaseQueryRepository<Category>>();
+            services.AddScoped<IBaseCommandRepository<Category>, BaseCommandRepository<Category>>();
+            services.AddScoped<IBaseQueryRepository<Product>, BaseQueryRepository<Product>>();
+            services.AddScoped<IBaseCommandRepository<Product>, BaseCommandRepository<Product>>();
+            services.AddScoped<IBaseQueryRepository<ShopList>, BaseQueryRepository<ShopList>>();
+            services.AddScoped<IBaseCommandRepository<ShopList>, BaseCommandRepository<ShopList>>();
+
             services.AddScoped<ICategoryQueryService, CategoryQueryService>();
             services.AddScoped<ICategoryCommandService, CategoryCommandService>();
             services.AddScoped<IProductQueryService, ProductQueryService>();
             services.AddScoped<IProductCommandService, ProductCommandService>();
             services.AddScoped<IShopListQueryService, ShopListQueryService>();
             services.AddScoped<IShopListCommandService, ShopListCommandService>();
+            services.AddScoped<IUserService, UserService>();
 
 
         }

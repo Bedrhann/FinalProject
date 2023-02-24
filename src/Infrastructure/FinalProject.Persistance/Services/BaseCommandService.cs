@@ -6,7 +6,7 @@ using Mapster;
 
 namespace FinalProject.Persistance.Services
 {
-    public abstract class BaseCommandService<Dto, Entity> : IBaseCommandService<Dto, Entity> where Entity : BaseEntity
+    public class BaseCommandService<Dto, Entity> : IBaseCommandService<Dto, Entity> where Entity : BaseEntity
     {
         private readonly IBaseCommandRepository<Entity> _commandRepository;
         private readonly IBaseQueryRepository<Entity> _queryRepository;

@@ -4,7 +4,7 @@ namespace FinalProject.Application.Interfaces.Repositories.ShopListRepositories
 {
     public interface IShopListCommandArchiveRepository
     {
-        Task SendCompletedShopList(ShopListArchiveDto model);
+        Task SendCompletedShopList(ShopListQueryDto model);
         Task SaveAsync();
     }
 }

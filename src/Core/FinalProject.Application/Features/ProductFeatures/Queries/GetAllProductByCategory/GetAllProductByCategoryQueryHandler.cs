@@ -1,11 +1,7 @@
-﻿using FinalProject.Application.Interfaces.Repositories.ProductRepositories;
-using FinalProject.Application.Models.Paging;
-using FinalProject.Application.DTOs.Product;
-using FinalProject.Domain.Entities;
-using Mapster;
-using MediatR;
-using FinalProject.Application.Wrappers.Base;
+﻿using FinalProject.Application.DTOs.Product;
 using FinalProject.Application.Interfaces.Services.ProductService;
+using FinalProject.Application.Wrappers.Base;
+using MediatR;
 
 namespace FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory
 {

@@ -2,11 +2,6 @@
 using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
 using FinalProject.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinalProject.Persistence.Repositories.ShopListRepositories
 {
@@ -18,9 +13,9 @@ namespace FinalProject.Persistence.Repositories.ShopListRepositories
             _context = context;
         }
 
-        public DbSet<ShopListArchiveDto> Table => _context.Set<ShopListArchiveDto>();
+        public DbSet<ShopListQueryDto> Table => _context.Set<ShopListQueryDto>();
 
-        public IQueryable<ShopListArchiveDto> GetAll()
+        public IQueryable<ShopListQueryDto> GetAll()
         {
             return Table;
         }

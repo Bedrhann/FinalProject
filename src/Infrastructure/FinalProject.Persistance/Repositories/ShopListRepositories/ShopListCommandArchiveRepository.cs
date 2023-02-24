@@ -16,9 +16,9 @@ namespace FinalProject.Persistence.Repositories.ShopListRepositories
             _context = context;
         }
 
-        public DbSet<ShopListArchiveDto> Table => _context.Set<ShopListArchiveDto>();
+        public DbSet<ShopListQueryDto> Table => _context.Set<ShopListQueryDto>();
 
-        public async Task SendCompletedShopList(ShopListArchiveDto model)
+        public async Task SendCompletedShopList(ShopListQueryDto model)
         {
             await Table.AddAsync(model);
         }
