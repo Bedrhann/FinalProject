@@ -5,7 +5,7 @@ using FinalProject.Persistence.Repositories.Common;
 
 namespace FinalProject.Persistence.Repositories.ShopListRepositories
 {
-    public class ShopListQueryRepository : QueryRepository<ShopList>, IShopListQueryRepository
+    public class ShopListQueryRepository : BaseQueryRepository<ShopList>, IShopListQueryRepository
     {
         public ShopListQueryRepository(MsSqlDbContext context) : base(context)
         {

@@ -32,7 +32,6 @@ namespace FinalProject.Persistance.Services.ShopListServices
 
 
 
-
         //*******************       UPDATE     **********************
         public async Task<BaseResponse<ShopListCommandDto>> UpdateAsync(Guid id, ShopListCommandDto updateResource)
         {
@@ -43,7 +42,7 @@ namespace FinalProject.Persistance.Services.ShopListServices
             await _commandRepository.SaveAsync();
             if (oldStatus == false && UpdatedShopList.IsCompleted == true)
             {
-                UpdatedShopList.Adapt<ShopList, ShopListArchiveDto>();
+                UpdatedShopList.Adapt<ShopList, ShopListQueryDto>();
                // _rabbitMq.Publish(UpdatedShopList, "fanout.shoplist");
                //TODO rABİİT İŞLERİ VAR
             }

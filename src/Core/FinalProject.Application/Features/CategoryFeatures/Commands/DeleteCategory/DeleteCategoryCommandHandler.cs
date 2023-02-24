@@ -1,4 +1,6 @@
-﻿using FinalProject.Application.Interfaces.Repositories.CategoryRepositories;
+﻿using FinalProject.Application.DTOs.Category;
+using FinalProject.Application.Interfaces.Repositories.CategoryRepositories;
+using FinalProject.Application.Wrappers.Base;
 using FinalProject.Application.Wrappers.Responses;
 using FinalProject.Domain.Entities;
 using MediatR;
@@ -6,7 +8,7 @@ using MediatR;
 namespace FinalProject.Application.Features.CategoryFeatures.Commands.DeleteCategory
 {
 
-    public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommandRequest, BaseResponse>
+    public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommandRequest, BaseResponse<CategoryCommandDto>>
     {
         private readonly ICategoryQueryRepository _queryRepository;
         private readonly ICategoryCommandRepository _commandRepository;
@@ -17,7 +19,7 @@ namespace FinalProject.Application.Features.CategoryFeatures.Commands.DeleteCate
             _queryRepository = queryRepository;
         }
 
-        public async Task<BaseResponse> Handle(DeleteCategoryCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<CategoryCommandDto>> Handle(DeleteCategoryCommandRequest request, CancellationToken cancellationToken)
         {
             Category DeletedCategory = await _queryRepository.GetByIdAsync(request.Id.ToString());
 

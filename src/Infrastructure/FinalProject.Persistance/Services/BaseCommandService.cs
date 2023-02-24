@@ -30,7 +30,23 @@ namespace FinalProject.Persistance.Services
 
 
 
-        //*******************       REMOVE     **********************
+
+        //*******************       UPDATE     **********************
+        public virtual async Task<BaseResponse<Dto>> UpdateAsync(Guid id, Dto updateResource)
+        {
+            Entity UpdatedEntity = await _queryRepository.GetByIdAsync(id.ToString());
+            updateResource.Adapt<Dto, Entity>(UpdatedEntity);
+            _commandRepository.Update(UpdatedEntity);
+            await _commandRepository.SaveAsync();
+
+
+            return new BaseResponse<Dto>(true);
+        }
+
+
+
+
+        //*******************       DELETE     **********************
         public async Task<BaseResponse<Dto>> RemoveAsync(Guid id)
         {
             Entity DeletedProduct = await _queryRepository.GetByIdAsync(id.ToString());
@@ -43,30 +59,5 @@ namespace FinalProject.Persistance.Services
 
 
 
-        //*******************       UPDATE     **********************
-        public virtual async Task<BaseResponse<Dto>> UpdateAsync(Guid id, Dto updateResource)
-        {
-            Entity UpdatedShopList = await _queryRepository.GetByIdAsync(id.ToString());
-            bool oldStatus = UpdatedShopList.IsCompleted;
-            request.Adapt<UpdateShopListCommandRequest, ShopList>(UpdatedShopList);
-            _commandRepository.Update(UpdatedShopList);
-            await _commandRepository.SaveAsync();
-            if (oldStatus == false && UpdatedShopList.IsCompleted == true)
-            {
-                UpdatedShopList.Adapt<ShopList, ShopListArchiveDto>();
-                _rabbitMq.Publish(UpdatedShopList, "fanout.shoplist");
-            }
-
-
-            BaseResponse response = new()
-            {
-                Success = true,
-                Message = "ShopList Updated"
-            };
-            return response;
-
-
-            throw new NotImplementedException();
-        }
     }
 }

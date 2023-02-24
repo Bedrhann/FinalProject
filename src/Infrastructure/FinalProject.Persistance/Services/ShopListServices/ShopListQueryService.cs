@@ -1,6 +1,6 @@
 ﻿using FinalProject.Application.DTOs.ShopList;
-using FinalProject.Application.Features.ShopListFeatures.Queries.GetAllShopList;
 using FinalProject.Application.Interfaces.Repositories.Common;
+using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
 using FinalProject.Application.Interfaces.Services.ShopListService;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Application.Wrappers.Paging;
@@ -12,13 +12,15 @@ namespace FinalProject.Persistance.Services.ShopListServices
     public class ShopListQueryService : BaseQueryService<ShopListQueryDto, ShopList>, IShopListQueryService
     {
         private readonly IQueryRepository<ShopList> _repository;
+        private readonly IShopListQueryArchiveRepository _archiveRepository;
 
-        public ShopListQueryService(IQueryRepository<ShopList> repository) : base(repository)
+        public ShopListQueryService(IQueryRepository<ShopList> repository, IShopListQueryArchiveRepository archiveRepository) : base(repository)
         {
             _repository = repository;
+            _archiveRepository = archiveRepository;
         }
 
-        public async Task<BaseResponseWithPaging<List<ShopListQueryDto>>> GetAllAsync(GetAllShopListQueryRequest request, bool isByUser)
+        public async Task<BaseResponseWithPaging<List<ShopListQueryDto>>> GetAllAsync(ShopListGetAllRequestDto request, bool isByUser, bool? İsArchive = false)
         {
             IQueryable<ShopList> Lists = null;
             if (isByUser)

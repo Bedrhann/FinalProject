@@ -1,12 +1,13 @@
-﻿using FinalProject.Application.Interfaces.Repositories.CategoryRepositories;
-using FinalProject.Application.Wrappers.Responses;
+﻿using FinalProject.Application.DTOs.Category;
+using FinalProject.Application.Interfaces.Repositories.CategoryRepositories;
+using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities;
 using Mapster;
 using MediatR;
 
 namespace FinalProject.Application.Features.CategoryFeatures.Commands.UpdateCategory
 {
-    public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommandRequest, BaseResponse>
+    public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommandRequest, BaseResponse<CategoryCommandDto>>
     {
         private readonly ICategoryCommandRepository _commandRepository;
         private readonly ICategoryQueryRepository _queryRepository;
@@ -17,7 +18,7 @@ namespace FinalProject.Application.Features.CategoryFeatures.Commands.UpdateCate
             _queryRepository = queryRepository;
         }
 
-        public async Task<BaseResponse> Handle(UpdateCategoryCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<CategoryCommandDto>> Handle(UpdateCategoryCommandRequest request, CancellationToken cancellationToken)
         {
             Category UpdatedCategory = await _queryRepository.GetByIdAsync(request.Id.ToString());
             request.Adapt<UpdateCategoryCommandRequest, Category>(UpdatedCategory);

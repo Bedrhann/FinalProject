@@ -1,5 +1,6 @@
 ﻿using FinalProject.Application.DTOs.Category;
 using FinalProject.Application.Interfaces.Repositories.CategoryRepositories;
+using FinalProject.Application.Interfaces.Services.CategoryService;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Application.Wrappers.Responses;
 using FinalProject.Domain.Entities;
@@ -10,30 +11,31 @@ namespace FinalProject.Application.Features.CategoryFeatures.Commands.CreateCate
 {
     public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommandRequest, BaseResponse<CategoryCommandDto>>
     {
-        private readonly ICategoryCommandRepository _repository;
+        private readonly ICategoryCommandService _service;
 
-        public CreateCategoryCommandHandler(ICategoryCommandRepository repository)
+        public CreateCategoryCommandHandler(ICategoryCommandService service)
         {
-            _repository = repository;
+            _service = service;
         }
 
         public async Task<BaseResponse<CategoryCommandDto>> Handle(CreateCategoryCommandRequest request, CancellationToken cancellationToken)
         {
+            return _service.InsertAsync(,)
 
 
 
-            Category NewCategory = request.Adapt<Category>();
-            bool result = await _repository.AddAsync(NewCategory);
-            await _repository.SaveAsync();
-            CreateCategoryCommandResponse response = new();
+            //Category NewCategory = request.Adapt<Category>();
+            //bool result = await _repository.AddAsync(NewCategory);
+            //await _repository.SaveAsync();
+            //CreateCategoryCommandResponse response = new();
 
-            if (result)
-            {
-                response.NewCategoryId = NewCategory.Id;
-                response.Success = true;
-                response.Message = "Category Added";
-            }
-            return response;
+            //if (result)
+            //{
+            //    response.NewCategoryId = NewCategory.Id;
+            //    response.Success = true;
+            //    response.Message = "Category Added";
+            //}
+            //return response;
         }
     }
 }

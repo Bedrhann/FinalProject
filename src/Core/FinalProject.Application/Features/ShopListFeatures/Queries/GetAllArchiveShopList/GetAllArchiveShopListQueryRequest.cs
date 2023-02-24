@@ -1,16 +1,11 @@
-﻿using FinalProject.Application.Wrappers.Queries;
+﻿using FinalProject.Application.DTOs.ShopList;
+using FinalProject.Application.Wrappers.Base;
 using MediatR;
 
 namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetAllArchiveShopList
 {
-    public class GetAllArchiveShopListQueryRequest : BasePagingRequest, IRequest<GetAllArchiveShopListQueryResponse>
+    public class GetAllArchiveShopListQueryRequest : ShopListGetAllRequestDto, IRequest<BaseResponseWithPaging<List<ShopListQueryDto>>>
     {
-        public Guid? UserId { get; set; }
-        public string? SearchByName { get; set; }
-        public DateTime? CreationRangeCeiling { get; set; }
-        public DateTime? CreationRangeLower { get; set; }
-        public DateTime? UpdateRangeCeiling { get; set; }
-        public DateTime? UpdateRangeLower { get; set; }
-        public bool IsCompleted { get; set; }
+
     }
 }

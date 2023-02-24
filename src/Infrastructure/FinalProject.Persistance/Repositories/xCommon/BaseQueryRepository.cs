@@ -7,11 +7,11 @@ using System.Linq.Expressions;
 
 namespace FinalProject.Persistence.Repositories.Common
 {
-    public class QueryRepository<T> : IQueryRepository<T> where T : BaseEntity
+    public class BaseQueryRepository<T> : IQueryRepository<T> where T : BaseEntity
     {
         private readonly MsSqlDbContext _context;
 
-        public QueryRepository(MsSqlDbContext context)
+        public BaseQueryRepository(MsSqlDbContext context)
         {
             _context = context;
         }
