@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace FinalProject.Application.Interfaces.Repositories.Common
 {
-    public interface IQueryRepository<T> : IRepository<T> where T : BaseEntity
+    public interface IBaseQueryRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
         IQueryable<T> GetAll();
         IQueryable<T> GetWhere(Expression<Func<T, bool>> method);

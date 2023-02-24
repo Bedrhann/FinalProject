@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject.Application.Interfaces.Repositories.Common
 {
-    public interface IRepository<T> where T : BaseEntity
+    public interface IBaseRepository<T> where T : BaseEntity
     {
         DbSet<T> Table { get; }
     }

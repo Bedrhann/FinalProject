@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace FinalProject.Persistence.Repositories.Common
 {
-    public class BaseCommandRepository<T> : ICommandRepository<T> where T : BaseEntity
+    public class BaseCommandRepository<T> : IBaseCommandRepository<T> where T : BaseEntity
     {
         private readonly MsSqlDbContext _context;
 

@@ -4,7 +4,7 @@ using FinalProject.Domain.Entities;
 
 namespace FinalProject.Application.Interfaces.Repositories.CategoryRepositories
 {
-    public interface ICategoryCommandRepository : ICommandRepository<Category>
+    public interface ICategoryCommandRepository : IBaseCommandRepository<Category>
     {
     }
 }

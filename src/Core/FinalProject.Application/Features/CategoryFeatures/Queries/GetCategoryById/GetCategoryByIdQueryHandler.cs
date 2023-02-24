@@ -1,31 +1,23 @@
 ﻿using FinalProject.Application.DTOs.Category;
-using FinalProject.Application.Interfaces.Repositories.CategoryRepositories;
-using FinalProject.Domain.Entities;
-using Mapster;
+using FinalProject.Application.Interfaces.Services.CategoryService;
+using FinalProject.Application.Wrappers.Base;
 using MediatR;
 
 namespace FinalProject.Application.Features.CategoryFeatures.Queries.GetCategoryById
 {
-    public class GetCategoryByIdQueryHandler : IRequestHandler<GetCategoryByIdQueryRequest, GetCategoryByIdQueryResponse>
+    public class GetCategoryByIdQueryHandler : IRequestHandler<GetCategoryByIdQueryRequest, BaseResponse<CategoryQueryDto>>
     {
-        private readonly ICategoryQueryRepository _repository;
+        private readonly ICategoryQueryService _service;
 
-        public GetCategoryByIdQueryHandler(ICategoryQueryRepository repository)
+        public GetCategoryByIdQueryHandler(ICategoryQueryService service)
         {
-            _repository = repository;
+            _service = service;
         }
 
-        public async Task<GetCategoryByIdQueryResponse> Handle(GetCategoryByIdQueryRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<CategoryQueryDto>> Handle(GetCategoryByIdQueryRequest request, CancellationToken cancellationToken)
         {
-            Category Category = await _repository.GetByIdAsync(request.Id.ToString());
-            CategoryQueryDto CategoryDto = Category.Adapt<CategoryQueryDto>();
 
-            return new GetCategoryByIdQueryResponse()
-            {
-                Category = CategoryDto
-            };
-
-            throw new NotImplementedException();
+            return await _service.GetByIdAsync(request.Id);
         }
     }
 }

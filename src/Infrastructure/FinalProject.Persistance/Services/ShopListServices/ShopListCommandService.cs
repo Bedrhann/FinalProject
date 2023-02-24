@@ -9,10 +9,10 @@ namespace FinalProject.Persistance.Services.ShopListServices
 {
     public class ShopListCommandService : BaseCommandService<ShopListCommandDto, ShopList>, IShopListCommandService
     {
-        private readonly IQueryRepository<ShopList> _queryRepository;
-        private readonly ICommandRepository<ShopList> _commandRepository;
+        private readonly IBaseQueryRepository<ShopList> _queryRepository;
+        private readonly IBaseCommandRepository<ShopList> _commandRepository;
 
-        public ShopListCommandService(ICommandRepository<ShopList> commandRepository, IQueryRepository<ShopList> queryRepository) : base(commandRepository,queryRepository )
+        public ShopListCommandService(IBaseCommandRepository<ShopList> commandRepository, IBaseQueryRepository<ShopList> queryRepository) : base(commandRepository,queryRepository )
         {
             _queryRepository = queryRepository;
             _commandRepository = commandRepository;

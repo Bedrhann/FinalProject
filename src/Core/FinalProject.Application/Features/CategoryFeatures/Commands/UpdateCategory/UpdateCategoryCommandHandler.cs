@@ -1,5 +1,6 @@
 ﻿using FinalProject.Application.DTOs.Category;
 using FinalProject.Application.Interfaces.Repositories.CategoryRepositories;
+using FinalProject.Application.Interfaces.Services.CategoryService;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities;
 using Mapster;
@@ -9,31 +10,17 @@ namespace FinalProject.Application.Features.CategoryFeatures.Commands.UpdateCate
 {
     public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommandRequest, BaseResponse<CategoryCommandDto>>
     {
-        private readonly ICategoryCommandRepository _commandRepository;
-        private readonly ICategoryQueryRepository _queryRepository;
+        private readonly ICategoryCommandService _service;
 
-        public UpdateCategoryCommandHandler(ICategoryCommandRepository commandRepository, ICategoryQueryRepository queryRepository)
+        public UpdateCategoryCommandHandler(ICategoryCommandService service)
         {
-            _commandRepository = commandRepository;
-            _queryRepository = queryRepository;
+            _service = service;
         }
 
         public async Task<BaseResponse<CategoryCommandDto>> Handle(UpdateCategoryCommandRequest request, CancellationToken cancellationToken)
         {
-            Category UpdatedCategory = await _queryRepository.GetByIdAsync(request.Id.ToString());
-            request.Adapt<UpdateCategoryCommandRequest, Category>(UpdatedCategory);
 
-            _commandRepository.Update(UpdatedCategory);
-            await _commandRepository.SaveAsync();
-            BaseResponse response = new()
-            {
-                Success = true,
-                Message = "Category Updated"
-            };
-            return response;
-
-
-            throw new NotImplementedException();
+            return await _service.UpdateAsync(request.Id, request.Adapt<CategoryCommandDto>());
         }
     }
 }

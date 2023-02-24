@@ -4,7 +4,7 @@ using FinalProject.Domain.Entities;
 
 namespace FinalProject.Application.Interfaces.Repositories.CategoryRepositories
 {
-    public interface ICategoryQueryRepository : IQueryRepository<Category>
+    public interface ICategoryQueryRepository : IBaseQueryRepository<Category>
     {
     }
 }

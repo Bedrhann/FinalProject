@@ -4,7 +4,7 @@ using FinalProject.Domain.Entities;
 
 namespace FinalProject.Application.Interfaces.Repositories.ShopListRepositories
 {
-    public interface IShopListQueryRepository : IQueryRepository<ShopList>
+    public interface IShopListQueryRepository : IBaseQueryRepository<ShopList>
     {
 
     }

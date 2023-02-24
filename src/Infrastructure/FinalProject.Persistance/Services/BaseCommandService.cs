@@ -6,11 +6,11 @@ using Mapster;
 
 namespace FinalProject.Persistance.Services
 {
-    public abstract class BaseCommandService<Dto,Entity> : IBaseCommandService<Dto,Entity> where Entity : BaseEntity
+    public abstract class BaseCommandService<Dto, Entity> : IBaseCommandService<Dto, Entity> where Entity : BaseEntity
     {
-        private readonly ICommandRepository<Entity> _commandRepository;
-        private readonly IQueryRepository<Entity> _queryRepository;
-        public BaseCommandService(ICommandRepository<Entity> commandRepository, IQueryRepository<Entity> queryRepository)
+        private readonly IBaseCommandRepository<Entity> _commandRepository;
+        private readonly IBaseQueryRepository<Entity> _queryRepository;
+        public BaseCommandService(IBaseCommandRepository<Entity> commandRepository, IBaseQueryRepository<Entity> queryRepository)
         {
             _commandRepository = commandRepository;
             _queryRepository = queryRepository;
@@ -19,13 +19,13 @@ namespace FinalProject.Persistance.Services
 
 
         //*******************       INSERT     **********************
-        public async Task<BaseResponse<Dto>> InsertAsync(Dto insertResource)
+        public virtual async Task<BaseResponse<Dto>> InsertAsync(Dto insertResource)
         {
 
-            await _commandRepository.AddAsync(insertResource.Adapt<Entity>());
+            bool result = await _commandRepository.AddAsync(insertResource.Adapt<Entity>());
             await _commandRepository.SaveAsync();
 
-            return new BaseResponse<Dto>(insertResource);
+            return new BaseResponse<Dto>(result);
         }
 
 
@@ -36,24 +36,22 @@ namespace FinalProject.Persistance.Services
         {
             Entity UpdatedEntity = await _queryRepository.GetByIdAsync(id.ToString());
             updateResource.Adapt<Dto, Entity>(UpdatedEntity);
-            _commandRepository.Update(UpdatedEntity);
+            bool result = _commandRepository.Update(UpdatedEntity);
             await _commandRepository.SaveAsync();
 
-
-            return new BaseResponse<Dto>(true);
+            return new BaseResponse<Dto>(result);
         }
 
 
 
 
         //*******************       DELETE     **********************
-        public async Task<BaseResponse<Dto>> RemoveAsync(Guid id)
+        public virtual async Task<BaseResponse<Dto>> RemoveAsync(Guid id)
         {
-            Entity DeletedProduct = await _queryRepository.GetByIdAsync(id.ToString());
-            _commandRepository.Remove(DeletedProduct);
-            _commandRepository.SaveAsync();
+            bool result = await _commandRepository.RemoveByIdAsync(id.ToString());
+            await _commandRepository.SaveAsync();
 
-            return new BaseResponse<Dto>(true);
+            return new BaseResponse<Dto>(result);
         }
 
 

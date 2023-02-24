@@ -6,15 +6,15 @@ using Mapster;
 
 namespace FinalProject.Persistance.Services
 {
-    public class BaseQueryService<Dto,Entity> : IBaseQueryService<Dto,Entity> where Entity : BaseEntity
+    public abstract class BaseQueryService<Dto,Entity> : IBaseQueryService<Dto,Entity> where Entity : BaseEntity
     {
-        private readonly IQueryRepository<Entity> _queryRepository;
-        public BaseQueryService(IQueryRepository<Entity> commandRepository)
+        private readonly IBaseQueryRepository<Entity> _queryRepository;
+        public BaseQueryService(IBaseQueryRepository<Entity> commandRepository)
         {
             _queryRepository = commandRepository;
         }
 
-        public async Task<BaseResponse<Dto>> GetByIdAsync(Guid id)
+        public virtual async Task<BaseResponse<Dto>> GetByIdAsync(Guid id)
         {
             Entity ShopList = await _queryRepository.GetByIdAsync(id.ToString());
                 

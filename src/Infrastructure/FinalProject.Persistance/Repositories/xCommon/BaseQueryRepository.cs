@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace FinalProject.Persistence.Repositories.Common
 {
-    public class BaseQueryRepository<T> : IQueryRepository<T> where T : BaseEntity
+    public class BaseQueryRepository<T> : IBaseQueryRepository<T> where T : BaseEntity
     {
         private readonly MsSqlDbContext _context;
 
@@ -15,7 +15,7 @@ namespace FinalProject.Persistence.Repositories.Common
         {
             _context = context;
         }
-        DbSet<T> IRepository<T>.Table => throw new NotImplementedException();
+        DbSet<T> IBaseRepository<T>.Table => throw new NotImplementedException();
 
         public DbSet<T> Table => _context.Set<T>();
 

@@ -3,7 +3,7 @@
 
 namespace FinalProject.Application.Interfaces.Repositories.Common
 {
-    public interface ICommandRepository<T> : IRepository<T> where T : BaseEntity
+    public interface IBaseCommandRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
         Task<bool> AddAsync(T model);
         Task<bool> AddMultipleAsync(List<T> datas);

@@ -4,7 +4,7 @@ using FinalProject.Domain.Entities;
 
 namespace FinalProject.Application.Interfaces.Repositories.ProductRepositories
 {
-    public interface IProductCommandRepository : ICommandRepository<Product>
+    public interface IProductCommandRepository : IBaseCommandRepository<Product>
     {
     }
 }
