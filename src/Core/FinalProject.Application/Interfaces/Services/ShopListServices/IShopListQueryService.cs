@@ -7,6 +7,6 @@ namespace FinalProject.Application.Interfaces.Services.ShopListService
 {
     public interface IShopListQueryService : IBaseQueryService<ShopListQueryDto, ShopList>
     {
-        Task<BaseResponseWithPaging<List<ShopListQueryDto>>> GetAllAsync(GetAllShopListQueryRequest request);
+        Task<BaseResponseWithPaging<List<ShopListQueryDto>>> GetAllAsync(GetAllShopListQueryRequest request,bool isByUser);
     }
 }

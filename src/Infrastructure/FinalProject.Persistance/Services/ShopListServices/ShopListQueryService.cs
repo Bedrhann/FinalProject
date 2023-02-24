@@ -18,9 +18,18 @@ namespace FinalProject.Persistance.Services.ShopListServices
             _repository = repository;
         }
 
-        public async Task<BaseResponseWithPaging<List<ShopListQueryDto>>> GetAllAsync(GetAllShopListQueryRequest request)
+        public async Task<BaseResponseWithPaging<List<ShopListQueryDto>>> GetAllAsync(GetAllShopListQueryRequest request, bool isByUser)
         {
-            IQueryable<ShopList> Lists = _repository.GetAll();
+            IQueryable<ShopList> Lists = null;
+            if (isByUser)
+            {
+                Lists = _repository.GetWhere(x => x.AppUserId == request.UserId.ToString() && x.IsDeleted == false);
+            }
+            else
+            {
+                Lists = _repository.GetAll();
+            }
+
             if (request.IsCompleted)
             {
                 Lists = Lists.Where(x => x.IsCompleted == true);
