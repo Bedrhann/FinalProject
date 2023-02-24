@@ -12,6 +12,6 @@ namespace FinalProject.Application.Interfaces.Services.UserServices
         Task<BaseResponse<UserCommandDto>> UpdateAsync(Guid id, UserCommandDto updateResource);
         Task<BaseResponse<UserCommandDto>> RemoveAsync(Guid id);
         Task<BaseResponse<UserQueryDto>> GetByIdAsync(Guid id);
-        Task<BaseResponseWithPaging<IEnumerable<UserQueryDto>>> GetAllAsync(GetAllUserQueryRequest request);
+        Task<BaseResponseWithPaging<List<UserQueryDto>>> GetAllAsync(GetAllUserQueryRequest request);
     }
 }

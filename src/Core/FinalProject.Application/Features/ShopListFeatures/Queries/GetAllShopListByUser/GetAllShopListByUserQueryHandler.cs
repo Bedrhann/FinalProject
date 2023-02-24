@@ -19,7 +19,7 @@ namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetAllShopL
         public async Task<BaseResponseWithPaging<List<ShopListQueryDto>>> Handle(GetAllShopListByUserQueryRequest request, CancellationToken cancellationToken)
         {
 
-            return await _service.GetAllAsync(request.Adapt<GetAllShopListQueryRequest>(), true);
+            return await _service.GetAllAsync(request, true);
         }
     }
 }

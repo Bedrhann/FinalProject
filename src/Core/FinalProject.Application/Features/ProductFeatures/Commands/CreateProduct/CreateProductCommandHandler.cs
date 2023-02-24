@@ -1,29 +1,24 @@
-﻿using FinalProject.Application.DTOs.Base;
-using FinalProject.Application.Interfaces.Repositories.ProductRepositories;
+﻿using FinalProject.Application.DTOs.Product;
+using FinalProject.Application.Interfaces.Services.ProductService;
 using FinalProject.Application.Wrappers.Base;
-using FinalProject.Domain.Entities;
 using Mapster;
 using MediatR;
 
 namespace FinalProject.Application.Features.ProductFeatures.Commands.CreateProduct
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, BaseResponse<BaseCreateDto>>
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, BaseResponse<ProductCommandDto>>
     {
-        private readonly IProductCommandRepository _repository;
+        private readonly IProductCommandService _service;
 
-        public CreateProductCommandHandler(IProductCommandRepository repository)
+        public CreateProductCommandHandler(IProductCommandService service)
         {
-            _repository = repository;
+            _service = service;
         }
 
-        public async Task<BaseResponse<BaseCreateDto>> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<ProductCommandDto>> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
-            Product NewProduct = request.Adapt<Product>();
-            bool result = await _repository.AddAsync(NewProduct);
-            await _repository.SaveAsync();
 
-            
-            return new BaseResponse<BaseCreateDto>(result);
+            return await _service.InsertAsync(request.Adapt<ProductCommandDto>());
         }
     }
 }

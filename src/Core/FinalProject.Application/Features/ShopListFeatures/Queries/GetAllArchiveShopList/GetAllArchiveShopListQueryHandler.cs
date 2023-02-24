@@ -18,7 +18,7 @@ namespace FinalProject.Application.Features.ShopListFeatures.Queries.GetAllArchi
 
         public async Task<BaseResponseWithPaging<List<ShopListQueryDto>>> Handle(GetAllArchiveShopListQueryRequest request, CancellationToken cancellationToken)
         {
-            return await _service.GetAllAsync(request.Adapt<ShopListGetAllRequestDto>(), false, true);
+            return await _service.GetAllAsync(request, false, true);
         }
     }
 }

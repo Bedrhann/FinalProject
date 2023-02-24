@@ -1,22 +1,19 @@
-﻿using FinalProject.Application.DTOs.Base;
-using FinalProject.Application.Features.UserFeatures.Commands.CreateUser;
-using FinalProject.Application.Interfaces.Repositories.ProductRepositories;
-using FinalProject.Application.Wrappers.Base;
-using FinalProject.Domain.Entities.Identity;
-using Microsoft.AspNetCore.Identity;
+﻿using FinalProject.Application.DTOs.Product;
+using FinalProject.Application.Interfaces.Repositories.Common;
+using FinalProject.Application.Interfaces.Services.ProductService;
+using FinalProject.Domain.Entities;
 
 namespace FinalProject.Persistance.Services.ProductServices
 {
-    public class ProductQueryService
+    public class ProductCommandService : BaseCommandService<ProductCommandDto, Product>, IProductCommandService
     {
-        private readonly IProductCommandRepository _repositoryCommand;
-        private readonly IProductQueryRepository _repositoryQuery;
-        public ProductQueryService(IProductCommandRepository repositoryCommand, IProductQueryRepository repositoryQuery)
+        private readonly IBaseCommandRepository<Product> _repositoryCommand;
+        private readonly IBaseQueryRepository<Product> _repositoryQuery;
+
+        public ProductCommandService(IBaseQueryRepository<Product> repositoryQuery, IBaseCommandRepository<Product> repositoryCommand) : base(repositoryCommand, repositoryQuery)
         {
-            _repositoryCommand = repositoryCommand;
-            _repositoryQuery = repositoryQuery;
+            this._repositoryQuery = repositoryQuery;
+            this._repositoryCommand = repositoryCommand;
         }
-
-
     }
 }

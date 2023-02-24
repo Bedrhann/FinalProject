@@ -1,38 +1,24 @@
-﻿using FinalProject.Application.Interfaces.Repositories.ProductRepositories;
-using FinalProject.Application.Wrappers.Responses;
-using FinalProject.Domain.Entities;
+﻿using FinalProject.Application.DTOs.Product;
+using FinalProject.Application.Interfaces.Services.ProductService;
+using FinalProject.Application.Wrappers.Base;
 using Mapster;
 using MediatR;
 
 namespace FinalProject.Application.Features.ProductFeatures.Commands.UpdateProduct
 {
-    public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest, BaseResponse>
+    public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest, BaseResponse<ProductCommandDto>>
     {
-        private readonly IProductCommandRepository _commandRepository;
-        private readonly IProductQueryRepository _queryRepository;
+        private readonly IProductCommandService _service;
 
-        public UpdateProductCommandHandler(IProductCommandRepository commandrepository, IProductQueryRepository queryrepository)
+        public UpdateProductCommandHandler(IProductCommandService service)
         {
-            _commandRepository = commandrepository;
-            _queryRepository = queryrepository;
+            _service = service;
         }
 
-        public async Task<BaseResponse> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<ProductCommandDto>> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
         {
-            Product UpdatedProduct = await _queryRepository.GetByIdAsync(request.Id.ToString());
-            request.Adapt<UpdateProductCommandRequest, Product>(UpdatedProduct);
 
-            _commandRepository.Update(UpdatedProduct);
-            await _commandRepository.SaveAsync();
-            BaseResponse response = new()
-            {
-                Success = true,
-                Message = "Product Updated"
-            };
-            return response;
-
-
-            throw new NotImplementedException();
+            return await _service.UpdateAsync(request.Id, request.Adapt<ProductCommandDto>());
         }
     }
 }

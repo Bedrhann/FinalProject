@@ -1,12 +1,12 @@
-﻿using FinalProject.Application.DTOs.Base;
-using FinalProject.Application.DTOs.User;
-using FinalProject.Application.Features.UserFeatures.Commands.CreateUser;
+﻿using FinalProject.Application.DTOs.User;
 using FinalProject.Application.Features.UserFeatures.Queries.GetAllUser;
 using FinalProject.Application.Interfaces.ForeignServices;
 using FinalProject.Application.Interfaces.Services.UserServices;
 using FinalProject.Application.Wrappers.Base;
+using FinalProject.Application.Wrappers.Paging;
 using FinalProject.Domain.Entities.Identity;
 using FinalProject.Domain.Models;
+using Mapster;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 
@@ -75,7 +75,7 @@ namespace FinalProject.Persistance.Services.UserServices
             return new BaseResponse<UserCommandDto>(result.Succeeded);
         }
 
-        public Task<BaseResponse<IEnumerable<UserQueryDto>>> GetAllAsync(GetAllUserQueryRequest request)
+        public async Task<BaseResponseWithPaging<List<UserQueryDto>>> GetAllAsync(GetAllUserQueryRequest request)
         {
             IQueryable<AppUser> Lists = _userManager.Users;
 
@@ -105,12 +105,10 @@ namespace FinalProject.Persistance.Services.UserServices
             };
             List<AppUser> UserList = Lists.Skip(Skip).Take(request.Limit).ToList();
             List<UserQueryDto> UserDtoList = UserList.Adapt<List<UserQueryDto>>();
-            return new GetAllUserQueryResponse()
-            {
-                PagingInfo = PageInfo,
-                Users = UserDtoList
-            };
+
+            return new BaseResponseWithPaging<List<UserQueryDto>>(new BaseResponse<List<UserQueryDto>>(UserDtoList), PageInfo);
         }
+
 
         public Task<BaseResponse<UserQueryDto>> GetByIdAsync(Guid id)
         {

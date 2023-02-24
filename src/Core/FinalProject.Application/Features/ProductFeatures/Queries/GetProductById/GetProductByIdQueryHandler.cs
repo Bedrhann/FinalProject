@@ -1,29 +1,23 @@
 ﻿using FinalProject.Application.DTOs.Product;
-using FinalProject.Application.Interfaces.Repositories.ProductRepositories;
-using FinalProject.Domain.Entities;
-using Mapster;
+using FinalProject.Application.Interfaces.Services.ProductService;
+using FinalProject.Application.Wrappers.Base;
 using MediatR;
 
 namespace FinalProject.Application.Features.ProductFeatures.Queries.GetProductById
 {
-    public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQueryRequest, GetProductByIdQueryResponse>
+    public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQueryRequest, BaseResponse<ProductQueryDto>>
     {
-        private readonly IProductQueryRepository _repository;
+        private readonly IProductQueryService _service;
 
-        public GetProductByIdQueryHandler(IProductQueryRepository repository)
+        public GetProductByIdQueryHandler(IProductQueryService service)
         {
-            _repository = repository;
+            _service = service;
         }
 
-        public async Task<GetProductByIdQueryResponse> Handle(GetProductByIdQueryRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<ProductQueryDto>> Handle(GetProductByIdQueryRequest request, CancellationToken cancellationToken)
         {
-            Product Product = await _repository.GetByIdAsync(request.Id.ToString());
-            ProductQueryDto ProductDto = Product.Adapt<ProductQueryDto>();
-            return new GetProductByIdQueryResponse()
-            {
-                Product = ProductDto
-            };
-            throw new NotImplementedException();
+
+            return await _service.GetByIdAsync(request.Id);
         }
     }
 }

@@ -4,59 +4,24 @@ using FinalProject.Application.DTOs.Product;
 using FinalProject.Domain.Entities;
 using Mapster;
 using MediatR;
+using FinalProject.Application.Wrappers.Base;
+using FinalProject.Application.Interfaces.Services.ProductService;
 
 namespace FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory
 {
-    public class GetAllProductByCategoryQueryHandler : IRequestHandler<GetAllProductByCategoryQueryRequest, GetAllProductByCategoryQueryResponse>
+    public class GetAllProductByCategoryQueryHandler : IRequestHandler<GetAllProductByCategoryQueryRequest, BaseResponseWithPaging<List<ProductQueryDto>>>
     {
-        private readonly IProductQueryRepository _repository;
+        private readonly IProductQueryService _service;
 
-        public GetAllProductByCategoryQueryHandler(IProductQueryRepository repository)
+        public GetAllProductByCategoryQueryHandler(IProductQueryService service)
         {
-            _repository = repository;
+            _service = service;
         }
 
-        public async Task<GetAllProductByCategoryQueryResponse> Handle(GetAllProductByCategoryQueryRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponseWithPaging<List<ProductQueryDto>>> Handle(GetAllProductByCategoryQueryRequest request, CancellationToken cancellationToken)
         {
 
-            IQueryable<Product> Products = _repository.GetWhere(x => x.CategoryId == request.CategoryId);
-
-            if (!string.IsNullOrWhiteSpace(request.SearchByName))
-            {
-                Products = Products.Where(x => x.Name.Contains(request.SearchByName));
-            }
-
-            if (request.CreationRangeCeiling.HasValue || request.CreationRangeLower.HasValue)
-            {
-                Products = Products.Where(x => x.CreationDate <= request.CreationRangeCeiling && x.CreationDate >= request.CreationRangeLower);
-            }
-
-            if (request.UpdateRangeCeiling.HasValue || request.UpdateRangeLower.HasValue)
-            {
-                Products = Products.Where(x => x.UpdateDate <= request.UpdateRangeCeiling && x.UpdateDate >= request.CreationRangeLower);
-            }
-
-            int TotalUser = Products.Count();
-            int TotalPage = (int)Math.Ceiling(TotalUser / (double)request.Limit);
-            int Skip = (request.Page - 1) * request.Limit;
-
-            BasePagingResponse PageInfo = new()
-            {
-                TotalData = TotalUser,
-                TotalPage = TotalPage,
-                PageLimit = request.Limit,
-                PageNum = request.Page,
-                HasNext = request.Page >= TotalPage ? false : true,
-                HasPrevious = request.Page == 1 ? false : true,
-            };
-
-            List<Product> ProductList = Products.Skip(Skip).Take(request.Limit).ToList();
-            List<ProductQueryDto> ProductDtoList = ProductList.Adapt<List<ProductQueryDto>>();
-            return new GetAllProductByCategoryQueryResponse()
-            {
-                PagingInfo = PageInfo,
-                Products = ProductDtoList
-            };
+            return await _service.GetAllAsync(request);
         }
     }
 }

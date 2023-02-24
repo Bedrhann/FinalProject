@@ -1,9 +1,11 @@
-﻿using FinalProject.Application.Wrappers.Queries;
+﻿using FinalProject.Application.DTOs.Product;
+using FinalProject.Application.Wrappers.Base;
+using FinalProject.Application.Wrappers.Paging;
 using MediatR;
 
 namespace FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory
 {
-    public class GetAllProductByCategoryQueryRequest : BasePagingRequest, IRequest<GetAllProductByCategoryQueryResponse>
+    public class GetAllProductByCategoryQueryRequest : BasePagingRequest, IRequest<BaseResponseWithPaging<List<ProductQueryDto>>>
     {
         public Guid CategoryId { get; set; }
         public string? SearchByName { get; set; }

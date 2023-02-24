@@ -1,4 +1,4 @@
-﻿using FinalProject.Application.DTOs.Base;
+﻿using FinalProject.Application.DTOs.Product;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities.Enums;
 using MediatR;
@@ -6,7 +6,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.ProductFeatures.Commands.CreateProduct
 {
-    public class CreateProductCommandRequest : IRequest<BaseResponse<BaseCreateDto>>
+    public class CreateProductCommandRequest : IRequest<BaseResponse<ProductCommandDto>>
     {
         public string Name { get; set; }
         public float Quantity { get; set; }
