@@ -2,6 +2,7 @@
 using FinalProject.Application.Interfaces.Repositories.Common;
 using FinalProject.Application.Interfaces.Services.ProductService;
 using FinalProject.Domain.Entities;
+using FinalProject.Persistance.Services.BaseServices;
 
 namespace FinalProject.Persistance.Services.ProductServices
 {

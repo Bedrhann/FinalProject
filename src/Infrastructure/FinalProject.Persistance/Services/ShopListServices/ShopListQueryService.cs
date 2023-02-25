@@ -5,6 +5,7 @@ using FinalProject.Application.Interfaces.Services.ShopListService;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Application.Wrappers.Paging;
 using FinalProject.Domain.Entities;
+using FinalProject.Persistance.Services.BaseServices;
 using Mapster;
 
 namespace FinalProject.Persistance.Services.ShopListServices

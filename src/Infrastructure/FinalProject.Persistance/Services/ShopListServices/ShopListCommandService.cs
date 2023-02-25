@@ -3,6 +3,7 @@ using FinalProject.Application.Interfaces.Repositories.Common;
 using FinalProject.Application.Interfaces.Services.ShopListService;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities;
+using FinalProject.Persistance.Services.BaseServices;
 using Mapster;
 
 namespace FinalProject.Persistance.Services.ShopListServices
@@ -33,7 +34,7 @@ namespace FinalProject.Persistance.Services.ShopListServices
 
 
         //*******************       UPDATE     **********************
-        public async Task<BaseResponse<ShopListCommandDto>> UpdateAsync(Guid id, ShopListCommandDto updateResource)
+        public override async Task<BaseResponse<ShopListCommandDto>> UpdateAsync(Guid id, ShopListCommandDto updateResource)
         {
             ShopList UpdatedShopList = await _queryRepository.GetByIdAsync(id.ToString());
             bool oldStatus = UpdatedShopList.IsCompleted;
