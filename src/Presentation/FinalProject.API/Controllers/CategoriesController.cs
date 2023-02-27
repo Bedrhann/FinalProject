@@ -27,11 +27,9 @@ namespace FinalProject.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllCategoryByShopList([FromQuery] GetAllCategoryByShopListQueryRequest request)
         {
+            BaseResponse<List<CategoryQueryDto>> response = await _mediator.Send(request);
 
-            BaseResponseWithPaging<List<CategoryQueryDto>> response = await _mediator.Send(request);
-            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(response.PagingInfo));
-
-            return Ok(response.BaseResponse);
+            return Ok(response);
         }
 
 

@@ -5,7 +5,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCategoryByShopList
 {
-    public class GetAllCategoryByShopListQueryHandler : IRequestHandler<GetAllCategoryByShopListQueryRequest, BaseResponseWithPaging<List<CategoryQueryDto>>>
+    public class GetAllCategoryByShopListQueryHandler : IRequestHandler<GetAllCategoryByShopListQueryRequest, BaseResponse<List<CategoryQueryDto>>>
     {
         private readonly ICategoryQueryService _service;
 
@@ -14,7 +14,7 @@ namespace FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCateg
             _service = service;
         }
 
-        public async Task<BaseResponseWithPaging<List<CategoryQueryDto>>> Handle(GetAllCategoryByShopListQueryRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<List<CategoryQueryDto>>> Handle(GetAllCategoryByShopListQueryRequest request, CancellationToken cancellationToken)
         {
 
             return await _service.GetAllAsync(request);

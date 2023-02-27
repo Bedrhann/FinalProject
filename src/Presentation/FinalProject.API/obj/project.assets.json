@@ -1820,7 +1820,8 @@
         "dependencies": {
           "FinalProject.Application": "1.0.0",
           "Microsoft.EntityFrameworkCore.InMemory": "6.0.6",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6",
+          "Microsoft.Extensions.Caching.StackExchangeRedis": "6.0.6"
         },
         "compile": {
           "bin/placeholder/FinalProject.Persistance.dll": {}
@@ -5018,7 +5019,6 @@
       "FinalProject.Persistance >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Testing >= 6.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.6",
-      "Microsoft.Extensions.Caching.StackExchangeRedis >= 6.0.6",
       "Swashbuckle.AspNetCore >= 6.2.3",
       "Swashbuckle.AspNetCore.Filters >= 7.0.3"
     ]
@@ -5092,10 +5092,6 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
-            "target": "Package",
-            "version": "[6.0.6, )"
-          },
-          "Microsoft.Extensions.Caching.StackExchangeRedis": {
             "target": "Package",
             "version": "[6.0.6, )"
           },

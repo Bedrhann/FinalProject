@@ -87,7 +87,7 @@ namespace FinalProject.API.Controllers
         public async Task<IActionResult> GetAllShopList([FromQuery] GetAllShopListQueryRequest request)
         {
             BaseResponseWithPaging<List<ShopListQueryDto>> response = await _mediator.Send(request);
-
+            //TODO Sayfalama olan responseları kontrol et
             return Ok(response);
         }
 

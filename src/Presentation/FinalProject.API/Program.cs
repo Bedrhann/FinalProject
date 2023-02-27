@@ -9,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddResponseCaching();
-builder.Services.AddStackExchangeRedisCache(options => options.Configuration = "localhost:49153,password=redispw");
 
 builder.Services.AddSwaggerGen(options =>//Swagger aray�z�nde Authentication kullanabilmek i�in aray�z ekliyoruz.
 {

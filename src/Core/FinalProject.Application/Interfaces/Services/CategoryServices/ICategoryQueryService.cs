@@ -7,6 +7,6 @@ namespace FinalProject.Application.Interfaces.Services.CategoryService
 {
     public interface ICategoryQueryService : IBaseQueryService<CategoryQueryDto, Category>
     {
-        Task<BaseResponseWithPaging<List<CategoryQueryDto>>> GetAllAsync(GetAllCategoryByShopListQueryRequest request);
+        Task<BaseResponse<List<CategoryQueryDto>>> GetAllAsync(GetAllCategoryByShopListQueryRequest request);
     }
 }

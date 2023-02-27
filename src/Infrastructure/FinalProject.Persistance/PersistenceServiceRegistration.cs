@@ -7,7 +7,6 @@ using FinalProject.Application.Interfaces.Services.ProductService;
 using FinalProject.Application.Interfaces.Services.ShopListService;
 using FinalProject.Application.Interfaces.Services.UserServices;
 using FinalProject.Domain.Entities;
-using FinalProject.Domain.Entities.Common;
 using FinalProject.Domain.Entities.Identity;
 using FinalProject.Persistance.Services.CategoryServices;
 using FinalProject.Persistance.Services.ProductServices;
@@ -41,6 +40,9 @@ namespace FinalProject.Persistence
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
             }).AddEntityFrameworkStores<MsSqlDbContext>();
+
+            services.AddStackExchangeRedisCache(options => options.Configuration = "localhost:49153,password=redispw");
+
 
             services.AddScoped<IProductCommandRepository, ProductCommandRepository>();
             services.AddScoped<IProductQueryRepository, ProductQueryRepository>();
