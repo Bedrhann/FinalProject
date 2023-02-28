@@ -1,12 +1,16 @@
 using FinalProject.Application;
+using FinalProject.Application.Validators.CategoryValidators;
 using FinalProject.Infrastructure;
 using FinalProject.Persistence;
+using FluentValidation.AspNetCore;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<CreateCategoryValidator>());
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddResponseCaching();
 
