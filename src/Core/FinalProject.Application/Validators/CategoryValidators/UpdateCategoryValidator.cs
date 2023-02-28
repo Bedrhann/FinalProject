@@ -9,10 +9,10 @@ namespace FinalProject.Application.Validators.CategoryValidators
         {
             RuleFor(c => c.Name)
             .NotNull().NotEmpty()
-            .WithMessage("BOŞ OLMASIN ADI ONA GÖRE");
+            .WithMessage("Category Name can not be null!");
             RuleFor(c => c.Id)
             .NotNull().NotEmpty()
-            .WithMessage("BOŞ OLMASIN ID ONA GÖRE");
+            .WithMessage("Please specify a valid Id for Category!");
         }
     }
 }

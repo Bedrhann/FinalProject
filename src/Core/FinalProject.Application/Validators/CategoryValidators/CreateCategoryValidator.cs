@@ -8,11 +8,11 @@ namespace FinalProject.Application.Validators.CategoryValidators
         public CreateCategoryValidator()
         {
             RuleFor(c => c.Name)
-            .NotNull().NotEmpty()
-            .WithMessage("BOŞ OLMASIN ADI ONA GÖRE");
+           .NotNull().NotEmpty()
+           .WithMessage("Category Name can not be null!");
             RuleFor(c => c.ShopListId)
             .NotNull().NotEmpty()
-            .WithMessage("BOŞ OLMASIN ID ONA GÖRE");
+            .WithMessage("Please specify a valid Id for ShopList!");
         }
     }
 }

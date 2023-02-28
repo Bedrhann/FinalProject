@@ -7,7 +7,7 @@ namespace FinalProject.Application.Features.ShopListFeatures.Commands.CreateShop
 {
     public class CreateShopListCommandRequest : IRequest<BaseResponse<ShopListCommandDto>>
     {
-        public Guid? AppUserId { get; set; }
+        public Guid AppUserId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }
