@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Ok1mW5yvDQzNfP8bjLpVBR9MCFPFYEgun1GLUTedISkjZ2c1bx5CyxbKAXaYuybD+JtWaspjSeHMBp6hwjo1rQ==",
+  "dgSpecHash": "k/J4j8SDKQOBzCO9r1nT5cfK9DBOaoQgZ3qxf2LT20mCn8fAQ5CuMEPInZYVVaGljpvcYcWGeSPG/W6lO4MARg==",
   "success": true,
   "projectFilePath": "E:\\DotNetWork\\a.ParamProjects\\FinalProject\\src\\Core\\FinalProject.Application\\FinalProject.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\mapster\\7.3.0\\mapster.7.3.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\mapster.core\\1.2.0\\mapster.core.1.2.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",

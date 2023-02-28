@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "kzktTmU92cptLrQh3JFSdfKOQc6QbL6B2xN4QffuPIo47aYR2GPZlp+eAutJAHV/8IRq4nM3Z9JEkCcv/mQ4pQ==",
+  "dgSpecHash": "CbqCo5ZQ02txz+oxQ7ySIix0Y66JYbp5fWmGpJqnjgWNrQ2mIZns91znOWoe9NLbwVYqPieNDUM8ENnJ2XXy/w==",
   "success": true,
   "projectFilePath": "E:\\DotNetWork\\a.ParamProjects\\FinalProject\\src\\Infrastructure\\FinalProject.Persistance\\FinalProject.Persistance.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\mapster\\7.3.0\\mapster.7.3.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\mapster.core\\1.2.0\\mapster.core.1.2.0.nupkg.sha512",
