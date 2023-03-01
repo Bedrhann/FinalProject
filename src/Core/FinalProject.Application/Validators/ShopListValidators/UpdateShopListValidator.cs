@@ -7,12 +7,17 @@ namespace FinalProject.Application.Validators.ShopListValidators
     {
         public UpdateShopListValidator()
         {
-            RuleFor(c => c.Name)
-            .NotNull().NotEmpty()
-            .WithMessage("Category Name can not be null!");
             RuleFor(c => c.Id)
             .NotNull().NotEmpty()
-            .WithMessage("Please specify a valid Id for Category!");
+            .WithMessage("Please specify a valid Id for User!");
+
+            RuleFor(c => c.Name)
+            .NotNull().NotEmpty()
+            .WithMessage("Please specify a Name!");
+
+            RuleFor(c => c.Description)
+            .NotNull().NotEmpty()
+            .WithMessage("Please specify a Description!");
         }
     }
 }

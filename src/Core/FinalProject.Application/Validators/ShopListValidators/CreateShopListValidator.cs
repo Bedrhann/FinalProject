@@ -9,7 +9,7 @@ namespace FinalProject.Application.Validators.ShopListValidators
         {
             RuleFor(c => c.AppUserId)
             .NotNull().NotEmpty()
-            .WithMessage("Please specify a valid Id for Category!");
+            .WithMessage("Please specify a valid Id for User!");
 
             RuleFor(c => c.Name)
             .NotNull().NotEmpty()
@@ -17,8 +17,7 @@ namespace FinalProject.Application.Validators.ShopListValidators
 
             RuleFor(c => c.Description)
             .NotNull().NotEmpty()
-            .WithMessage("Please specify a Quantity!")
-            .WithMessage("Quantity cannot be less than zero");
+            .WithMessage("Please specify a Description!");
         }
     }
 }
