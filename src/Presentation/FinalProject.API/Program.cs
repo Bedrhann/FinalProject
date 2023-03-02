@@ -14,7 +14,7 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddResponseCaching();
 
-builder.Services.AddSwaggerGen(options =>//Swagger aray�z�nde Authentication kullanabilmek i�in aray�z ekliyoruz.
+builder.Services.AddSwaggerGen(options =>//Swagger arayüzünde Authentication kullanabilmek için arayüz ekliyoruz.
 {
     options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
     {

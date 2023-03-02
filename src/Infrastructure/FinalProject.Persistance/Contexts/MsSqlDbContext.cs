@@ -1,6 +1,7 @@
 ﻿using FinalProject.Domain.Entities;
 using FinalProject.Domain.Entities.Common;
 using FinalProject.Domain.Entities.Identity;
+using FinalProject.Persistance.Contexts.Configurations;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,7 @@ namespace FinalProject.Persistence.Contexts
         public DbSet<ShopList> ShopLists { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+
 
         public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
@@ -29,5 +31,13 @@ namespace FinalProject.Persistence.Contexts
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.ApplyConfiguration(new RoleConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new UserRoleConfiguration());
+
+            base.OnModelCreating(builder);
+        }
     }
 }
