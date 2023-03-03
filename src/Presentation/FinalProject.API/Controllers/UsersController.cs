@@ -1,10 +1,13 @@
 ﻿using FinalProject.Application.DTOs.User;
 using FinalProject.Application.Features.UserFeatures.Queries.GetAllUser;
 using FinalProject.Application.Wrappers.Base;
+using FinalProject.Persistance.Contexts;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System.Text.Json;
 
 namespace FinalProject.API.Controllers
@@ -31,10 +34,10 @@ namespace FinalProject.API.Controllers
             {
                 if (_distributedCache.GetString(request.UserId) != null)
                 {
-                    return Ok( await _distributedCache.GetStringAsync(request.UserId));
+                    return Ok(await _distributedCache.GetStringAsync(request.UserId));
                 }
             }
-            
+
             BaseResponseWithPaging<List<UserQueryDto>> response = await _mediator.Send(request);
             Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(response.PagingInfo));
             await _distributedCache.SetStringAsync("user", response.BaseResponse.Response.ToString(), options: new()
@@ -44,15 +47,27 @@ namespace FinalProject.API.Controllers
             });
             return Ok(response.BaseResponse);
         }
+        public class Product
+        {
+            [BsonId]
+            public ObjectId Id { get; set; }
+            public string name { get; set; }
+            public string surname { get; set; }
+
+        }
 
         [HttpGet("/add")]
         public async Task<IActionResult> GetDeneme([FromQuery] string request)
         {
-            await _distributedCache.SetStringAsync("name", request, options: new()
+            MongoDbConnect dbConnect = new();
+
+            Product product = new Product()
             {
-                AbsoluteExpiration = DateTime.UtcNow.AddSeconds(20),
-                SlidingExpiration = TimeSpan.FromSeconds(6),
-            });
+                name = "CEMALETTİN",
+                surname = "KOYA"
+            };
+            var collection = dbConnect.ConnectToMongo<Product>("products");
+            await collection.InsertOneAsync(product);
             return Ok();
         }
 
