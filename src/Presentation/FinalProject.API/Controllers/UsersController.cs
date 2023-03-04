@@ -43,7 +43,7 @@ namespace FinalProject.API.Controllers
             ArchivedShopList archivedShop = new()
             {
                 description = "asdas",
-                Name = "bismillah.com"
+                Name = "11111"
             };
             _repo.AddAsync(archivedShop);
 
