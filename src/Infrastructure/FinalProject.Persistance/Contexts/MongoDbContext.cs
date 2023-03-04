@@ -1,18 +1,19 @@
-﻿using MongoDB.Driver;
+﻿using FinalProject.Application.Interfaces.Contexts;
+using FinalProject.Domain.Models;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 
 namespace FinalProject.Persistance.Contexts
 {
-    public class MongoDbConnect
+    public class MongoDbContext : IMongoDbContext
     {
-
-        public const string MongoConnectionString = "mongodb://docker:mongopw@localhost:49153";
-        public const string MongoDatabaseName = "DENEME";
-
-        public IMongoCollection<T> ConnectToMongo<T>(string collection)
+        private readonly IMongoDatabase _database;
+        public MongoDbContext(IOptions<MongoDbSettings> options)
         {
-            var client = new MongoClient(MongoConnectionString);
-            var db = client.GetDatabase(MongoDatabaseName);
-            return db.GetCollection<T>(collection);
+            var mongoclient = new MongoClient(options.Value.ConnectionString);
+            _database = mongoclient.GetDatabase(options.Value.DatabaseName);
         }
+
+        public IMongoDatabase Database => _database;
     }
 }

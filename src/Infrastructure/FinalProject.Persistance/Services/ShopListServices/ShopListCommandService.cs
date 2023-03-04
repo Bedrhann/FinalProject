@@ -36,14 +36,14 @@ namespace FinalProject.Persistance.Services.ShopListServices
         //*******************       UPDATE     **********************
         public override async Task<BaseResponse<ShopListCommandDto>> UpdateAsync(Guid id, ShopListCommandDto updateResource)
         {
-            ShopList UpdatedShopList = await _queryRepository.GetByIdAsync(id.ToString());
-            bool oldStatus = UpdatedShopList.IsCompleted;
-            updateResource.Adapt<ShopListCommandDto, ShopList>(UpdatedShopList);
-            _commandRepository.Update(UpdatedShopList);
+            ShopList updatedShopList = await _queryRepository.GetByIdAsync(id.ToString());
+            bool oldStatus = updatedShopList.IsCompleted;
+            updateResource.Adapt<ShopListCommandDto, ShopList>(updatedShopList);
+            _commandRepository.Update(updatedShopList);
             await _commandRepository.SaveAsync();
-            if (oldStatus == false && UpdatedShopList.IsCompleted == true)
+            if (oldStatus == false && updatedShopList.IsCompleted == true)
             {
-                UpdatedShopList.Adapt<ShopList, ShopListQueryDto>();
+                updatedShopList.Adapt<ShopList, ShopListQueryDto>();
                // _rabbitMq.Publish(UpdatedShopList, "fanout.shoplist");
                //TODO rABİİT İŞLERİ VAR
             }

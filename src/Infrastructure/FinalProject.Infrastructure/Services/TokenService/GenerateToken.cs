@@ -1,4 +1,4 @@
-﻿using FinalProject.Application.Interfaces.ForeignServices;
+﻿using FinalProject.Application.Interfaces.ExternalServices;
 using FinalProject.Domain.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;

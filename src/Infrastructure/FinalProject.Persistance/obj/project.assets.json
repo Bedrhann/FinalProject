@@ -1468,6 +1468,8 @@
           "Mapster": "7.3.0",
           "MediatR": "10.0.1",
           "MediatR.Extensions.Microsoft.DependencyInjection": "10.0.1",
+          "MongoDB.Bson": "2.19.0",
+          "MongoDB.Driver": "2.19.0",
           "RabbitMQ.Client": "6.4.0"
         },
         "compile": {
@@ -1482,7 +1484,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity": "2.2.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.6"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.6",
+          "MongoDB.Bson": "2.19.0"
         },
         "compile": {
           "bin/placeholder/FinalProject.Domain.dll": {}
@@ -4277,8 +4280,7 @@
       "Microsoft.EntityFrameworkCore.InMemory >= 6.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.6",
-      "Microsoft.Extensions.Caching.StackExchangeRedis >= 6.0.6",
-      "MongoDB.Driver >= 2.19.0"
+      "Microsoft.Extensions.Caching.StackExchangeRedis >= 6.0.6"
     ]
   },
   "packageFolders": {
@@ -4354,10 +4356,6 @@
           "Microsoft.Extensions.Caching.StackExchangeRedis": {
             "target": "Package",
             "version": "[6.0.6, )"
-          },
-          "MongoDB.Driver": {
-            "target": "Package",
-            "version": "[2.19.0, )"
           }
         },
         "imports": [

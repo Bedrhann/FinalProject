@@ -1,4 +1,4 @@
-﻿using FinalProject.Application.Interfaces.ForeignServices;
+﻿using FinalProject.Application.Interfaces.ExternalServices;
 using FinalProject.Infrastructure.Services.TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;

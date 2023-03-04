@@ -2,7 +2,7 @@
 using System.Security.Claims;
 
 
-namespace FinalProject.Application.Interfaces.ForeignServices
+namespace FinalProject.Application.Interfaces.ExternalServices
 {
     public interface IGenerateToken
     {

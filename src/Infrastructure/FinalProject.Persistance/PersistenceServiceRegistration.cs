@@ -1,4 +1,5 @@
-﻿using FinalProject.Application.Interfaces.Repositories.CategoryRepositories;
+﻿using FinalProject.Application.Interfaces.Contexts;
+using FinalProject.Application.Interfaces.Repositories.CategoryRepositories;
 using FinalProject.Application.Interfaces.Repositories.Common;
 using FinalProject.Application.Interfaces.Repositories.ProductRepositories;
 using FinalProject.Application.Interfaces.Repositories.ShopListRepositories;
@@ -8,6 +9,9 @@ using FinalProject.Application.Interfaces.Services.ShopListService;
 using FinalProject.Application.Interfaces.Services.UserServices;
 using FinalProject.Domain.Entities;
 using FinalProject.Domain.Entities.Identity;
+using FinalProject.Domain.Models;
+using FinalProject.Persistance.Contexts;
+using FinalProject.Persistance.Repositories.MongoRepositories.ArchivedShopListRepositories;
 using FinalProject.Persistance.Services.CategoryServices;
 using FinalProject.Persistance.Services.ProductServices;
 using FinalProject.Persistance.Services.ShopListServices;
@@ -44,12 +48,16 @@ namespace FinalProject.Persistence
             services.AddStackExchangeRedisCache(options => options.Configuration = "localhost:49153,password=redispw");
 
 
+            services.AddScoped<IMongoDbContext, MongoDbContext>();
+            services.Configure<MongoDbSettings>(
+                configuration.GetSection("MongoDb"));
+            services.AddScoped<IArchiveShopListQueryRepository, ArchiveShopListQueryRepository>();
+            services.AddScoped<IArchiveShopListCommandRepository, ArchiveShopListCommandRepository>();
+
             services.AddScoped<IProductCommandRepository, ProductCommandRepository>();
             services.AddScoped<IProductQueryRepository, ProductQueryRepository>();
             services.AddScoped<IShopListCommandRepository, ShopListCommandRepository>();
             services.AddScoped<IShopListQueryRepository, ShopListQueryRepository>();
-            services.AddSingleton<IShopListCommandArchiveRepository, ShopListCommandArchiveRepository>();
-            services.AddScoped<IShopListQueryArchiveRepository, ShopListQueryArchiveRepository>();
             services.AddScoped<ICategoryCommandRepository, CategoryCommandRepository>();
             services.AddScoped<ICategoryQueryRepository, CategoryQueryRepository>();
 

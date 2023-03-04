@@ -13,12 +13,11 @@ namespace FinalProject.Persistance.Services.ShopListServices
     public class ShopListQueryService : BaseQueryService<ShopListQueryDto, ShopList>, IShopListQueryService
     {
         private readonly IBaseQueryRepository<ShopList> _repository;
-        private readonly IShopListQueryArchiveRepository _archiveRepository;
+        //private readonly IArchiveShopListQueryRepository _archiveRepository;
 
-        public ShopListQueryService(IBaseQueryRepository<ShopList> repository, IShopListQueryArchiveRepository archiveRepository) : base(repository)
+        public ShopListQueryService(IBaseQueryRepository<ShopList> repository) : base(repository)
         {
             _repository = repository;
-            _archiveRepository = archiveRepository;
         }
 
         public async Task<BaseResponseWithPaging<List<ShopListQueryDto>>> GetAllAsync(ShopListGetAllRequestDto request, bool isByUser, bool? İsArchive = false)

@@ -1,6 +1,6 @@
 ﻿using FinalProject.Application.DTOs.User;
 using FinalProject.Application.Features.UserFeatures.Queries.GetAllUser;
-using FinalProject.Application.Interfaces.ForeignServices;
+using FinalProject.Application.Interfaces.ExternalServices;
 using FinalProject.Application.Interfaces.Services.UserServices;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Application.Wrappers.Paging;

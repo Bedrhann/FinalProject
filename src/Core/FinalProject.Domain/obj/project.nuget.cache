@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WXBnbdWEi0rU3Sa42vew0IQrGPY2OB27BGsh0qZgDupwcQwYfuNoGPTxZZZOTIIk8n+HJPD4VgsU+UjKa3aQeg==",
+  "dgSpecHash": "XgMSoxhZ6ozJs/ek80Yj/gIuH+UO0TcosWnCSBBFteggpFcHHRSmVn4iDHOyFBufdOtiYAy+/lR5d6S/6qGGVw==",
   "success": true,
   "projectFilePath": "E:\\DotNetWork\\a.ParamProjects\\FinalProject\\src\\Core\\FinalProject.Domain\\FinalProject.Domain.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "C:\\Users\\Bedirhan\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Bedirhan\\.nuget\\packages\\mongodb.bson\\2.19.0\\mongodb.bson.2.19.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Bedirhan\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
