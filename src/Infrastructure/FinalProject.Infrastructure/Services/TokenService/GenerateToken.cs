@@ -1,4 +1,4 @@
-﻿using FinalProject.Application.Interfaces.ExternalServices;
+﻿using FinalProject.Application.Interfaces.ExternalServices.JWT;
 using FinalProject.Domain.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;

@@ -1,4 +1,5 @@
 ﻿using FinalProject.Application.DTOs.ShopList;
+using FinalProject.Application.Interfaces.ExternalServices.RabbitMq;
 using FinalProject.Application.Interfaces.Repositories.Common;
 using FinalProject.Application.Interfaces.Services.ShopListService;
 using FinalProject.Application.Wrappers.Base;
@@ -12,11 +13,13 @@ namespace FinalProject.Persistance.Services.ShopListServices
     {
         private readonly IBaseQueryRepository<ShopList> _queryRepository;
         private readonly IBaseCommandRepository<ShopList> _commandRepository;
+        private readonly IRabbitMqPublisher _rabbitMq;
 
-        public ShopListCommandService(IBaseCommandRepository<ShopList> commandRepository, IBaseQueryRepository<ShopList> queryRepository) : base(commandRepository,queryRepository )
+        public ShopListCommandService(IBaseCommandRepository<ShopList> commandRepository, IBaseQueryRepository<ShopList> queryRepository, IRabbitMqPublisher rabbitMq) : base(commandRepository, queryRepository)
         {
             _queryRepository = queryRepository;
             _commandRepository = commandRepository;
+            _rabbitMq = rabbitMq;
         }
 
 
@@ -44,8 +47,7 @@ namespace FinalProject.Persistance.Services.ShopListServices
             if (oldStatus == false && updatedShopList.IsCompleted == true)
             {
                 updatedShopList.Adapt<ShopList, ShopListQueryDto>();
-               // _rabbitMq.Publish(UpdatedShopList, "fanout.shoplist");
-               //TODO rABİİT İŞLERİ VAR
+                _rabbitMq.Publish(updatedShopList, "direct.list");
             }
 
             return new BaseResponse<ShopListCommandDto>(true);

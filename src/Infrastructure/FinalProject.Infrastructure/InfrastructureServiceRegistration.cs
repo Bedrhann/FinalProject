@@ -1,4 +1,6 @@
-﻿using FinalProject.Application.Interfaces.ExternalServices;
+﻿using FinalProject.Application.Interfaces.ExternalServices.JWT;
+using FinalProject.Application.Interfaces.ExternalServices.RabbitMq;
+using FinalProject.Infrastructure.Services.RabbitMqService;
 using FinalProject.Infrastructure.Services.TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -13,8 +15,8 @@ namespace FinalProject.Infrastructure
         public static void AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<IGenerateToken, GenerateToken>();
-            //services.AddTransient<IRabbitMqPublisher, RabbitMqPublisher>();
-            //services.AddHostedService<ShopListReporter>();
+            services.AddTransient<IRabbitMqPublisher, RabbitMqPublisher>();
+            services.AddTransient<IRabbitMqConnection, RabbitMqConnection>();
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
