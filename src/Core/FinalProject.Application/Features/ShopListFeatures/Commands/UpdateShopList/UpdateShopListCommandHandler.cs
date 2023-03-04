@@ -17,7 +17,7 @@ namespace FinalProject.Application.Features.ShopListFeatures.Commands.UpdateShop
 
         public async Task<BaseResponse<ShopListCommandDto>> Handle(UpdateShopListCommandRequest request, CancellationToken cancellationToken)
         {
-            return await _service.UpdateAsync(request.Id, request.Adapt<ShopListCommandDto>());
+            return await _service.UpdateAsync(request.Id, request);
         }
     }
 }
