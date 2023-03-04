@@ -2,10 +2,10 @@
 
 namespace FinalProject.Application.Interfaces.Services
 {
-    public interface IBaseCommandService<Dto, Entity>
+    public interface IBaseCommandService<DtoCreate,DtoUpdate, Entity>
     {
-        Task<BaseResponse<Dto>> InsertAsync(Dto insertResource);
-        Task<BaseResponse<Dto>> UpdateAsync(Guid id, Dto updateResource);
-        Task<BaseResponse<Dto>> RemoveAsync(Guid id);
+        Task<BaseResponse<DtoCreate>> InsertAsync(DtoCreate insertResource);
+        Task<BaseResponse<DtoUpdate>> UpdateAsync(Guid id, DtoUpdate updateResource);
+        Task<BaseResponse<object>> RemoveAsync(Guid id);
     }
 }

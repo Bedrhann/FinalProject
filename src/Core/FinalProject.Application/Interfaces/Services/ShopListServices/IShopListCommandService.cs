@@ -1,13 +1,12 @@
 ﻿using FinalProject.Application.DTOs.ShopList;
-using FinalProject.Application.Features.ShopListFeatures.Commands.UpdateShopList;
 using FinalProject.Application.Wrappers.Base;
 using FinalProject.Domain.Entities;
 
 namespace FinalProject.Application.Interfaces.Services.ShopListService
 {
-    public interface IShopListCommandService : IBaseCommandService<ShopListCommandDto, ShopList>
+    public interface IShopListCommandService : IBaseCommandService<ShopListCreateDto, ShopListUpdateDto, ShopList>
     {
-        Task<BaseResponse<ShopListCommandDto>> SoftRemoveAsync(Guid id); 
-        Task<BaseResponse<ShopListCommandDto>> UpdateAsync(Guid id, UpdateShopListCommandRequest updateResource);
+        Task<BaseResponse<object>> SoftRemoveAsync(Guid id);
+        Task<BaseResponse<ShopListUpdateDto>> UpdateAsync(Guid id, ShopListUpdateDto updateResource);
     }
 }

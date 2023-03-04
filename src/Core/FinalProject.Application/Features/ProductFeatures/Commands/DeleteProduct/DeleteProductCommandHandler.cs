@@ -5,7 +5,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.ProductFeatures.Commands.DeleteProduct
 {
-    public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandRequest, BaseResponse<ProductCommandDto>>
+    public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandRequest, BaseResponse<object>>
     {
         private readonly IProductCommandService _service;
 
@@ -13,7 +13,7 @@ namespace FinalProject.Application.Features.ProductFeatures.Commands.DeleteProdu
         {
             _service = service;
         }
-        public async Task<BaseResponse<ProductCommandDto>> Handle(DeleteProductCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<object>> Handle(DeleteProductCommandRequest request, CancellationToken cancellationToken)
         {
 
             return await _service.RemoveAsync(request.Id);

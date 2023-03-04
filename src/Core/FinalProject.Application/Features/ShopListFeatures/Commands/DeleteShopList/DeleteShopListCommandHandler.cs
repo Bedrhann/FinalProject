@@ -5,7 +5,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.ShopListFeatures.Commands.DeleteShopList
 {
-    public class DeleteShopListCommandHandler : IRequestHandler<DeleteShopListCommandRequest, BaseResponse<ShopListCommandDto>>
+    public class DeleteShopListCommandHandler : IRequestHandler<DeleteShopListCommandRequest, BaseResponse<object>>
     {
         private readonly IShopListCommandService _service;
 
@@ -14,7 +14,7 @@ namespace FinalProject.Application.Features.ShopListFeatures.Commands.DeleteShop
             _service = service;
         }
 
-        public async Task<BaseResponse<ShopListCommandDto>> Handle(DeleteShopListCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<object>> Handle(DeleteShopListCommandRequest request, CancellationToken cancellationToken)
         {
             return await _service.SoftRemoveAsync(request.Id);
         }

@@ -47,7 +47,7 @@ namespace FinalProject.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryCommandRequest request)
         {
-            BaseResponse<CategoryCommandDto> response = await _mediator.Send(request);
+            BaseResponse<CategoryCreateDto> response = await _mediator.Send(request);
 
             return Ok(response);
         }
@@ -57,7 +57,7 @@ namespace FinalProject.API.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateCategory([FromBody] UpdateCategoryCommandRequest request)
         {
-            BaseResponse<CategoryCommandDto> response = await _mediator.Send(request);
+            BaseResponse<CategoryUpdateDto> response = await _mediator.Send(request);
 
             return Ok(response);
         }
@@ -67,7 +67,7 @@ namespace FinalProject.API.Controllers
         [HttpDelete("{Id}")]
         public async Task<IActionResult> DeleteCategory([FromRoute] DeleteCategoryCommandRequest request)
         {
-            BaseResponse<CategoryCommandDto> response = await _mediator.Send(request);
+            BaseResponse<object> response = await _mediator.Send(request);
 
             return Ok(response);
         }

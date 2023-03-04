@@ -6,7 +6,7 @@ using Mapster;
 
 namespace FinalProject.Persistance.Services.BaseServices
 {
-    public class BaseCommandService<Dto, Entity> : IBaseCommandService<Dto, Entity> where Entity : BaseEntity
+    public class BaseCommandService<DtoCreate,DtoUpdate, Entity> : IBaseCommandService<DtoCreate, DtoUpdate, Entity> where Entity : BaseEntity
     {
         private readonly IBaseCommandRepository<Entity> _commandRepository;
         private readonly IBaseQueryRepository<Entity> _queryRepository;
@@ -19,39 +19,39 @@ namespace FinalProject.Persistance.Services.BaseServices
 
 
         //*******************       INSERT     **********************
-        public virtual async Task<BaseResponse<Dto>> InsertAsync(Dto insertResource)
+        public virtual async Task<BaseResponse<DtoCreate>> InsertAsync(DtoCreate insertResource)
         {
 
             bool result = await _commandRepository.AddAsync(insertResource.Adapt<Entity>());
             await _commandRepository.SaveAsync();
 
-            return new BaseResponse<Dto>(result);
+            return new BaseResponse<DtoCreate>(result);
         }
 
 
 
 
         //*******************       UPDATE     **********************
-        public virtual async Task<BaseResponse<Dto>> UpdateAsync(Guid id, Dto updateResource)
+        public virtual async Task<BaseResponse<DtoUpdate>> UpdateAsync(Guid id, DtoUpdate updateResource)
         {
             Entity UpdatedEntity = await _queryRepository.GetByIdAsync(id.ToString());
             updateResource.Adapt(UpdatedEntity);
             bool result = _commandRepository.Update(UpdatedEntity);
             await _commandRepository.SaveAsync();
 
-            return new BaseResponse<Dto>(result);
+            return new BaseResponse<DtoUpdate>(result);
         }
 
 
 
 
         //*******************       DELETE     **********************
-        public virtual async Task<BaseResponse<Dto>> RemoveAsync(Guid id)
+        public virtual async Task<BaseResponse<Object>> RemoveAsync(Guid id)
         {
             bool result = await _commandRepository.RemoveByIdAsync(id.ToString());
             await _commandRepository.SaveAsync();
 
-            return new BaseResponse<Dto>(result);
+            return new BaseResponse<Object>(result);
         }
 
 

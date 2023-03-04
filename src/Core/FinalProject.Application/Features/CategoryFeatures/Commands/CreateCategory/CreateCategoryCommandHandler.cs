@@ -6,7 +6,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.CategoryFeatures.Commands.CreateCategory
 {
-    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommandRequest, BaseResponse<CategoryCommandDto>>
+    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommandRequest, BaseResponse<CategoryCreateDto>>
     {
         private readonly ICategoryCommandService _service;
 
@@ -15,10 +15,10 @@ namespace FinalProject.Application.Features.CategoryFeatures.Commands.CreateCate
             _service = service;
         }
 
-        public async Task<BaseResponse<CategoryCommandDto>> Handle(CreateCategoryCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<CategoryCreateDto>> Handle(CreateCategoryCommandRequest request, CancellationToken cancellationToken)
         {
 
-            return await _service.InsertAsync(request.Adapt<CategoryCommandDto>());
+            return await _service.InsertAsync(request.Adapt<CategoryCreateDto>());
         }
     }
 }

@@ -3,7 +3,7 @@ using FinalProject.Domain.Entities;
 
 namespace FinalProject.Application.Interfaces.Services.ProductService
 {
-    public interface IProductCommandService : IBaseCommandService<ProductCommandDto, Product>
+    public interface IProductCommandService : IBaseCommandService<ProductCommandDto,ProductUpdateDto, Product>
     {
     }
 }

@@ -8,7 +8,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.CategoryFeatures.Commands.UpdateCategory
 {
-    public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommandRequest, BaseResponse<CategoryCommandDto>>
+    public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommandRequest, BaseResponse<CategoryUpdateDto>>
     {
         private readonly ICategoryCommandService _service;
 
@@ -17,10 +17,10 @@ namespace FinalProject.Application.Features.CategoryFeatures.Commands.UpdateCate
             _service = service;
         }
 
-        public async Task<BaseResponse<CategoryCommandDto>> Handle(UpdateCategoryCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<CategoryUpdateDto>> Handle(UpdateCategoryCommandRequest request, CancellationToken cancellationToken)
         {
 
-            return await _service.UpdateAsync(request.Id, request.Adapt<CategoryCommandDto>());
+            return await _service.UpdateAsync(request.Id, request);
         }
     }
 }

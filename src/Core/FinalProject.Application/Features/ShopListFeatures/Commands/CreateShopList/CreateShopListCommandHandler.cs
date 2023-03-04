@@ -6,7 +6,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.ShopListFeatures.Commands.CreateShopList
 {
-    public class CreateShopListCommandHandler : IRequestHandler<CreateShopListCommandRequest, BaseResponse<ShopListCommandDto>>
+    public class CreateShopListCommandHandler : IRequestHandler<CreateShopListCommandRequest, BaseResponse<ShopListCreateDto>>
     {
         private readonly IShopListCommandService _service;
 
@@ -15,10 +15,10 @@ namespace FinalProject.Application.Features.ShopListFeatures.Commands.CreateShop
             _service = service;
         }
 
-        public async Task<BaseResponse<ShopListCommandDto>> Handle(CreateShopListCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<ShopListCreateDto>> Handle(CreateShopListCommandRequest request, CancellationToken cancellationToken)
         {
 
-            return await _service.InsertAsync(request.Adapt<ShopListCommandDto>());
+            return await _service.InsertAsync(request.Adapt<ShopListCreateDto>());
         }
     }
 }

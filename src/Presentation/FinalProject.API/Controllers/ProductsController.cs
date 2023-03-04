@@ -61,7 +61,7 @@ namespace FinalProject.API.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateProduct([FromBody] UpdateProductCommandRequest request)
         {
-            BaseResponse<ProductCommandDto> response = await _mediator.Send(request);
+            BaseResponse<ProductUpdateDto> response = await _mediator.Send(request);
 
             return Ok(response);
         }
@@ -72,7 +72,7 @@ namespace FinalProject.API.Controllers
         [HttpDelete("{Id}")]
         public async Task<IActionResult> DeleteProduct([FromRoute] DeleteProductCommandRequest request)
         {
-            BaseResponse<ProductCommandDto> response = await _mediator.Send(request);
+            BaseResponse<object> response = await _mediator.Send(request);
 
             return Ok(response);
         }

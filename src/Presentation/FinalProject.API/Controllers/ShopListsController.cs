@@ -54,7 +54,7 @@ namespace FinalProject.API.Controllers
         {
             ClaimsIdentity Identity = (ClaimsIdentity)HttpContext.User.Identity;
             request.AppUserId = Guid.Parse(Identity.Claims.FirstOrDefault(x => x.Type == "Id").Value);
-            BaseResponse<ShopListCommandDto> response = await _mediator.Send(request);
+            BaseResponse<ShopListCreateDto> response = await _mediator.Send(request);
 
             return Ok(response);
         }
@@ -64,7 +64,7 @@ namespace FinalProject.API.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateShopList([FromBody] UpdateShopListCommandRequest request)
         {
-            BaseResponse<ShopListCommandDto> response = await _mediator.Send(request);
+            BaseResponse<ShopListUpdateDto> response = await _mediator.Send(request);
 
             return Ok(response);
         }
@@ -75,7 +75,7 @@ namespace FinalProject.API.Controllers
         public async Task<IActionResult> DeletedShopList([FromRoute] DeleteShopListCommandRequest request)
         {
 
-            BaseResponse<ShopListCommandDto> response = await _mediator.Send(request);
+            BaseResponse<object> response = await _mediator.Send(request);
 
             return Ok(response);
         }

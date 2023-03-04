@@ -6,7 +6,7 @@ using FinalProject.Persistance.Services.BaseServices;
 
 namespace FinalProject.Persistance.Services.CategoryServices
 {
-    public class CategoryCommandService : BaseCommandService<CategoryCommandDto, Category>, ICategoryCommandService
+    public class CategoryCommandService : BaseCommandService<CategoryCreateDto,CategoryUpdateDto, Category>, ICategoryCommandService
     {
         private readonly IBaseCommandRepository<Category> _commandRepository;
         private readonly IBaseQueryRepository<Category> _queryRepository;

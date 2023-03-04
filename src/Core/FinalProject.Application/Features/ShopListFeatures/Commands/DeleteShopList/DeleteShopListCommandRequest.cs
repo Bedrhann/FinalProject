@@ -4,7 +4,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.ShopListFeatures.Commands.DeleteShopList
 {
-    public class DeleteShopListCommandRequest : IRequest<BaseResponse<ShopListCommandDto>>
+    public class DeleteShopListCommandRequest : IRequest<BaseResponse<object>>
     {
         public Guid Id { get; set; }
     }

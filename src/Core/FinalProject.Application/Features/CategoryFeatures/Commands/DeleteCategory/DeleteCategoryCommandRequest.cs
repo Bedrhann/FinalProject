@@ -4,7 +4,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.CategoryFeatures.Commands.DeleteCategory
 {
-    public class DeleteCategoryCommandRequest : IRequest<BaseResponse<CategoryCommandDto>>
+    public class DeleteCategoryCommandRequest : IRequest<BaseResponse<object>>
     {
         public Guid Id { get; set; }
     }

@@ -6,7 +6,7 @@ using MediatR;
 namespace FinalProject.Application.Features.CategoryFeatures.Commands.DeleteCategory
 {
 
-    public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommandRequest, BaseResponse<CategoryCommandDto>>
+    public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommandRequest, BaseResponse<object>>
     {
         private readonly ICategoryCommandService _service;
 
@@ -15,7 +15,7 @@ namespace FinalProject.Application.Features.CategoryFeatures.Commands.DeleteCate
             _service = service;
         }
 
-        public async Task<BaseResponse<CategoryCommandDto>> Handle(DeleteCategoryCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<object>> Handle(DeleteCategoryCommandRequest request, CancellationToken cancellationToken)
         {
 
             return await _service.RemoveAsync(request.Id);

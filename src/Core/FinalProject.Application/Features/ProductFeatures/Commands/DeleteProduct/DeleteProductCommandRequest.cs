@@ -4,7 +4,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.ProductFeatures.Commands.DeleteProduct
 {
-    public class DeleteProductCommandRequest : IRequest<BaseResponse<ProductCommandDto>>
+    public class DeleteProductCommandRequest : IRequest<BaseResponse<object>>
     {
         public Guid Id { get; set; }
     }

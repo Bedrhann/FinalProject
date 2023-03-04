@@ -10,7 +10,7 @@ namespace FinalProject.Application.Wrappers.Base
 
         public BaseResponse()
         {
-            Response = default;
+            Response = default(T);
             Success = false;
             Message = new List<string>() { "Fault" };
         }

@@ -10,7 +10,7 @@ using Mapster;
 
 namespace FinalProject.Persistance.Services.ShopListServices
 {
-    public class ShopListCommandService : BaseCommandService<ShopListCommandDto, ShopList>, IShopListCommandService
+    public class ShopListCommandService : BaseCommandService<ShopListCreateDto, ShopListUpdateDto, ShopList>, IShopListCommandService
     {
         private readonly IBaseQueryRepository<ShopList> _queryRepository;
         private readonly IBaseCommandRepository<ShopList> _commandRepository;
@@ -25,24 +25,24 @@ namespace FinalProject.Persistance.Services.ShopListServices
 
 
         //*******************       REMOVE     **********************
-        public async Task<BaseResponse<ShopListCommandDto>> SoftRemoveAsync(Guid id)
+        public async Task<BaseResponse<object>> SoftRemoveAsync(Guid id)
         {
             ShopList deletedProduct = await _queryRepository.GetByIdAsync(id.ToString());
             deletedProduct.IsDeleted = true;
             _commandRepository.Update(deletedProduct);
             _commandRepository.SaveAsync();
 
-            return new BaseResponse<ShopListCommandDto>(true);
+            return new BaseResponse<object>(true);
         }
 
 
 
         //*******************       UPDATE     **********************
-        public async Task<BaseResponse<ShopListCommandDto>> UpdateAsync(Guid id, UpdateShopListCommandRequest updateResource)
+        public async Task<BaseResponse<ShopListCreateDto>> UpdateAsync(Guid id, ShopListUpdateDto updateResource)
         {
             ShopList updatedShopList = await _queryRepository.GetByIdAsync(id.ToString());
             bool oldStatus = updatedShopList.IsCompleted;
-            updateResource.Adapt<UpdateShopListCommandRequest, ShopList>(updatedShopList);
+            updateResource.Adapt<ShopListUpdateDto, ShopList>(updatedShopList);
             _commandRepository.Update(updatedShopList);
             await _commandRepository.SaveAsync();
             if (oldStatus == false && updatedShopList.IsCompleted == true)
@@ -50,7 +50,7 @@ namespace FinalProject.Persistance.Services.ShopListServices
                 ArchivedShopList archivedShopList = updatedShopList.Adapt<ShopList, ArchivedShopList>();
                 _rabbitMq.Publish(archivedShopList, "direct.list");
             }
-            return new BaseResponse<ShopListCommandDto>(true);
+            return new BaseResponse<ShopListCreateDto>(true);
         }
     }
 }

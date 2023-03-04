@@ -4,9 +4,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.CategoryFeatures.Commands.UpdateCategory
 {
-    public class UpdateCategoryCommandRequest : IRequest<BaseResponse<CategoryCommandDto>>
+    public class UpdateCategoryCommandRequest : CategoryUpdateDto, IRequest<BaseResponse<CategoryUpdateDto>>
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
     }
 }

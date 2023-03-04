@@ -6,7 +6,7 @@ using FinalProject.Persistance.Services.BaseServices;
 
 namespace FinalProject.Persistance.Services.ProductServices
 {
-    public class ProductCommandService : BaseCommandService<ProductCommandDto, Product>, IProductCommandService
+    public class ProductCommandService : BaseCommandService<ProductCommandDto,ProductUpdateDto, Product>, IProductCommandService
     {
         private readonly IBaseCommandRepository<Product> _repositoryCommand;
         private readonly IBaseQueryRepository<Product> _repositoryQuery;
