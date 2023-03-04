@@ -13,7 +13,7 @@ namespace FinalProject.Application.Features.ShopListFeatures.Commands.UpdateShop
         public UpdateShopListCommandHandler(IShopListCommandService service)
         {
             _service = service;
-        }//TODO burada rabbitmq vardı !!
+        }
 
         public async Task<BaseResponse<ShopListCommandDto>> Handle(UpdateShopListCommandRequest request, CancellationToken cancellationToken)
         {

@@ -5,9 +5,7 @@ namespace FinalProject.Application.DTOs.ShopList
 {
     public class ArchivedShopList : BaseMongoEntity
     {
-        
         public string Name { get; set; }
-        public string description { get; set; }
-       
+        public string Description { get; set; }
     }
 }

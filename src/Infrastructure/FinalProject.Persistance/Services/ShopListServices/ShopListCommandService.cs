@@ -46,10 +46,9 @@ namespace FinalProject.Persistance.Services.ShopListServices
             await _commandRepository.SaveAsync();
             if (oldStatus == false && updatedShopList.IsCompleted == true)
             {
-                updatedShopList.Adapt<ShopList, ShopListQueryDto>();
+                updatedShopList.Adapt<ShopList, ArchivedShopList>();
                 _rabbitMq.Publish(updatedShopList, "direct.list");
             }
-
             return new BaseResponse<ShopListCommandDto>(true);
         }
     }

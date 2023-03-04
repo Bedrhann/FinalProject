@@ -12,7 +12,11 @@ namespace ShoppingList.Consumer.Services.RabbitMq
     public class ConsumerService : IConsumerService
     {
         private readonly IMongoDbService _mongoDb;
-        public ConsumerService(IMongoDbService mongoDb) => _mongoDb = mongoDb;
+
+        public ConsumerService(IMongoDbService mongoDb)
+        {
+            _mongoDb = mongoDb;
+        }
 
         public void Consume(string queueName, bool IsAcknowledgeAuto, IModel channel)
         {
