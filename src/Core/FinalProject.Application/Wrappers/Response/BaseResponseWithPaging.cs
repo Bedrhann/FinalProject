@@ -6,13 +6,16 @@ namespace FinalProject.Application.Wrappers.Base
 {
     public class BaseResponseWithPaging<T>
     {
+        [System.Text.Json.Serialization.JsonPropertyName("baseResponse")]
         public BaseResponse<T> BaseResponse { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("pagingInfo")]
         public BasePagingResponse PagingInfo { get; set; }
 
-        public BaseResponseWithPaging(BaseResponse<T> baseResponse, BasePagingResponse pagingInfo)
+        public BaseResponseWithPaging(BaseResponse<T> response, BasePagingResponse paging)
         {
-            BaseResponse = baseResponse;
-            PagingInfo = pagingInfo;
+            BaseResponse = response;
+            PagingInfo = paging;
         }
     }
 }

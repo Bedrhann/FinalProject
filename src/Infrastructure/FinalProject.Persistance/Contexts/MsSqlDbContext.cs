@@ -23,10 +23,10 @@ namespace FinalProject.Persistence.Contexts
             foreach (var data in Datas)
             {
                 if (data.State == EntityState.Added)
-                    data.Entity.CreationDate = DateTime.UtcNow;
+                    data.Entity.CreationDate = DateTime.Now;
 
                 if (data.State == EntityState.Modified)
-                    data.Entity.UpdateDate = DateTime.UtcNow;
+                    data.Entity.UpdateDate = DateTime.Now;
             }
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }

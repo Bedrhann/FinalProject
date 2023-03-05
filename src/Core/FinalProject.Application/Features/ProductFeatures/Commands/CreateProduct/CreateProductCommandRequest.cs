@@ -6,7 +6,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.ProductFeatures.Commands.CreateProduct
 {
-    public class CreateProductCommandRequest : IRequest<BaseResponse<ProductCommandDto>>
+    public class CreateProductCommandRequest : IRequest<BaseResponse<ProductCreateDto>>
     {
         public string Name { get; set; }
         public float Quantity { get; set; }

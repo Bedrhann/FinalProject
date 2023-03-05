@@ -1,5 +1,4 @@
 ﻿using FinalProject.Application.DTOs.ShopList;
-using FinalProject.Application.Features.ShopListFeatures.Commands.UpdateShopList;
 using FinalProject.Application.Interfaces.ExternalServices.RabbitMq;
 using FinalProject.Application.Interfaces.Repositories.Common;
 using FinalProject.Application.Interfaces.Services.ShopListService;
@@ -38,7 +37,7 @@ namespace FinalProject.Persistance.Services.ShopListServices
 
 
         //*******************       UPDATE     **********************
-        public async Task<BaseResponse<ShopListCreateDto>> UpdateAsync(Guid id, ShopListUpdateDto updateResource)
+        override public async Task<BaseResponse<ShopListUpdateDto>> UpdateAsync(Guid id, ShopListUpdateDto updateResource)
         {
             ShopList updatedShopList = await _queryRepository.GetByIdAsync(id.ToString());
             bool oldStatus = updatedShopList.IsCompleted;
@@ -50,7 +49,7 @@ namespace FinalProject.Persistance.Services.ShopListServices
                 ArchivedShopList archivedShopList = updatedShopList.Adapt<ShopList, ArchivedShopList>();
                 _rabbitMq.Publish(archivedShopList, "direct.list");
             }
-            return new BaseResponse<ShopListCreateDto>(true);
+            return new BaseResponse<ShopListUpdateDto>(true);
         }
     }
 }

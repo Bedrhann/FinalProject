@@ -50,7 +50,7 @@ namespace FinalProject.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody] CreateProductCommandRequest request)
         {
-            BaseResponse<ProductCommandDto> response = await _mediator.Send(request);
+            BaseResponse<ProductCreateDto> response = await _mediator.Send(request);
 
             return Ok(response);
         }

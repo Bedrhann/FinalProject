@@ -3,7 +3,7 @@ using FinalProject.Domain.Entities.Enums;
 
 namespace FinalProject.Application.DTOs.Product
 {
-    public class ProductCommandDto : BaseEntity
+    public class ProductCreateDto : BaseEntity
     {
         public string Name { get; set; }
         public float Quantity { get; set; }

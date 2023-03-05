@@ -4,9 +4,14 @@ namespace FinalProject.Application.Wrappers.Base
 {
     public class BaseResponse<T>
     {
-        public bool Success { get; private set; }
-        public List<string> Message { get; private set; }
-        public T Response { get; private set; }
+        [System.Text.Json.Serialization.JsonPropertyName("success")]
+        public bool Success { get;  set; }
+        
+        [System.Text.Json.Serialization.JsonPropertyName("message")]
+        public List<string> Message { get;  set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("response")]
+        public T Response { get;  set; }
 
         public BaseResponse()
         {

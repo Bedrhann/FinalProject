@@ -1,0 +1,7 @@
+{
+  "FinalProject.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\DotNetWork\\a.ParamProjects\\FinalProject\\src\\Presentation\\FinalProject.API",
+  "FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\DotNetWork\\a.ParamProjects\\FinalProject\\src\\Core\\FinalProject.Application",
+  "FinalProject.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\DotNetWork\\a.ParamProjects\\FinalProject\\src\\Core\\FinalProject.Domain",
+  "FinalProject.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\DotNetWork\\a.ParamProjects\\FinalProject\\src\\Infrastructure\\FinalProject.Infrastructure",
+  "FinalProject.Persistance, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\DotNetWork\\a.ParamProjects\\FinalProject\\src\\Infrastructure\\FinalProject.Persistance"
+}

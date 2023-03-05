@@ -31,10 +31,16 @@ namespace FinalProject.Persistence
     {
         public static void AddPersistenceServices(this IServiceCollection services, IConfiguration configuration, string enviroment = "Development")
         {
-
-            services.AddDbContext<MsSqlDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("MsSqlConnection")), ServiceLifetime.Singleton);
-
+            if (enviroment == "Test")
+            {
+                services.AddDbContext<MsSqlDbContext>(options =>
+               options.UseInMemoryDatabase("TestDatabaseMs"), ServiceLifetime.Singleton);
+            }
+            else
+            {
+                services.AddDbContext<MsSqlDbContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("MsSqlConnection")), ServiceLifetime.Singleton);
+            }
 
             services.AddIdentity<AppUser, AppRole>(options =>
             {

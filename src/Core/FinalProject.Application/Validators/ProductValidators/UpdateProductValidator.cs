@@ -18,7 +18,7 @@ namespace FinalProject.Application.Validators.ProductValidators
             RuleFor(c => c.Quantity)
             .NotNull().NotEmpty()
             .WithMessage("Please specify a Quantity!")
-            .LessThan(0).WithMessage("Quantity cannot be less than zero");
+            .Must(x => x >= 0).WithMessage("Quantity cannot be less than zero");
         }
     }
 }

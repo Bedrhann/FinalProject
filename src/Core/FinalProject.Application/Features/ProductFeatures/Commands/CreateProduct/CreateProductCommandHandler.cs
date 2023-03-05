@@ -6,7 +6,7 @@ using MediatR;
 
 namespace FinalProject.Application.Features.ProductFeatures.Commands.CreateProduct
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, BaseResponse<ProductCommandDto>>
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, BaseResponse<ProductCreateDto>>
     {
         private readonly IProductCommandService _service;
 
@@ -15,10 +15,10 @@ namespace FinalProject.Application.Features.ProductFeatures.Commands.CreateProdu
             _service = service;
         }
 
-        public async Task<BaseResponse<ProductCommandDto>> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<ProductCreateDto>> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
 
-            return await _service.InsertAsync(request.Adapt<ProductCommandDto>());
+            return await _service.InsertAsync(request.Adapt<ProductCreateDto>());
         }
     }
 }

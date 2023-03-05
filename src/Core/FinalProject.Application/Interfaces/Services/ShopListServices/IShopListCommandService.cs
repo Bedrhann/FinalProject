@@ -7,6 +7,5 @@ namespace FinalProject.Application.Interfaces.Services.ShopListService
     public interface IShopListCommandService : IBaseCommandService<ShopListCreateDto, ShopListUpdateDto, ShopList>
     {
         Task<BaseResponse<object>> SoftRemoveAsync(Guid id);
-        Task<BaseResponse<ShopListUpdateDto>> UpdateAsync(Guid id, ShopListUpdateDto updateResource);
     }
 }
