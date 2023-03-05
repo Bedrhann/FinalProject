@@ -4,6 +4,7 @@ using FinalProject.Infrastructure;
 using FinalProject.Persistence;
 using FluentValidation.AspNetCore;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,13 @@ builder.Services.AddControllers()
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddResponseCaching();
+
+builder.Logging.AddSerilog();
+
+builder.Host.UseSerilog((hostContext, services, configuration) =>
+{
+    configuration.ReadFrom.Configuration(hostContext.Configuration);
+});
 
 builder.Services.AddSwaggerGen(options =>//Swagger arayüzünde Authentication kullanabilmek için arayüz ekliyoruz.
 {

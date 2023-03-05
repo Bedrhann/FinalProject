@@ -397,3 +397,12 @@ E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin
 E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
 E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
 E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\Serilog.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\Serilog.AspNetCore.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\src\Presentation\FinalProject.API\bin\Debug\net6.0\Serilog.Sinks.File.dll
