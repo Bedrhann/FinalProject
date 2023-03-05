@@ -22,7 +22,7 @@ namespace FinalProject.Test.IntegrationTests
             //GET****************
             GetAllCategoryByShopListQueryRequest RequestGet = new GetAllCategoryByShopListQueryRequest()
             {
-                ShopListId = Guid.Parse("078cc72b-48df-402d-99cb-5339467f923c")
+                ShopListId = Guid.Parse("12345678-48df-402d-99cb-5339467f923c")
             };
             HttpResponseMessage responseGet = await _httpClient.GetAsync($"/api/categories?ShopListId={RequestGet.ShopListId}");
             responseGet.EnsureSuccessStatusCode();

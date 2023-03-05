@@ -15,6 +15,7 @@ namespace FinalProject.Persistance.Services.CategoryServices
 {
     public class CategoryQueryService : BaseQueryService<CategoryQueryDto, Category>, ICategoryQueryService
     {
+        private const string _testGuid = "12345678-48df-402d-99cb-5339467f923c";
         private readonly IBaseQueryRepository<Category> _queryRepository;
         private readonly IDistributedCache _cache;
         private string _categoryCacheName;
@@ -30,11 +31,11 @@ namespace FinalProject.Persistance.Services.CategoryServices
 
             _categoryCacheName = request.ShopListId.ToString();
             var categoryCache = _cache.GetAsync(_categoryCacheName).Result;
-            if(categoryCache != null)
+            if (categoryCache != null && request.ShopListId.ToString() != _testGuid)
             {
                 var jsonCategory = Encoding.UTF8.GetString(categoryCache);
                 List<CategoryQueryDto> categoryDtoList = JsonSerializer.Deserialize<List<CategoryQueryDto>>(jsonCategory);
-                return new  BaseResponse<List<CategoryQueryDto>>(categoryDtoList);
+                return new BaseResponse<List<CategoryQueryDto>>(categoryDtoList);
             }
             else
             {
@@ -42,8 +43,8 @@ namespace FinalProject.Persistance.Services.CategoryServices
                 List<CategoryQueryDto> categoryDtoList = categories.Adapt<List<CategoryQueryDto>>();
 
                 var cacheEntryOptions = new DistributedCacheEntryOptions()
-                    .SetAbsoluteExpiration(TimeSpan.FromSeconds(85))
-                    .SetSlidingExpiration(TimeSpan.FromSeconds(25));
+                    .SetAbsoluteExpiration(TimeSpan.FromSeconds(40))
+                    .SetSlidingExpiration(TimeSpan.FromSeconds(8));
 
                 string jsonCategory = JsonSerializer.Serialize(categoryDtoList);
                 await _cache.SetAsync(_categoryCacheName, Encoding.UTF8.GetBytes(jsonCategory), cacheEntryOptions);
