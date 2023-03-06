@@ -27,7 +27,7 @@
 
 ## Mimari
 * **Onion Architecture** => Proje Clean Architecutre prensiplerine uygun olacak şekilde bir mimari ile tasarlanmıştır.
-* 
+
 ![image](https://user-images.githubusercontent.com/99317183/223220886-023176c1-4c13-4a49-944f-fb5d015bf826.png)
 
 
