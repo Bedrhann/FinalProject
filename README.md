@@ -49,3 +49,16 @@
 * **MsSql** => projede kullanılan ana veritabanıdır, ilişkisel şekilde kuralan yapının şeması;
 
 ![image](https://user-images.githubusercontent.com/99317183/223213316-f90d16c6-cef1-4f3d-8a9f-302aff525fee.png)
+
+
+## Log
+* Projenin logları SeriLog kütüphanesi kullanılarak bir text dosyasına günlük olarak yazılmaktadır.
+
+![image](https://user-images.githubusercontent.com/99317183/223226141-087f6760-4304-4286-b26c-05482f1df75c.png)
+
+
+## Test
+* 2 adet unit test bulunmaktadır 
+** 1- Categorinin eklenme endpoint'i 
+** 2-  Ürünlerin  eklenme endpoint'i 
+
