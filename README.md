@@ -24,6 +24,7 @@
 :heavy_check_mark: **Redis / Distributed Cache**<br>
 :heavy_check_mark: **Response Cache**<br>
 :heavy_check_mark: **Docker**<br>
+:heavy_check_mark: **Paging**<br>
 :heavy_check_mark: **Global Exception Handler**<br>
 :heavy_check_mark: **RabbitMQ ile Message Queue kullanımı**<br>
 :heavy_check_mark: **Unit ve Entegrasyon Testleri**<br>
@@ -71,7 +72,36 @@
 ![image](https://user-images.githubusercontent.com/99317183/223228454-cd616d3f-bbb8-481a-a082-2ea3744a31fa.png)
 
 
+## Örnek Senaryo 
 
+* **Kullanıcı kayıt olur**
+
+![1giris](https://user-images.githubusercontent.com/99317183/223238259-09799156-ceb9-4779-bfbf-af0f69ee1ff1.png)
+
+
+* **Kullanıcı giriş yapar**
+
+![2giris](https://user-images.githubusercontent.com/99317183/223238473-ea7ad9fd-5bd4-44a8-a179-20ea7b015817.png)
+
+
+* **Kullanıcı liste oluşturur**
+
+![3listekayıt](https://user-images.githubusercontent.com/99317183/223238919-ef213a0c-be7a-4985-873f-5f3d081ea66b.png)
+
+
+* **Kullanıcı listeye kategori ekler**
+
+![4kategorikayıt](https://user-images.githubusercontent.com/99317183/223239148-e7685c18-b4ed-43ab-ba26-fc5e6379a8d2.png)
+
+
+* **Kullanıcı kategorinin altına ürün ekler**
+
+![5ürünekle](https://user-images.githubusercontent.com/99317183/223239367-fa1a87d7-fe4e-4f7e-af45-a3f5a0499888.png)
+
+
+* **Kullanıcı listelerini görüntüler**
+
+![6listelisteme](https://user-images.githubusercontent.com/99317183/223239569-425d5eb5-e651-4ce9-a44a-c789bf798c71.png)
 
 
 ## Kurulum
