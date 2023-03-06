@@ -1,3 +1,4 @@
+using FinalProject.API.Extensions;
 using FinalProject.Application;
 using FinalProject.Application.Validators.CategoryValidators;
 using FinalProject.Infrastructure;
@@ -50,6 +51,8 @@ app.UseResponseCaching();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseGlobalExceptionMiddleware();
 
 app.MapControllers();
 app.Run();
