@@ -1,11 +1,16 @@
 # PARAM Practicum FinalProject / SBasket API
 
-### Projede Kullanılanlar; 
+## Projede Kullanılanlar 
+* **.NET 6** 
+
+
+## Projede Kullanılanlar
 * **.NET 6** 
 * **Onion Architecture**
 * **Repository Pattern**
 * **Entity Framework**
 * **CQRS yapısı ve Mediatr kütüphanesi**
+* **Dependency Injection**
 * **Jwt Token ile giriş yapma ve rolleme işlemleri**
 * **Mapster**
 * **MongoDb**
