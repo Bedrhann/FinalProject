@@ -50,7 +50,7 @@ namespace FinalProject.Persistance.Services.UserServices
                 Token token = _tokenGenerater.CreateAccessToken(5, claims);
                 return new BaseResponse<Token>(token);
             }
-            throw new Exception();//TODO exeption kontolu dikkay!!!!
+            throw new Exception();
 
         }
 
