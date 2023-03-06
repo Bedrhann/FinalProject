@@ -4,6 +4,7 @@
 * **.NET 6** 
 * **Onion Architecture**
 * **Repository Pattern**
+* **Entity Framework**
 * **CQRS yapısı ve Mediatr kütüphanesi**
 * **Jwt Token ile giriş yapma ve rolleme işlemleri**
 * **Mapster**
@@ -12,7 +13,6 @@
 * **Redis / Distributed Cache**
 * **Response Cache**
 * **Global Exception Handler**
-* **Mapster**
 * **RabbitMQ ile Message Queue kullanımı**
 * **Unit ve Entegrasyon Testleri**
 
