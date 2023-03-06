@@ -9,24 +9,24 @@
 * **Normal işlemler için MsSql, Rabbitmq mesaj kuyruğu hizmeti tarafından gönderilen listeleri arşivlemek için MongoDB kullanılır.**
 
 ## Projede Kullanılanlar
-:heavy_check_mark: **.NET 6** 
-:heavy_check_mark: **Onion Architecture**
-:heavy_check_mark: **Repository Pattern**
-:heavy_check_mark: **Entity Framework**
-:heavy_check_mark: **CQRS yapısı ve Mediatr kütüphanesi**
-:heavy_check_mark: **Dependency Injection**
-:heavy_check_mark: **Jwt Token ile giriş yapma ve rolleme işlemleri**
-:heavy_check_mark: **Mapster**
-:heavy_check_mark: **MongoDb**
-:heavy_check_mark: **MsSql**
-:heavy_check_mark: **SeriLog**
-:heavy_check_mark: **Fluent Validation**
-:heavy_check_mark: **Redis / Distributed Cache**
-:heavy_check_mark: **Response Cache**
-:heavy_check_mark: **Docker**
-:heavy_check_mark: **Global Exception Handler**
-:heavy_check_mark: **RabbitMQ ile Message Queue kullanımı**
-:heavy_check_mark: **Unit ve Entegrasyon Testleri**
+:heavy_check_mark: **.NET 6**<br>
+:heavy_check_mark: **Onion Architecture**<br>
+:heavy_check_mark: **Repository Pattern**<br>
+:heavy_check_mark: **Entity Framework**<br>
+:heavy_check_mark: **CQRS yapısı ve Mediatr kütüphanesi**<br>
+:heavy_check_mark: **Dependency Injection**<br>
+:heavy_check_mark: **Jwt Token ile giriş yapma ve rolleme işlemleri**<br>
+:heavy_check_mark: **Mapster**<br>
+:heavy_check_mark: **MongoDb**<br>
+:heavy_check_mark: **MsSql**<br>
+:heavy_check_mark: **SeriLog**<br>
+:heavy_check_mark: **Fluent Validation**<br>
+:heavy_check_mark: **Redis / Distributed Cache**<br>
+:heavy_check_mark: **Response Cache**<br>
+:heavy_check_mark: **Docker**<br>
+:heavy_check_mark: **Global Exception Handler**<br>
+:heavy_check_mark: **RabbitMQ ile Message Queue kullanımı**<br>
+:heavy_check_mark: **Unit ve Entegrasyon Testleri**<br>
 
 ## Mimari
 * **Onion Architecture** => Proje Clean Architecture prensiplerine uygun olacak şekilde bir mimari ile tasarlanmıştır.
