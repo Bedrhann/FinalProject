@@ -58,7 +58,7 @@
 
 
 ## Test
-* 2 adet unit test bulunmaktadır 
-** 1- Categorinin eklenme endpoint'i 
-** 2-  Ürünlerin  eklenme endpoint'i 
+* 2 adet unit test bulunmaktadır, Categori ve Ürünlerin eklenme endpoint'i 
+* 2 adet Entegrasyon test bulunmaktadır, Kategori ve Ürünlerin işlemlerinin bulunduğu controller'ların örnek senaryo ile ekleme-listeleme-güncelleme-silme işlemleri test edilmektedir.
+![image](https://user-images.githubusercontent.com/99317183/223227330-9e6fc704-95bb-42a5-bba8-359163f7e730.png)
 
