@@ -36,25 +36,5 @@ namespace FinalProject.API.Controllers
             Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(response.PagingInfo));
             return Ok(response.BaseResponse);
         }
-
-        [HttpGet("/add")]
-        public async Task<IActionResult> GetDeneme([FromQuery] string request)
-        {
-            ArchivedShopList archivedShop = new()
-            {
-                Description = "asdas",
-                Name = "11111"
-            };
-            _repo.AddAsync(archivedShop);
-
-            return Ok();
-        }
-
-        [HttpGet("/gett")]
-        public async Task<IActionResult> GetDeneme2()
-        {
-            //var name = await _distributedCache.GetStringAsync("name");
-            return Ok();
-        }
     }
 }
