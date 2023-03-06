@@ -11,7 +11,7 @@ using System.Text.Json;
 
 namespace FinalProject.API.Controllers
 {
-    //[Authorize(Roles = "User,Admin")]
+    [Authorize(Roles = "User,Admin")]
     [Route("api/categories")]
     [ApiController]
     public class CategoriesController : ControllerBase
