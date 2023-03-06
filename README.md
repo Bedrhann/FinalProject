@@ -41,7 +41,7 @@
 * **Presentation** => Projenin yönetildiği, controller sınıflarının bulunduğu katmandır.
 * **Test** => Projenin Unit ve Entegrasyon testlerinin bulunduğu katman.
 * **Consumer** => RabbitMq'da gerekli kuyruğu dinleyerek gelen verileri MongoDb'ye işleyen katman.
-* 
+
 ![image](https://user-images.githubusercontent.com/99317183/223219920-81ebe89b-aeb2-461f-83e2-8038edf3d83e.png)
 
 ## Veri Tabanı
