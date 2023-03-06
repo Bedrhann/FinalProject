@@ -9,22 +9,24 @@
 * **Normal işlemler için MsSql, Rabbitmq mesaj kuyruğu hizmeti tarafından gönderilen listeleri arşivlemek için MongoDB kullanılır.**
 
 ## Projede Kullanılanlar
-* **.NET 6** 
-* **Onion Architecture**
-* **Repository Pattern**
-* **Entity Framework**
-* **CQRS yapısı ve Mediatr kütüphanesi**
-* **Dependency Injection**
-* **Jwt Token ile giriş yapma ve rolleme işlemleri**
-* **Mapster**
-* **MongoDb**
-* **SeriLog**
-* **Redis / Distributed Cache**
-* **Response Cache**
-* **Docker**
-* **Global Exception Handler**
-* **RabbitMQ ile Message Queue kullanımı**
-* **Unit ve Entegrasyon Testleri**
+:heavy_check_mark: **.NET 6**<br>
+:heavy_check_mark: **Onion Architecture**<br>
+:heavy_check_mark: **Repository Pattern**<br>
+:heavy_check_mark: **Entity Framework**<br>
+:heavy_check_mark: **CQRS yapısı ve Mediatr kütüphanesi**<br>
+:heavy_check_mark: **Dependency Injection**<br>
+:heavy_check_mark: **Jwt Token ile giriş yapma ve rolleme işlemleri**<br>
+:heavy_check_mark: **Mapster**<br>
+:heavy_check_mark: **MongoDb**<br>
+:heavy_check_mark: **MsSql**<br>
+:heavy_check_mark: **SeriLog**<br>
+:heavy_check_mark: **Fluent Validation**<br>
+:heavy_check_mark: **Redis / Distributed Cache**<br>
+:heavy_check_mark: **Response Cache**<br>
+:heavy_check_mark: **Docker**<br>
+:heavy_check_mark: **Global Exception Handler**<br>
+:heavy_check_mark: **RabbitMQ ile Message Queue kullanımı**<br>
+:heavy_check_mark: **Unit ve Entegrasyon Testleri**<br>
 
 ## Mimari
 * **Onion Architecture** => Proje Clean Architecture prensiplerine uygun olacak şekilde bir mimari ile tasarlanmıştır.
@@ -67,5 +69,37 @@
 ## Endpoint'ler
 
 ![image](https://user-images.githubusercontent.com/99317183/223228454-cd616d3f-bbb8-481a-a082-2ea3744a31fa.png)
+
+
+
+
+
+## Kurulum
+
+- Projeyi indirmek için :
+```
+    git clone https://github.com/Bedrhann/FinalProject.git
+```
+
+- Veritabanı oluşturmak için package manager konsolunda default project kısmında `Persistence` seçili olmalıdır. Ardından :
+```c
+    update-database
+```
+
+- Appsettings.json içindeki bağlantı string'leri bilgisayardaki Mssql, Redis, MongoDb bağlantılarına göre ayarlanması gerekmektedir.
+```c
+  {
+  "ConnectionStrings": {
+    "MsSqlConnection": "Server=DESKTOP-415NNNG;Database=DB_SBasket;Trusted_Connection=True;",
+    "Redis": "localhost:49153,password=redispw"
+  },
+  "MongoDb": {
+    "ConnectionString": "mongodb://docker:mongopw@localhost:49153",
+    "DatabaseName": "SBasketDb"
+  },
+```
+- Docker kullanılıyor ise aşağıdaki gibi conteiner'ların ayakta olması gerekmektedir.
+
+![image](https://user-images.githubusercontent.com/99317183/223229644-a8bf3a51-f767-4d71-bb0d-b32b2b5c1cd9.png)
 
 
