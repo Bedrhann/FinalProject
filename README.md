@@ -27,17 +27,19 @@
 
 ## Mimari
 * **Onion Architecture** => Proje Clean Architecutre prensiplerine uygun olacak şekilde bir mimari ile tasarlanmıştır.
+* 
 ![image](https://user-images.githubusercontent.com/99317183/223220886-023176c1-4c13-4a49-944f-fb5d015bf826.png)
 
 
-## Dosya Yapısı
-* **Consumer** => RabbitMq'da gerekli kuyruğu dinleyerek gelen verileri MongoDb'ye işleyen yapı.
-* **Core**
-* **Mapster**
-* **Mapster**
-* **Mapster**
-* **Mapster**
+## Dosya Yapısı Ve Katmanlar
 
+* **Domain** => Uygulamanın temel varlıklarını(Entities) içeren dışarı herhangi bir bağımlılığı olmayan katman.
+* **Application** => Uygulama Arayüzlerini(Interfaces), Servisleri(CQRS) ve Dto nesnelerini içeren, projenin soyutlama ve yönlendirme katmanıdır.
+* **Infrastructure** => Projenin sabit varlıkları ile direkt ilişkisi olmayan dış servislerin kullanımının yapıldığı katmandır.
+* **Persistance** => Application katmanında yapılan soyutlamaların somut varlıklarının bulunduğu, sistemin iş yükünü barındıran katmandır.
+* **Presentation** => Projenin yönetildiği, controller sınıflarının bulunduğu katmandır.
+* **Test** => Projenin Unit ve Entegrasyon testlerinin bulunduğu katman.
+* **Consumer** => RabbitMq'da gerekli kuyruğu dinleyerek gelen verileri MongoDb'ye işleyen katman.
 ![image](https://user-images.githubusercontent.com/99317183/223219920-81ebe89b-aeb2-461f-83e2-8038edf3d83e.png)
 
 
