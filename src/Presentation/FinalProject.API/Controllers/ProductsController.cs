@@ -6,6 +6,7 @@ using FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByC
 using FinalProject.Application.Features.ProductFeatures.Queries.GetProductById;
 using FinalProject.Application.Wrappers.Base;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 

@@ -6,6 +6,7 @@ using FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCategoryB
 using FinalProject.Application.Features.CategoryFeatures.Queries.GetCategoryById;
 using FinalProject.Application.Wrappers.Base;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
