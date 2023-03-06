@@ -1,8 +1,12 @@
 # PARAM Practicum FinalProject / SBasket API
 
-## Projede Kullanılanlar 
-* **.NET 6** 
-
+## Proje İçeriği
+* **.Net 6 ile geliştirilen bir Restful API** 
+* **Kullanıcılar tarafından kontrol edilebilen bir Alışveriş Listesi oluşturulur.**
+* **Kullanıcılar kayıt ve giriş yapabilirler. Ardından, listeleri ve liste öğelerini ekleyebilir, güncelleyebilir, silebilir veya arayabilirler.**
+* **Listelerin altlarında kategoriler oluşturulur ve öğeler bu kategorilerin altlarına eklenir.**
+* **Yönetici tüm listeleri, tamamlanan listelerin arşivini ve kullanıcı listesini görebilir.**
+* **Normal işlemler için MsSql, Rabbitmq mesaj kuyruğu hizmeti tarafından gönderilen listeleri arşivlemek için MongoDB kullanılır.**
 
 ## Projede Kullanılanlar
 * **.NET 6** 
