@@ -9,19 +9,24 @@ using Serilog;
 using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddPersistenceServices(builder.Configuration, builder.Environment.EnvironmentName);
+builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
+
+// Add Fluent Validation
 builder.Services.AddControllers()
     .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<CreateCategoryValidator>());
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddResponseCaching();
 
+// Add Logging
 builder.Logging.AddSerilog();
-
 builder.Host.UseSerilog((hostContext, services, configuration) =>
 {
     configuration.ReadFrom.Configuration(hostContext.Configuration);
 });
+
 
 builder.Services.AddSwaggerGen(options =>//Swagger arayüzünde Authentication kullanabilmek için 
 {
@@ -35,11 +40,8 @@ builder.Services.AddSwaggerGen(options =>//Swagger arayüzünde Authentication k
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 
-builder.Services.AddPersistenceServices(builder.Configuration, builder.Environment.EnvironmentName);
-builder.Services.AddApplicationServices();
-builder.Services.AddInfrastructureServices(builder.Configuration);
-var app = builder.Build();
 
+var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

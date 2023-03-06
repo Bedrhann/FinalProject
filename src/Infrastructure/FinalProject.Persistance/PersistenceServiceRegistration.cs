@@ -52,7 +52,7 @@ namespace FinalProject.Persistence
             }).AddEntityFrameworkStores<MsSqlDbContext>();
 
             services.AddStackExchangeRedisCache(options => options.Configuration = configuration.GetConnectionString("Redis"));
-
+            services.AddResponseCaching();
 
             services.AddScoped<IMongoDbContext, MongoDbContext>();
             services.Configure<MongoDbSettings>(
