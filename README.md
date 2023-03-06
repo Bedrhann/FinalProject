@@ -64,5 +64,8 @@
 ![image](https://user-images.githubusercontent.com/99317183/223227611-5a4b2375-08b9-4b15-bc89-315ec533a726.png)
 
 
+## Endpoint'ler
+
+![image](https://user-images.githubusercontent.com/99317183/223228454-cd616d3f-bbb8-481a-a082-2ea3744a31fa.png)
 
 
