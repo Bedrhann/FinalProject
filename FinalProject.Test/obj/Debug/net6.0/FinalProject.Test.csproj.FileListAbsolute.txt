@@ -481,3 +481,12 @@ E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\obj\Debug\net6.0\re
 E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\obj\Debug\net6.0\FinalProject.Test.pdb
 E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\obj\Debug\net6.0\FinalProject.Test.genruntimeconfig.cache
 E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\obj\Debug\net6.0\ref\FinalProject.Test.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\bin\Debug\net6.0\Serilog.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\bin\Debug\net6.0\Serilog.AspNetCore.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+E:\DotNetWork\a.ParamProjects\FinalProject\FinalProject.Test\bin\Debug\net6.0\Serilog.Sinks.File.dll

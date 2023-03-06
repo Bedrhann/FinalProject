@@ -1,0 +1,316 @@
+[2023-03-06 10:30:39.114 +03:00  INF]  User profile is available. Using 'C:\Users\Bedirhan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-03-06 10:30:39.114 +03:00  INF]  User profile is available. Using 'C:\Users\Bedirhan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-03-06 10:30:39.291 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - -
+[2023-03-06 10:30:39.291 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - -
+[2023-03-06 10:30:39.325 +03:00  WRN]  Failed to determine the https port for redirect.
+[2023-03-06 10:30:39.325 +03:00  WRN]  Failed to determine the https port for redirect.
+[2023-03-06 10:30:39.328 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:30:39.328 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:30:39.352 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 10:30:39.352 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:30:39.371 +03:00  INF]  Route matched with {action = "GetAllProductByShopList", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllProductByShopList(FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory.GetAllProductByCategoryQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:30:39.371 +03:00  INF]  Route matched with {action = "GetAllCategoryByShopList", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategoryByShopList(FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCategoryByShopList.GetAllCategoryByShopListQueryRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 10:30:40.061 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'MsSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory:6.0.6' with options: StoreName=TestDatabaseMs 
+[2023-03-06 10:30:40.360 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:30:40.390 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API) in 1013.4035ms
+[2023-03-06 10:30:40.391 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:30:40.391 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:30:40.394 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 1104.7270ms
+[2023-03-06 10:30:40.412 +03:00  INF]  Request starting HTTP/1.1 POST http://localhost/api/products application/json;+charset=utf-8 99
+[2023-03-06 10:30:40.414 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.CreateProduct (FinalProject.API)'
+[2023-03-06 10:30:40.417 +03:00  INF]  Route matched with {action = "CreateProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateProduct(FinalProject.Application.Features.ProductFeatures.Commands.CreateProduct.CreateProductCommandRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:30:40.624 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 10:30:40.629 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Product.ProductCreateDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 10:30:40.639 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.CreateProduct (FinalProject.API) in 221.7997ms
+[2023-03-06 10:30:40.639 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.CreateProduct (FinalProject.API)'
+[2023-03-06 10:30:40.639 +03:00  INF]  Request finished HTTP/1.1 POST http://localhost/api/products application/json;+charset=utf-8 99 - 200 - application/json;+charset=utf-8 227.6773ms
+[2023-03-06 10:30:40.640 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - -
+[2023-03-06 10:30:40.640 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:30:40.642 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:30:40.642 +03:00  INF]  Route matched with {action = "GetAllProductByShopList", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllProductByShopList(FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory.GetAllProductByCategoryQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:30:40.650 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:30:40.652 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API) in 9.7151ms
+[2023-03-06 10:30:40.652 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:30:40.652 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:30:40.652 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 11.7035ms
+[2023-03-06 10:30:40.656 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products/577bd8f8-8e5f-4b1f-91fa-009e40121a29 - -
+[2023-03-06 10:30:40.656 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:30:40.656 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetProductById (FinalProject.API)'
+[2023-03-06 10:30:40.658 +03:00  INF]  Route matched with {action = "GetProductById", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductById(FinalProject.Application.Features.ProductFeatures.Queries.GetProductById.GetProductByIdQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:30:40.668 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 10:30:40.669 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetProductById (FinalProject.API) in 10.3243ms
+[2023-03-06 10:30:40.669 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetProductById (FinalProject.API)'
+[2023-03-06 10:30:40.669 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:30:40.669 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products/577bd8f8-8e5f-4b1f-91fa-009e40121a29 - - - 200 - application/json;+charset=utf-8 13.5586ms
+[2023-03-06 10:30:40.673 +03:00  INF]  Request starting HTTP/1.1 PUT http://localhost/api/products application/json;+charset=utf-8 216
+[2023-03-06 10:30:40.673 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.UpdateProduct (FinalProject.API)'
+[2023-03-06 10:30:40.675 +03:00  INF]  Route matched with {action = "UpdateProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduct(FinalProject.Application.Features.ProductFeatures.Commands.UpdateProduct.UpdateProductCommandRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:30:40.693 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 10:30:40.694 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Product.ProductUpdateDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 10:30:40.694 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.UpdateProduct (FinalProject.API) in 19.1981ms
+[2023-03-06 10:30:40.694 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.UpdateProduct (FinalProject.API)'
+[2023-03-06 10:30:40.695 +03:00  INF]  Request finished HTTP/1.1 PUT http://localhost/api/products application/json;+charset=utf-8 216 - 200 - application/json;+charset=utf-8 21.9658ms
+[2023-03-06 10:30:40.696 +03:00  INF]  Request starting HTTP/1.1 DELETE http://localhost/api/products/577bd8f8-8e5f-4b1f-91fa-009e40121a29 - -
+[2023-03-06 10:30:40.696 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.DeleteProduct (FinalProject.API)'
+[2023-03-06 10:30:40.698 +03:00  INF]  Route matched with {action = "DeleteProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteProduct(FinalProject.Application.Features.ProductFeatures.Commands.DeleteProduct.DeleteProductCommandRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:30:40.707 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 10:30:40.712 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:30:40.713 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.DeleteProduct (FinalProject.API) in 14.49ms
+[2023-03-06 10:30:40.713 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.DeleteProduct (FinalProject.API)'
+[2023-03-06 10:30:40.713 +03:00  INF]  Request finished HTTP/1.1 DELETE http://localhost/api/products/577bd8f8-8e5f-4b1f-91fa-009e40121a29 - - - 200 - application/json;+charset=utf-8 17.4933ms
+[2023-03-06 10:30:40.714 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - -
+[2023-03-06 10:30:40.714 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:30:40.714 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:30:40.714 +03:00  INF]  Route matched with {action = "GetAllProductByShopList", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllProductByShopList(FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory.GetAllProductByCategoryQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:30:40.716 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:30:40.716 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API) in 1.9949ms
+[2023-03-06 10:30:40.716 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:30:40.716 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:30:40.716 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 2.4598ms
+[2023-03-06 10:53:43.455 +03:00  INF]  User profile is available. Using 'C:\Users\Bedirhan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-03-06 10:53:43.455 +03:00  INF]  User profile is available. Using 'C:\Users\Bedirhan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-03-06 10:53:43.517 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - -
+[2023-03-06 10:53:43.517 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - -
+[2023-03-06 10:53:43.539 +03:00  WRN]  Failed to determine the https port for redirect.
+[2023-03-06 10:53:43.539 +03:00  WRN]  Failed to determine the https port for redirect.
+[2023-03-06 10:53:43.540 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:53:43.540 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:53:43.559 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 10:53:43.559 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:53:43.587 +03:00  INF]  Route matched with {action = "GetAllProductByShopList", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllProductByShopList(FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory.GetAllProductByCategoryQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:53:43.587 +03:00  INF]  Route matched with {action = "GetAllCategoryByShopList", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategoryByShopList(FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCategoryByShopList.GetAllCategoryByShopListQueryRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 10:53:44.174 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'MsSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory:6.0.6' with options: StoreName=TestDatabaseMs 
+[2023-03-06 10:53:44.174 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'MsSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory:6.0.6' with options: StoreName=TestDatabaseMs 
+[2023-03-06 10:53:44.302 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:53:44.317 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API) in 726.7595ms
+[2023-03-06 10:53:44.318 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:53:44.318 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:53:44.319 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 804.5556ms
+[2023-03-06 10:53:44.329 +03:00  INF]  Request starting HTTP/1.1 POST http://localhost/api/products application/json;+charset=utf-8 99
+[2023-03-06 10:53:44.330 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.CreateProduct (FinalProject.API)'
+[2023-03-06 10:53:44.332 +03:00  INF]  Route matched with {action = "CreateProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateProduct(FinalProject.Application.Features.ProductFeatures.Commands.CreateProduct.CreateProductCommandRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:53:44.463 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 10:53:44.466 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Product.ProductCreateDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 10:53:44.467 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.CreateProduct (FinalProject.API) in 134.7449ms
+[2023-03-06 10:53:44.467 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.CreateProduct (FinalProject.API)'
+[2023-03-06 10:53:44.467 +03:00  INF]  Request finished HTTP/1.1 POST http://localhost/api/products application/json;+charset=utf-8 99 - 200 - application/json;+charset=utf-8 138.4961ms
+[2023-03-06 10:53:44.468 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - -
+[2023-03-06 10:53:44.468 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:53:44.469 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:53:44.469 +03:00  INF]  Route matched with {action = "GetAllProductByShopList", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllProductByShopList(FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory.GetAllProductByCategoryQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:53:44.477 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:53:44.478 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Category.CategoryQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:53:44.478 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API) in 8.9284ms
+[2023-03-06 10:53:44.478 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:53:44.478 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:53:44.479 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 10.5468ms
+[2023-03-06 10:53:44.479 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API) in 891.2162ms
+[2023-03-06 10:53:44.479 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 10:53:44.480 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:53:44.480 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 965.6981ms
+[2023-03-06 10:53:44.481 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products/6e0325ef-46dc-4247-8740-0575e439d398 - -
+[2023-03-06 10:53:44.481 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:53:44.482 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetProductById (FinalProject.API)'
+[2023-03-06 10:53:44.482 +03:00  INF]  Request starting HTTP/1.1 POST http://localhost/api/categories application/json;+charset=utf-8 67
+[2023-03-06 10:53:44.484 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.CreateCategory (FinalProject.API)'
+[2023-03-06 10:53:44.484 +03:00  INF]  Route matched with {action = "GetProductById", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductById(FinalProject.Application.Features.ProductFeatures.Queries.GetProductById.GetProductByIdQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:53:44.485 +03:00  INF]  Route matched with {action = "CreateCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCategory(FinalProject.Application.Features.CategoryFeatures.Commands.CreateCategory.CreateCategoryCommandRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 10:53:44.492 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 10:53:44.492 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetProductById (FinalProject.API) in 8.364ms
+[2023-03-06 10:53:44.493 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetProductById (FinalProject.API)'
+[2023-03-06 10:53:44.493 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:53:44.493 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products/6e0325ef-46dc-4247-8740-0575e439d398 - - - 200 - application/json;+charset=utf-8 11.2439ms
+[2023-03-06 10:53:44.495 +03:00  INF]  Request starting HTTP/1.1 PUT http://localhost/api/products application/json;+charset=utf-8 216
+[2023-03-06 10:53:44.495 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.UpdateProduct (FinalProject.API)'
+[2023-03-06 10:53:44.497 +03:00  INF]  Route matched with {action = "UpdateProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduct(FinalProject.Application.Features.ProductFeatures.Commands.UpdateProduct.UpdateProductCommandRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:53:44.504 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 10:53:44.504 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Category.CategoryCreateDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 10:53:44.504 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.CreateCategory (FinalProject.API) in 18.9592ms
+[2023-03-06 10:53:44.505 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.CreateCategory (FinalProject.API)'
+[2023-03-06 10:53:44.505 +03:00  INF]  Request finished HTTP/1.1 POST http://localhost/api/categories application/json;+charset=utf-8 67 - 200 - application/json;+charset=utf-8 22.2888ms
+[2023-03-06 10:53:44.505 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - -
+[2023-03-06 10:53:44.505 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:53:44.506 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 10:53:44.507 +03:00  INF]  Route matched with {action = "GetAllCategoryByShopList", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategoryByShopList(FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCategoryByShopList.GetAllCategoryByShopListQueryRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 10:53:44.513 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 10:53:44.513 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Product.ProductUpdateDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 10:53:44.519 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.UpdateProduct (FinalProject.API) in 22.7685ms
+[2023-03-06 10:53:44.520 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.UpdateProduct (FinalProject.API)'
+[2023-03-06 10:53:44.520 +03:00  INF]  Request finished HTTP/1.1 PUT http://localhost/api/products application/json;+charset=utf-8 216 - 200 - application/json;+charset=utf-8 25.0091ms
+[2023-03-06 10:53:44.520 +03:00  INF]  Request starting HTTP/1.1 DELETE http://localhost/api/products/6e0325ef-46dc-4247-8740-0575e439d398 - -
+[2023-03-06 10:53:44.521 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.DeleteProduct (FinalProject.API)'
+[2023-03-06 10:53:44.521 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Category.CategoryQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:53:44.521 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API) in 14.7517ms
+[2023-03-06 10:53:44.521 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 10:53:44.521 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:53:44.521 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 16.2057ms
+[2023-03-06 10:53:44.524 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/categories/55957174-591f-4a9e-9b40-ad9f3bcf9fc0 - -
+[2023-03-06 10:53:44.525 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:53:44.525 +03:00  INF]  Route matched with {action = "DeleteProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteProduct(FinalProject.Application.Features.ProductFeatures.Commands.DeleteProduct.DeleteProductCommandRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:53:44.525 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.GetCategoryById (FinalProject.API)'
+[2023-03-06 10:53:44.528 +03:00  INF]  Route matched with {action = "GetCategoryById", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategoryById(FinalProject.Application.Features.CategoryFeatures.Queries.GetCategoryById.GetCategoryByIdQueryRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 10:53:44.531 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Category.CategoryQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 10:53:44.532 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.GetCategoryById (FinalProject.API) in 3.8933ms
+[2023-03-06 10:53:44.532 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.GetCategoryById (FinalProject.API)'
+[2023-03-06 10:53:44.532 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:53:44.532 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/categories/55957174-591f-4a9e-9b40-ad9f3bcf9fc0 - - - 200 - application/json;+charset=utf-8 8.5032ms
+[2023-03-06 10:53:44.533 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 10:53:44.535 +03:00  INF]  Request starting HTTP/1.1 PUT http://localhost/api/categories application/json;+charset=utf-8 142
+[2023-03-06 10:53:44.535 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.UpdateCategory (FinalProject.API)'
+[2023-03-06 10:53:44.536 +03:00  INF]  Route matched with {action = "UpdateCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateCategory(FinalProject.Application.Features.CategoryFeatures.Commands.UpdateCategory.UpdateCategoryCommandRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 10:53:44.537 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:53:44.538 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.DeleteProduct (FinalProject.API) in 12.7612ms
+[2023-03-06 10:53:44.538 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.DeleteProduct (FinalProject.API)'
+[2023-03-06 10:53:44.538 +03:00  INF]  Request finished HTTP/1.1 DELETE http://localhost/api/products/6e0325ef-46dc-4247-8740-0575e439d398 - - - 200 - application/json;+charset=utf-8 17.6667ms
+[2023-03-06 10:53:44.539 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - -
+[2023-03-06 10:53:44.539 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:53:44.539 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:53:44.539 +03:00  INF]  Route matched with {action = "GetAllProductByShopList", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllProductByShopList(FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory.GetAllProductByCategoryQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 10:53:44.541 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:53:44.541 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API) in 1.6694ms
+[2023-03-06 10:53:44.541 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 10:53:44.541 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 10:53:44.541 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 2.0355ms
+[2023-03-06 10:53:44.542 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 10:53:44.542 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Category.CategoryUpdateDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 10:53:44.543 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.UpdateCategory (FinalProject.API) in 6.3599ms
+[2023-03-06 10:53:44.543 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.UpdateCategory (FinalProject.API)'
+[2023-03-06 10:53:44.543 +03:00  INF]  Request finished HTTP/1.1 PUT http://localhost/api/categories application/json;+charset=utf-8 142 - 200 - application/json;+charset=utf-8 8.3321ms
+[2023-03-06 10:53:44.544 +03:00  INF]  Request starting HTTP/1.1 DELETE http://localhost/api/categories/55957174-591f-4a9e-9b40-ad9f3bcf9fc0 - -
+[2023-03-06 10:53:44.544 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.DeleteCategory (FinalProject.API)'
+[2023-03-06 10:53:44.546 +03:00  INF]  Route matched with {action = "DeleteCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCategory(FinalProject.Application.Features.CategoryFeatures.Commands.DeleteCategory.DeleteCategoryCommandRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 10:53:44.548 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 10:53:44.548 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 10:53:44.548 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.DeleteCategory (FinalProject.API) in 2.6294ms
+[2023-03-06 10:53:44.548 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.DeleteCategory (FinalProject.API)'
+[2023-03-06 10:53:44.548 +03:00  INF]  Request finished HTTP/1.1 DELETE http://localhost/api/categories/55957174-591f-4a9e-9b40-ad9f3bcf9fc0 - - - 200 - application/json;+charset=utf-8 4.7024ms
+[2023-03-06 10:53:44.548 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - -
+[2023-03-06 10:53:44.549 +03:00  INF]  No cached response available for this request.
+[2023-03-06 10:53:44.549 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 10:53:44.549 +03:00  INF]  Route matched with {action = "GetAllCategoryByShopList", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategoryByShopList(FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCategoryByShopList.GetAllCategoryByShopListQueryRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 17:13:23.356 +03:00  INF]  User profile is available. Using 'C:\Users\Bedirhan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-03-06 17:13:23.356 +03:00  INF]  User profile is available. Using 'C:\Users\Bedirhan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2023-03-06 17:13:23.470 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - -
+[2023-03-06 17:13:23.470 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - -
+[2023-03-06 17:13:23.491 +03:00  WRN]  Failed to determine the https port for redirect.
+[2023-03-06 17:13:23.491 +03:00  WRN]  Failed to determine the https port for redirect.
+[2023-03-06 17:13:23.493 +03:00  INF]  No cached response available for this request.
+[2023-03-06 17:13:23.493 +03:00  INF]  No cached response available for this request.
+[2023-03-06 17:13:23.514 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 17:13:23.514 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 17:13:23.532 +03:00  INF]  Route matched with {action = "GetAllProductByShopList", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllProductByShopList(FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory.GetAllProductByCategoryQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 17:13:23.532 +03:00  INF]  Route matched with {action = "GetAllCategoryByShopList", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategoryByShopList(FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCategoryByShopList.GetAllCategoryByShopListQueryRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 17:13:24.151 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'MsSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory:6.0.6' with options: StoreName=TestDatabaseMs 
+[2023-03-06 17:13:24.151 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'MsSqlDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory:6.0.6' with options: StoreName=TestDatabaseMs 
+[2023-03-06 17:13:24.289 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 17:13:24.300 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Category.CategoryQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 17:13:24.307 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API) in 771.887ms
+[2023-03-06 17:13:24.307 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API) in 771.9014ms
+[2023-03-06 17:13:24.308 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 17:13:24.308 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 17:13:24.309 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 17:13:24.309 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 17:13:24.310 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 842.9829ms
+[2023-03-06 17:13:24.310 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 842.9338ms
+[2023-03-06 17:13:24.319 +03:00  INF]  Request starting HTTP/1.1 POST http://localhost/api/categories application/json;+charset=utf-8 67
+[2023-03-06 17:13:24.320 +03:00  INF]  Request starting HTTP/1.1 POST http://localhost/api/products application/json;+charset=utf-8 99
+[2023-03-06 17:13:24.321 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.CreateCategory (FinalProject.API)'
+[2023-03-06 17:13:24.321 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.CreateProduct (FinalProject.API)'
+[2023-03-06 17:13:24.323 +03:00  INF]  Route matched with {action = "CreateCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCategory(FinalProject.Application.Features.CategoryFeatures.Commands.CreateCategory.CreateCategoryCommandRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 17:13:24.323 +03:00  INF]  Route matched with {action = "CreateProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateProduct(FinalProject.Application.Features.ProductFeatures.Commands.CreateProduct.CreateProductCommandRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 17:13:24.454 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 17:13:24.454 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 17:13:24.458 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Category.CategoryCreateDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 17:13:24.458 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Product.ProductCreateDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 17:13:24.459 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.CreateCategory (FinalProject.API) in 135.3172ms
+[2023-03-06 17:13:24.459 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.CreateProduct (FinalProject.API) in 135.2904ms
+[2023-03-06 17:13:24.459 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.CreateCategory (FinalProject.API)'
+[2023-03-06 17:13:24.459 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.CreateProduct (FinalProject.API)'
+[2023-03-06 17:13:24.459 +03:00  INF]  Request finished HTTP/1.1 POST http://localhost/api/categories application/json;+charset=utf-8 67 - 200 - application/json;+charset=utf-8 139.5024ms
+[2023-03-06 17:13:24.459 +03:00  INF]  Request finished HTTP/1.1 POST http://localhost/api/products application/json;+charset=utf-8 99 - 200 - application/json;+charset=utf-8 139.5336ms
+[2023-03-06 17:13:24.461 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - -
+[2023-03-06 17:13:24.461 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - -
+[2023-03-06 17:13:24.461 +03:00  INF]  No cached response available for this request.
+[2023-03-06 17:13:24.461 +03:00  INF]  No cached response available for this request.
+[2023-03-06 17:13:24.462 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 17:13:24.462 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 17:13:24.462 +03:00  INF]  Route matched with {action = "GetAllProductByShopList", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllProductByShopList(FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory.GetAllProductByCategoryQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 17:13:24.463 +03:00  INF]  Route matched with {action = "GetAllCategoryByShopList", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategoryByShopList(FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCategoryByShopList.GetAllCategoryByShopListQueryRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 17:13:24.470 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 17:13:24.471 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API) in 8.4628ms
+[2023-03-06 17:13:24.471 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 17:13:24.471 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 17:13:24.471 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 10.3080ms
+[2023-03-06 17:13:24.472 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Category.CategoryQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 17:13:24.473 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products/311c75be-9bf8-4d71-a685-7bc927ed4f27 - -
+[2023-03-06 17:13:24.473 +03:00  INF]  No cached response available for this request.
+[2023-03-06 17:13:24.473 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetProductById (FinalProject.API)'
+[2023-03-06 17:13:24.473 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API) in 10.5401ms
+[2023-03-06 17:13:24.473 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 17:13:24.473 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 17:13:24.473 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 12.4230ms
+[2023-03-06 17:13:24.474 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/categories/71845b1a-52aa-4065-bfc3-c4ceac77302b - -
+[2023-03-06 17:13:24.474 +03:00  INF]  No cached response available for this request.
+[2023-03-06 17:13:24.474 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.GetCategoryById (FinalProject.API)'
+[2023-03-06 17:13:24.475 +03:00  INF]  Route matched with {action = "GetProductById", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductById(FinalProject.Application.Features.ProductFeatures.Queries.GetProductById.GetProductByIdQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 17:13:24.476 +03:00  INF]  Route matched with {action = "GetCategoryById", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategoryById(FinalProject.Application.Features.CategoryFeatures.Queries.GetCategoryById.GetCategoryByIdQueryRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 17:13:24.485 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Category.CategoryQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 17:13:24.485 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 17:13:24.486 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.GetCategoryById (FinalProject.API) in 9.3916ms
+[2023-03-06 17:13:24.486 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.GetCategoryById (FinalProject.API)'
+[2023-03-06 17:13:24.486 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 17:13:24.486 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetProductById (FinalProject.API) in 10.9808ms
+[2023-03-06 17:13:24.486 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/categories/71845b1a-52aa-4065-bfc3-c4ceac77302b - - - 200 - application/json;+charset=utf-8 12.2507ms
+[2023-03-06 17:13:24.486 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetProductById (FinalProject.API)'
+[2023-03-06 17:13:24.486 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 17:13:24.486 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products/311c75be-9bf8-4d71-a685-7bc927ed4f27 - - - 200 - application/json;+charset=utf-8 13.5868ms
+[2023-03-06 17:13:24.489 +03:00  INF]  Request starting HTTP/1.1 PUT http://localhost/api/products application/json;+charset=utf-8 216
+[2023-03-06 17:13:24.489 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.UpdateProduct (FinalProject.API)'
+[2023-03-06 17:13:24.489 +03:00  INF]  Request starting HTTP/1.1 PUT http://localhost/api/categories application/json;+charset=utf-8 142
+[2023-03-06 17:13:24.489 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.UpdateCategory (FinalProject.API)'
+[2023-03-06 17:13:24.491 +03:00  INF]  Route matched with {action = "UpdateProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduct(FinalProject.Application.Features.ProductFeatures.Commands.UpdateProduct.UpdateProductCommandRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 17:13:24.491 +03:00  INF]  Route matched with {action = "UpdateCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateCategory(FinalProject.Application.Features.CategoryFeatures.Commands.UpdateCategory.UpdateCategoryCommandRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 17:13:24.514 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 17:13:24.514 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 17:13:24.514 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Product.ProductUpdateDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 17:13:24.514 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[FinalProject.Application.DTOs.Category.CategoryUpdateDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2023-03-06 17:13:24.515 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.UpdateProduct (FinalProject.API) in 24.2739ms
+[2023-03-06 17:13:24.515 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.UpdateCategory (FinalProject.API) in 23.7085ms
+[2023-03-06 17:13:24.515 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.UpdateProduct (FinalProject.API)'
+[2023-03-06 17:13:24.515 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.UpdateCategory (FinalProject.API)'
+[2023-03-06 17:13:24.515 +03:00  INF]  Request finished HTTP/1.1 PUT http://localhost/api/categories application/json;+charset=utf-8 142 - 200 - application/json;+charset=utf-8 26.3710ms
+[2023-03-06 17:13:24.515 +03:00  INF]  Request finished HTTP/1.1 PUT http://localhost/api/products application/json;+charset=utf-8 216 - 200 - application/json;+charset=utf-8 26.5114ms
+[2023-03-06 17:13:24.516 +03:00  INF]  Request starting HTTP/1.1 DELETE http://localhost/api/products/311c75be-9bf8-4d71-a685-7bc927ed4f27 - -
+[2023-03-06 17:13:24.516 +03:00  INF]  Request starting HTTP/1.1 DELETE http://localhost/api/categories/71845b1a-52aa-4065-bfc3-c4ceac77302b - -
+[2023-03-06 17:13:24.516 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.DeleteProduct (FinalProject.API)'
+[2023-03-06 17:13:24.516 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.DeleteCategory (FinalProject.API)'
+[2023-03-06 17:13:24.518 +03:00  INF]  Route matched with {action = "DeleteCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteCategory(FinalProject.Application.Features.CategoryFeatures.Commands.DeleteCategory.DeleteCategoryCommandRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 17:13:24.518 +03:00  INF]  Route matched with {action = "DeleteProduct", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteProduct(FinalProject.Application.Features.ProductFeatures.Commands.DeleteProduct.DeleteProductCommandRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 17:13:24.526 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 17:13:24.526 +03:00  INF]  Saved 1 entities to in-memory store.
+[2023-03-06 17:13:24.530 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 17:13:24.530 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 17:13:24.531 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.DeleteCategory (FinalProject.API) in 13.0766ms
+[2023-03-06 17:13:24.531 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.DeleteProduct (FinalProject.API) in 12.9999ms
+[2023-03-06 17:13:24.531 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.DeleteCategory (FinalProject.API)'
+[2023-03-06 17:13:24.531 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.DeleteProduct (FinalProject.API)'
+[2023-03-06 17:13:24.531 +03:00  INF]  Request finished HTTP/1.1 DELETE http://localhost/api/products/311c75be-9bf8-4d71-a685-7bc927ed4f27 - - - 200 - application/json;+charset=utf-8 15.5288ms
+[2023-03-06 17:13:24.531 +03:00  INF]  Request finished HTTP/1.1 DELETE http://localhost/api/categories/71845b1a-52aa-4065-bfc3-c4ceac77302b - - - 200 - application/json;+charset=utf-8 15.5199ms
+[2023-03-06 17:13:24.532 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - -
+[2023-03-06 17:13:24.532 +03:00  INF]  No cached response available for this request.
+[2023-03-06 17:13:24.532 +03:00  INF]  Request starting HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - -
+[2023-03-06 17:13:24.532 +03:00  INF]  No cached response available for this request.
+[2023-03-06 17:13:24.532 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 17:13:24.532 +03:00  INF]  Executing endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 17:13:24.532 +03:00  INF]  Route matched with {action = "GetAllCategoryByShopList", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCategoryByShopList(FinalProject.Application.Features.CategoryFeatures.Queries.GetAllCategoryByShopList.GetAllCategoryByShopListQueryRequest) on controller FinalProject.API.Controllers.CategoriesController (FinalProject.API).
+[2023-03-06 17:13:24.532 +03:00  INF]  Route matched with {action = "GetAllProductByShopList", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllProductByShopList(FinalProject.Application.Features.ProductFeatures.Queries.GetAllProductByCategory.GetAllProductByCategoryQueryRequest) on controller FinalProject.API.Controllers.ProductsController (FinalProject.API).
+[2023-03-06 17:13:24.534 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Product.ProductQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 17:13:24.534 +03:00  INF]  Executed action FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API) in 1.9385ms
+[2023-03-06 17:13:24.534 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.ProductsController.GetAllProductByShopList (FinalProject.API)'
+[2023-03-06 17:13:24.534 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 17:13:24.534 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/products?CategoryId=078cc72b-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 2.2832ms
+[2023-03-06 17:13:24.538 +03:00  INF]  Executing OkObjectResult, writing value of type 'FinalProject.Application.Wrappers.Base.BaseResponse`1[[System.Collections.Generic.List`1[[FinalProject.Application.DTOs.Category.CategoryQueryDto, FinalProject.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2023-03-06 17:13:24.539 +03:00  INF]  Executed action FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API) in 6.4803ms
+[2023-03-06 17:13:24.539 +03:00  INF]  Executed endpoint 'FinalProject.API.Controllers.CategoriesController.GetAllCategoryByShopList (FinalProject.API)'
+[2023-03-06 17:13:24.539 +03:00  INF]  The response could not be cached for this request.
+[2023-03-06 17:13:24.539 +03:00  INF]  Request finished HTTP/1.1 GET http://localhost/api/categories?ShopListId=12345678-48df-402d-99cb-5339467f923c - - - 200 - application/json;+charset=utf-8 6.8295ms

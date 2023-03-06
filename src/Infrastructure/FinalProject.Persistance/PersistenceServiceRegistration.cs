@@ -51,7 +51,7 @@ namespace FinalProject.Persistence
                 options.Password.RequireUppercase = false;
             }).AddEntityFrameworkStores<MsSqlDbContext>();
 
-            services.AddStackExchangeRedisCache(options => options.Configuration = "localhost:49153,password=redispw");
+            services.AddStackExchangeRedisCache(options => options.Configuration = configuration.GetConnectionString("Redis"));
 
 
             services.AddScoped<IMongoDbContext, MongoDbContext>();

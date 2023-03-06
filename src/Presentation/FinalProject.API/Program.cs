@@ -22,7 +22,7 @@ builder.Host.UseSerilog((hostContext, services, configuration) =>
     configuration.ReadFrom.Configuration(hostContext.Configuration);
 });
 
-builder.Services.AddSwaggerGen(options =>//Swagger arayüzünde Authentication kullanabilmek için arayüz ekliyoruz.
+builder.Services.AddSwaggerGen(options =>//Swagger arayüzünde Authentication kullanabilmek için 
 {
     options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
     {
